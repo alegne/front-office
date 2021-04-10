@@ -1,0 +1,64 @@
+.header-top:before, .about-area:before, .newsletter-area:before {
+  content: "";
+  height: 48px;
+  position: absolute;
+  right: 0;
+  top: 10px;
+  width: 43%;
+}
+.header-top:after, .about-area:after, .newsletter-area:after {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  -o-border-image: none;
+      border-image: none;
+  border-style: solid;
+  border-width: 24px 10px;
+  content: "";
+  height: 5px;
+  position: absolute;
+  right: 43%;
+  top: 10px;
+  width: 0;
+}
+
+/*----------------------------------------*/
+/*  4. About Area
+/*----------------------------------------*/
+.about-area {
+  background: rgba(0, 0, 0, 0) url("./../../../assets/images/slider/banner.jpg") no-repeat scroll center top;
+  color: #ffffff;
+  margin-top: 140px;
+  padding-bottom: 54px;
+  position: relative;
+  margin-bottom: 100px;
+}
+.about-area:before {
+  height: 110px;
+  left: 0;
+  right: auto;
+  top: -20px;
+  width: 49.2%;
+}
+.about-area:after {
+  border-width: 55px 30px;
+  left: 49.2%;
+  top: -20px;
+  right: auto
+}
+.about-area h3 {
+  font-size: 30px;
+  margin-bottom: 79px;
+  padding-top: 22px;
+  z-index: 9;
+  position: relative;
+}
+.about-area p {
+  font-family: "Raleway";
+  line-height: 26px;
+  margin-bottom: 42px;
+}
+.about-container {margin-left: 70px;}
+.about-area .button-default {padding: 9px 41px;}
+.about-container > .button-default:hover {background: #ffffff none repeat scroll 0 0; color: #2d3e50;}

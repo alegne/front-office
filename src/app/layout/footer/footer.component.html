@@ -1,0 +1,122 @@
+                <!--Newsletter Area Start-->
+                <div class="newsletter-area">
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-lg-5 col-md-5">
+                              <div class="newsletter-content">
+                                  <h3>Recevoir</h3>
+                                  <h2>DES NOUVELLES</h2>
+                              </div>
+                          </div>
+                          <div class="col-lg-7 col-md-7">
+                              <div class="newsletter-form angle">
+                                  <form action="#" id="mc-form" class="mc-form footer-newsletter fix">
+                                      <div class="subscribe-form">
+                                          <input id="mc-email" type="email" name="email" placeholder="Votre adresse email...">
+                                          <button id="mc-submit" type="submit">S'INSCRIRE</button>
+                                      </div>
+                                  </form>
+                                  <!-- mailchimp-alerts Start -->
+                                  <div class="mailchimp-alerts text-centre fix pull-right">
+                                      <div class="mailchimp-submitting"></div><!-- mailchimp-submitting end -->
+                                      <div class="mailchimp-success"></div><!-- mailchimp-success end -->
+                                      <div class="mailchimp-error"></div><!-- mailchimp-error end -->
+                                  </div>
+                                  <!-- mailchimp-alerts end -->
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!--End of Newsletter Area-->
+              <!--Footer Widget Area Start-->
+              <div class="footer-widget-area">
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-lg-3 col-md-6 col-12">
+                              <div class="single-footer-widget">
+                                  <div class="footer-logo">
+                                      <a href="">
+                                        <img [src]="logo" alt="" id="footer-logo">
+                                      </a>
+                                  </div>
+                                  <p>
+                                    Ecole Nationale Informatique vise à former
+                                    des informaticiens le plus compétents
+                                    afin d'intégrer le monde numérique.
+                                  </p>
+                                  <div class="social-icons">
+                                      <a href="#"><i class="fa fa-facebook"></i></a>
+                                      <a href="#"><i class="fa fa-rss"></i></a>
+                                      <a href="#"><i class="fa fa-google-plus"></i></a>
+                                      <a href="#"><i class="fa fa-pinterest"></i></a>
+                                      <a href="#"><i class="fa fa-instagram"></i></a>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-lg-3 col-md-6 col-12">
+                              <div class="single-footer-widget">
+                                  <h3>INFORMATIONS</h3>
+                                  <a href="tel:+261 34 05 733 36">
+                                  <i class="fa fa-phone"></i> +261 34 05 733 36</a>
+                                  <span><i class="fa fa-envelope"></i>eni@univ-fianar.mg</span>
+                                  <span><i class="fa fa-globe"></i>www.moodle2.univ-fianar.mg/ </span>
+                                  <span><i class="fa fa-map-marker"></i>Fianarantsoa - MADAGASCAR</span>
+                              </div>
+                          </div>
+                          <div class="col-lg-3 col-md-6 col-12">
+                              <div class="single-footer-widget">
+                                  <h3>Pages</h3>
+                                  <ul class="footer-list" *ngFor="let item of menu">
+                                      <li><a [href]="item.slug">{{item.titre}}</a></li>
+                                  </ul>
+                              </div>
+                          </div>
+                          <div class="col-lg-3 col-md-6 col-12">
+                              <div class="single-footer-widget">
+                                  <h3>Titulaires</h3>
+                                  <div class="instagram-image">
+                                      <div class="footer-img">
+                                          <a href="#"><img src="./../../../assets/images/footer/1.jpg" alt=""></a>
+                                      </div>
+                                      <div class="footer-img">
+                                          <a href="#"><img src="./../../../assets/images/footer/2.jpg" alt=""></a>
+                                      </div>
+                                      <div class="footer-img">
+                                          <a href="#"><img src="./../../../assets/images/footer/3.jpg" alt=""></a>
+                                      </div>
+                                      <div class="footer-img">
+                                          <a href="#"><img src="./../../../assets/images/footer/4.jpg" alt=""></a>
+                                      </div>
+                                      <div class="footer-img">
+                                          <a href="#"><img src="./../../../assets/images/footer/5.jpg" alt=""></a>
+                                      </div>
+                                      <div class="footer-img">
+                                          <a href="#"><img src="./../../../assets/images/footer/6.jpg" alt=""></a>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <!--End of Footer Widget Area-->
+              <!--Footer Area Start-->
+              <footer class="footer-area">
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-lg-6 col-md-7 col-12">
+                              <span>Copyright &copy; ENI 2021.
+                                &nbsp;&nbsp;
+                                <a href="#">ICT Event</a></span>
+                          </div>
+                          <div class="col-lg-6 col-md-5 col-12">
+                              <div class="column-right">
+                                  <span>Privacy Policy , Terms &amp; Conditions</span>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </footer>
+              <!--End of Footer Area-->

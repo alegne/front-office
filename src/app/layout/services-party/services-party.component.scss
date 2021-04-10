@@ -1,0 +1,64 @@
+@import url(https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300&display=swap);
+
+.container {
+  max-width: 1170px; }
+  @media screen and (max-width: 575px) {
+    .container {
+      padding: 0px 15px;
+      max-width: 100%;
+      width: 100%; } }
+
+
+.bg-01 {
+  padding: 50px 0px;
+  background: #eef6ff;
+  position: relative;
+  overflow: hidden; }
+  .bg-01 .se-box {
+    display: block;
+    margin: -15px 0px;
+    padding: 20px 25px;
+    position: relative;
+    text-align: center; }
+    .bg-01 .se-box .icon {
+      padding: 0 0 10px 0px;
+      position: relative;
+      display: block;
+      height: 60px;
+      width: 60px;
+      background-color: #002147;
+      border-radius: 50px;
+      line-height: 60px;
+      text-align: center;
+      margin: 0px auto;
+      color: #fff;
+      font-size: 20px;
+      transition: 0.5s; }
+      .bg-01 .se-box .icon::before {
+        position: absolute;
+        content: "";
+        width: 80px;
+        height: 80px;
+        border-radius: 50px;
+        left: -10px;
+        top: -10px;
+        border: 2px dashed #002147; }
+      .bg-01 .se-box .icon:hover {
+        background: #4b4f5a;
+        cursor: pointer;}
+    .bg-01 .se-box .content {
+      padding: 20px 0px;
+      position: relative;
+      display: inline-block; }
+      .bg-01 .se-box .content h3 {
+        font-size: 20px;
+        color: #002147;
+        text-transform: capitalize;
+        margin: 10px 0 0 0;
+        cursor: pointer;}
+      .bg-01 .se-box .content p {
+        color: #444444;
+        font-size: 15px;
+        line-height: 26px;
+        margin: 10px 0px 20px 0px; }
+
