@@ -114,6 +114,7 @@ $color-white: white;
   padding: 25px;
   border-radius: 4px;
   transition: all 0.3s;
+  cursor: pointer;
 }
 
 #content-button-large a i {
@@ -124,4 +125,18 @@ $color-white: white;
   i {
     margin-left: 30px !important;
   }
+}
+
+.no-actu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 130px;
+  margin-top: -70px;
+  background: whitesmoke;
+  color: $first-color;
+  font-weight: bold;
+  align-items: center;
+  border-radius: 5px;
+  font-size: 18px;
 }

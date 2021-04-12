@@ -4,8 +4,6 @@ html, body { height: 100%; }
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  // font-family: Barlow,sans-serif;
-  // font-size: 1.6rem;
   line-height: 1.5;
   font-weight: 400;
   color: #333;
@@ -38,7 +36,7 @@ body {
 }
 
 mat-form-field {
-  width: 90%;
+  width: 85%;
 }
 
 // .mat-form-field-wrapper {

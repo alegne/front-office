@@ -17,6 +17,7 @@ import { GestureConfig, MatProgressSpinnerModule, MatButtonModule, MatCardModule
   MatTableModule, MatFormFieldModule, MatInputModule, MatPaginatorModule, MatSelectModule, MatToolbarModule,
   MatSidenavModule, MatDialogModule, MatDatepickerModule, MatNativeDateModule, MatAutocompleteModule,
   MatIconModule, MatExpansionModule, MatListModule, MatBadgeModule } from '@angular/material';
+import { NewsAllComponent } from './components/details/news-all/news-all.component';
 
 @NgModule({
   entryComponents: [
@@ -32,7 +33,8 @@ import { GestureConfig, MatProgressSpinnerModule, MatButtonModule, MatCardModule
     DirectorWordComponent,
     TopHeaderComponent,
     ServicesPartyComponent,
-    LoginComponent
+    LoginComponent,
+    NewsAllComponent
   ],
   imports: [
     BrowserModule,

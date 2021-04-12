@@ -1,0 +1,17 @@
+.header-news {
+  display: flex;
+  flex-direction: row;
+  height: 400px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./../../../../assets/images/background/bg-news.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.header-news .title-header-news {
+  color: white;
+  font-weight: 500;
+  font-size: 4vw;
+}

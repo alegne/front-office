@@ -1,3 +1,4 @@
+import { NewsAllComponent } from './components/details/news-all/news-all.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { NgModule } from '@angular/core';
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'actualités',
+    component: NewsAllComponent
   }
 ];
 
