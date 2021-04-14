@@ -1,3 +1,4 @@
+import { NewsService } from './../../services/news/news.service';
 import { HeaderService } from './../../services/Header/header.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -55,7 +56,7 @@ export class HeaderComponent implements OnInit {
     }
   ]
 
-  constructor(public headerService: HeaderService) { }
+  constructor(public headerService: HeaderService, public newsService: NewsService) { }
 
   ngOnInit() {
     this.menu = this.headerService.menu;

@@ -1,17 +1,31 @@
+$first-color : #0c2d50;
+$second-color : #002247;
+$color-white: white;
+
 .header-news {
   display: flex;
-  flex-direction: row;
-  height: 400px;
+  flex-direction: column;
+  height: 500px;
   width: 100%;
-  justify-content: center;
-  align-items: center;
-  background-image: url("./../../../../assets/images/background/bg-news.jpg");
+  text-align: center;
+  background-image: url("./../../../../assets/images/background/Anon151-Boundless-Banner-hd.jpg");
   background-position: center;
   background-size: cover;
+  padding-top: 80px;
 }
 
-.header-news .title-header-news {
-  color: white;
+.title-header-news {
+  font-size: 50px;
+  font-variant: petite-caps;
   font-weight: 500;
-  font-size: 4vw;
+  color: $first-color;
 }
+
+.descr-header-news {
+  color: $second-color;
+  width: 70%;
+  margin-left: 15%;
+  font-size: 18px;
+}
+
+

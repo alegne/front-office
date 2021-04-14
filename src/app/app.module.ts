@@ -18,6 +18,8 @@ import { GestureConfig, MatProgressSpinnerModule, MatButtonModule, MatCardModule
   MatSidenavModule, MatDialogModule, MatDatepickerModule, MatNativeDateModule, MatAutocompleteModule,
   MatIconModule, MatExpansionModule, MatListModule, MatBadgeModule } from '@angular/material';
 import { NewsAllComponent } from './components/details/news-all/news-all.component';
+import { ActualityComponent } from './components/details/news-all/actuality/actuality.component';
+import { EventsComponent } from './components/details/news-all/events/events.component';
 
 @NgModule({
   entryComponents: [
@@ -34,7 +36,9 @@ import { NewsAllComponent } from './components/details/news-all/news-all.compone
     TopHeaderComponent,
     ServicesPartyComponent,
     LoginComponent,
-    NewsAllComponent
+    NewsAllComponent,
+    ActualityComponent,
+    EventsComponent
   ],
   imports: [
     BrowserModule,
