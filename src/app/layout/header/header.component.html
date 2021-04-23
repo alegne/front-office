@@ -7,9 +7,9 @@
         <div class="carousel-caption">
             <h2>{{item.titre}}</h2>
             <p>{{item.description}}</p>
-            <div class="button-01">
+            <div class="button-01" (click)="seeNews(item.titre, item.date, item.posteur)">
                 <ul>
-                    <li class="btn_continue"><a [href]="item.slug">Continuer</a></li>
+                    <li class="btn_continue"><a>Continuer</a></li>
                 </ul>
             </div>
         </div>

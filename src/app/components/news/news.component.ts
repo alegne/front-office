@@ -36,4 +36,9 @@ export class NewsComponent implements OnInit {
     this.router.navigate(['/actualités']);
   }
 
+  seeActu(titre, date, posteur) {
+    let str = "/evenements/" + titre + "/" + date + "/" + posteur+ "";
+    this.router.navigateByUrl(str);
+  }
+
 }

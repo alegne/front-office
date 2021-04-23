@@ -26,6 +26,14 @@ const routes: Routes = [
     component: ActualityComponent
   },
   {
+    path: 'evenements/:type/:titre/:date/:posteur',
+    component: ActualityComponent
+  },
+  {
+    path: 'evenements/:titre/:date/:posteur',
+    component: ActualityComponent
+  },
+  {
     path : 'contact',
     component: ContactComponent
   },

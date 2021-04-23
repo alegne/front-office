@@ -35,8 +35,8 @@
                                         {{item.description}}
                                       </p>
                                   </div>
-                                  <div class="button-bottom">
-                                      <a [href]="item.slug" class="button-default">Voir l'actualité</a>
+                                  <div class="button-bottom" (click)="seeActu(item.titre, item.date, item.posteur)">
+                                      <a class="button-default">Voir l'actualité</a>
                                   </div>
                               </div>
                           </div>

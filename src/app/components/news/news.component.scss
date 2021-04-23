@@ -69,7 +69,7 @@ $color-white: white;
 }
 .single-item-rating i {margin-left: 3px;}
 .single-item .button-default {padding: 12px 33px;}
-.button-bottom {margin-bottom: -19.5px; text-align: center;height: 30px;}
+.button-bottom {margin-bottom: -19.5px; text-align: center;height: 30px;cursor: pointer;}
 .single-item:hover .button-default {background: $first-color none repeat scroll 0 0;}
 .button-large.button-default {
     box-shadow: 0 2px 20px rgba(34, 30, 31, 0.2);

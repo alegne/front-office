@@ -1,4 +1,5 @@
-import { NewsService } from './../../services/news/news.service';
+import { Router } from '@angular/router';
+import { NewsService, Actuality } from './../../services/news/news.service';
 import { HeaderService } from './../../services/Header/header.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -16,32 +17,7 @@ export class HeaderComponent implements OnInit {
   img3 = "./../../../assets/images/slider/3.jpg";
   logo = "./../../../assets/images/ENI/logo-ENl.png";
 
-  news = [
-    {
-      titre : "FORMATION HYBRIDE",
-      description : "Lorem ipsum, dolor sit amet consectetur adipisicing elit. \
-      Qui perspiciatis, eveniet sequi labore vel itaque adipisci odio necessitatibus voluptatibus \
-      saepe, impedit enim unde velit amet rem, suscipit corrupti vero ad.",
-      slug : "#",
-      image : "./../../../assets/images/slider/gasy1.png"
-    },
-    {
-      titre : "MAINTENANCE",
-      description : "Lorem ipsum, dolor sit amet consectetur adipisicing elit. \
-      Qui perspiciatis, eveniet sequi labore vel itaque adipisci odio necessitatibus voluptatibus \
-      saepe, impedit enim unde velit amet rem, suscipit corrupti vero ad.",
-      slug : "#",
-      image : "./../../../assets/images/slider/gasy2.jpg"
-    },
-    {
-    titre : "APPEL AU CANDIDATURE",
-    description : "Lorem ipsum, dolor sit amet consectetur adipisicing elit. \
-    Qui perspiciatis, eveniet sequi labore vel itaque adipisci odio necessitatibus voluptatibus \
-    saepe, impedit enim unde velit amet rem, suscipit corrupti vero ad.",
-    slug : "#",
-    image : "./../../../assets/images/slider/gasy3.jpg"
-    }
-  ];
+  news: Actuality[] = [];
 
   menu = null;
 
@@ -56,10 +32,15 @@ export class HeaderComponent implements OnInit {
     }
   ]
 
-  constructor(public headerService: HeaderService, public newsService: NewsService) { }
+  constructor(public headerService: HeaderService, public newsService: NewsService, private router: Router) { }
 
   ngOnInit() {
     this.menu = this.headerService.menu;
+    this.news = this.newsService.news.slice(0, 3);
   }
 
+  seeNews(titre, date, posteur) {
+    let str = "/evenements/nouvelles/" + titre + "/" + date + "/" + posteur+ "";
+    this.router.navigateByUrl(str);
+  }
 }

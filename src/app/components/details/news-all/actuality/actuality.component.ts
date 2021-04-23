@@ -24,6 +24,9 @@ export class ActualityComponent implements OnInit {
 
   timerInterval: any;
   isNews = false;
+  currentTitre = null;
+  currentPosteur = null;
+  currentDate = null;
 
   galleryOne : Gallery[] = [];
 
@@ -32,11 +35,20 @@ export class ActualityComponent implements OnInit {
   galleryTmp : Gallery[] = [];
 
   constructor(private newsService: NewsService, private activatedRoute : ActivatedRoute) {
-    let type : string = this.activatedRoute.snapshot.paramMap.get("type")
+    let type : string = this.activatedRoute.snapshot.paramMap.get("type");
+    let titre : string = this.activatedRoute.snapshot.paramMap.get("titre");
+    let date : string = this.activatedRoute.snapshot.paramMap.get("date");
+    let posteur : string = this.activatedRoute.snapshot.paramMap.get("posteur");
     if (type == "nouvelles" || type == "nouvelle" || type == "news" || type == "new"){
       this.isNews = true;
     } else {
       this.isNews = false;
+    }
+
+    if (titre && date && posteur) {
+      this.currentTitre = titre;
+      this.currentDate = date;
+      this.currentPosteur = posteur;
     }
   }
 
@@ -50,6 +62,9 @@ export class ActualityComponent implements OnInit {
     this.four_actu =  this.listActu.slice(0 , 4);
     this.last_actus = this.listActu.slice(this.minPagination, this.maxPagination);
     this.initPagination();
+    if (this.currentTitre && this.currentDate && this.currentPosteur) {
+      this.showActu(this.currentTitre, this.currentDate, this.currentPosteur);
+    }
   }
 
   initCurrent() {
@@ -135,7 +150,7 @@ export class ActualityComponent implements OnInit {
 
   slideToToppy() {
     $([document.documentElement, document.body]).animate({
-      scrollTop: $("#the-toppy").offset().top
+      scrollTop: $("#the-toppyy").offset().top
     }, 200);
   }
 
