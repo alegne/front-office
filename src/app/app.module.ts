@@ -25,6 +25,7 @@ import { AnimateOnScrollModule } from 'ng2-animate-on-scroll';
 import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './components/about/about.component';
 import { ScrollSpyDirective } from './components/about/scroll-spy.directive';
+import { SlideTopComponent } from './slide-top/slide-top.component';
 
 @NgModule({
   entryComponents: [
@@ -46,7 +47,8 @@ import { ScrollSpyDirective } from './components/about/scroll-spy.directive';
     ActualityComponent,
     EventsComponent,
     ContactComponent,
-    AboutComponent
+    AboutComponent,
+    SlideTopComponent
   ],
   imports: [
     BrowserModule,
