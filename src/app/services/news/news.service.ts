@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-
+import { environment } from 'src/environments/environment';
 export interface Actuality {
   titre: string,
   description: string,
@@ -19,6 +19,8 @@ export interface Gallery {
   providedIn: 'root'
 })
 export class NewsService {
+  endpoint = environment.endpoint;
+
   descr = "There are many variations of sages of Lorem Ipsum available,\
   but the mrity have suffered alteration in some orm,\
   by injected humo ur,There are many but the mri have\
@@ -446,4 +448,5 @@ export class NewsService {
   ];
 
   constructor() { }
+
 }
