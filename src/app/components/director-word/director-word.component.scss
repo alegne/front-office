@@ -29,7 +29,7 @@
 .about-area {
   background: rgba(0, 0, 0, 0) url("./../../../assets/images/slider/banner.jpg") no-repeat scroll center top;
   color: #ffffff;
-  margin-top: 140px;
+  margin-top: 100px;
   padding-bottom: 54px;
   position: relative;
   margin-bottom: 100px;
@@ -62,3 +62,15 @@
 .about-container {margin-left: 70px;}
 .about-area .button-default {padding: 9px 41px;}
 .about-container > .button-default:hover {background: #ffffff none repeat scroll 0 0; color: #2d3e50;}
+
+
+.timber {
+  right: 20px;
+  position: relative;
+  bottom: 20px;
+  width: 100%;
+  /* background: red; */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}

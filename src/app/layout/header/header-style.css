@@ -171,7 +171,8 @@ a:hover {
     position: absolute;
     content: "";
     /* background: rgba(3, 7, 53, 0.8); */
-    background : #0022478c;
+    /* background : #0022478c; */
+    background: #3436388c;
     height: 100%;
     width: 100%; }
   .slider .carousel-inner .carousel-item .carousel-caption {

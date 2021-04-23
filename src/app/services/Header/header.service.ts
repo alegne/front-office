@@ -1,25 +1,34 @@
 import { Injectable } from '@angular/core';
 
+export interface Menu {
+  titre : string,
+  slug : string
+}
+
 @Injectable({
   providedIn: 'root'
 })
 export class HeaderService {
-  public menu = [
+  public menu : Menu[] = [
     {
-      titre : "Formations",
-      slug : "#"
+      titre : "Actualités",
+      slug : "evenements/actualités"
     },
     {
       titre : "Nouvelles",
-      slug : "#"
+      slug : "evenements/nouvelles"
     },
     {
-      titre : "Contacts",
-      slug : "#"
+      titre : "Annonces",
+      slug : "annonces"
     },
     {
       titre : "Blog",
       slug : "#"
+    },
+    {
+      titre : "Contact",
+      slug : "contact"
     }
   ];
 

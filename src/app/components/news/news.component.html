@@ -1,6 +1,6 @@
                 <div class="course-area section-padding">
                   <div class="container">
-                      <div class="row">
+                      <div class="row row-title-actu">
                           <div class="col-md-12">
                               <div class="section-title-wrapper">
                                   <div class="section-title">
@@ -8,18 +8,25 @@
                                       <p>
                                         Les 3 dernières actualités de nos évenements
                                       </p>
+                                      <div class="bottomy">
+                                        <p class="bottomy-one"></p>
+                                        <div class="bottomy-center">
+                                          <fa name="globe"></fa>
+                                        </div>
+                                        <p class="bottomy-two"></p>
+                                      </div>
                                   </div>
                               </div>
                           </div>
                       </div>
-                      <div class="row">
+                      <div class="row row-actu">
                           <div class="col-lg-4 col-md-6" *ngFor="let item of actuality">
                               <div class="single-item">
                                   <div class="single-item-image overlay-effect">
-                                      <a href="#"><img [src]="item.image" alt=""></a>
+                                      <a [href]="item.slug"><img [src]="item.image" alt=""></a>
                                   </div>
                                   <div class="single-item-text">
-                                      <h4><a href="#">{{item.titre}}</a></h4>
+                                      <h4><a>{{item.titre}}</a></h4>
                                       <div class="single-item-text-info">
                                           <span>By: <span>{{item.posteur}}</span></span>
                                           <span>Date: <span>{{item.date}}</span></span>
@@ -29,7 +36,7 @@
                                       </p>
                                   </div>
                                   <div class="button-bottom">
-                                      <a [href]="item.slug" class="button-default">Plus de détail</a>
+                                      <a [href]="item.slug" class="button-default">Voir l'actualité</a>
                                   </div>
                               </div>
                           </div>
@@ -39,12 +46,12 @@
                             </div>
                           </div>
                           <br>
-                          <div class="col-md-12 col-sm-12 text-center" id="content-button-large" *ngIf="!noActu">
+                          <!-- <div class="col-md-12 col-sm-12 text-center" id="content-button-large" *ngIf="!noActu">
                               <a class="button-default button-large" (click)="allNews()">
                                 Les actualités
                                 <i class="fas fa-chevron-right"></i>
                               </a>
-                          </div>
+                          </div> -->
                       </div>
                   </div>
               </div>

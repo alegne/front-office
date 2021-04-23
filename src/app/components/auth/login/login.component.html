@@ -33,10 +33,10 @@
 
       <div class="content-btn">
           <button class="btn_connecter" type="submit">
-            <span class="arrow_right">
-              <!-- <fa-icon [icon]="faArrowCircleRight"></fa-icon> -->
+            <div class="loader" *ngIf="isLogin">...</div>
+            <span *ngIf="!isLogin">
+            Connexion
             </span>
-            &nbsp;&nbsp; Connexion
         </button>
       </div>
       <img [src]="logo" alt="" id="logo-eni-popup">

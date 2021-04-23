@@ -35,7 +35,7 @@
     </div>
 
     <div class="content-logo-uf">
-      <img [src]="logo" alt="logo-UF" id="logo-eni">
+      <img [src]="logo" alt="logo-UF" id="logo-eni" (click)="home()">
     </div>
   </div>
 
@@ -59,10 +59,13 @@
 <div class="external-content" id="external-content">
   <div id="mobile" class="demo1">
     <ul id="nav">
-      <li>Formations</li>
+      <li *ngFor="let item of menu">
+        {{item.titre}}
+      </li>
+      <!-- <li>Formations</li>
       <li>Nouvelles</li>
       <li>Contacts</li>
-      <li>Blog</li>
+      <li>Blog</li> -->
       <li id="login-mobile" (click)="login()">
         <img [src]="profile" alt="" id="img-profile-mobile">
         <span>

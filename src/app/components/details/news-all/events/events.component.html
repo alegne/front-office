@@ -1,6 +1,6 @@
 <div class="container-fluid main">
   <div class="title">
-    Les Nouvelles
+    Les Annonces
   </div>
 
   <div class="card-one">
@@ -33,34 +33,36 @@
     </div>
   </div>
 
-  <div class="contain-other-com">
-    <div class="row list-com" *ngFor="let item of last_news">
-      <div class="content-src-img col-lg-4">
-          <img [src]="item.image" alt="">
-      </div>
-      <div class="col-lg-7">
-        <div class="description-other">
-          <p class="date-other">
-            {{item.date}}
-          </p>
-          <p class="title-other">
-            {{item.titre}}
-          </p>
-          <p class="detail-other">
-            {{item.description.substring(0, 100)}}...
-          </p>
+  <div class="contain-other-com" id="contain-other-intern">
+    <div class="contain-other-intern">
+      <div class="row list-com" *ngFor="let item of last_news">
+        <div class="content-src-img col-lg-4">
+            <img [src]="item.image" alt="">
+        </div>
+        <div class="col-lg-7">
+          <div class="description-other">
+            <p class="date-other">
+              {{item.date}}
+            </p>
+            <p class="title-other">
+              {{item.titre}}
+            </p>
+            <p class="detail-other">
+              {{item.description.substring(0, 100)}}...
+            </p>
 
-          <div class="lire-plus">
-            Lire le communiqué
-            <span>
-              <i class="fas fa-arrow-right"></i>
-            </span>
+            <div class="lire-plus">
+              Lire le communiqué
+              <span>
+                <i class="fas fa-arrow-right"></i>
+              </span>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <div class="content-pagination">
-      <span *ngFor="let item of nbPagination" (click)="page(item)">
+      <span *ngFor="let item of nbPagination" (click)="page(item)" [ngClass]="{current : item === currentPagination}">
         {{item}}
       </span>
       <span (click)="page(currentPagination+1)">

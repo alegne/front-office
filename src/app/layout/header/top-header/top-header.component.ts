@@ -1,3 +1,4 @@
+import { HeaderService, Menu } from './../../../services/Header/header.service';
 import { LoginComponent } from './../../../components/auth/login/login.component';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -11,25 +12,7 @@ import * as $ from 'jquery';
   styleUrls: ['./top-header.component.scss', './tmp.scss']
 })
 export class TopHeaderComponent implements OnInit {
-  menu = [
-    {
-      titre : "Formations",
-      slug : "#"
-    },
-    {
-      titre : "Nouvelles",
-      slug : "#"
-    },
-    {
-      titre : "Contacts",
-      slug : "#"
-    },
-    {
-      titre : "Blog",
-      slug : "#"
-    }
-  ];
-
+  menu : Menu[];
   langues = [
     {
       libelle  : "Fr",
@@ -45,9 +28,10 @@ export class TopHeaderComponent implements OnInit {
   logoUf = "./../../../../assets/images/ENI/uf-light.png";
   profile = "./../../../../assets/images/icones/profile.png";
 
-  constructor(private router : Router, private dialog: MatDialog) { }
+  constructor(private router : Router, private dialog: MatDialog, private headerService: HeaderService) { }
 
   ngOnInit() {
+    this.getMenu();
     this.initJs();
   }
 
@@ -63,8 +47,15 @@ export class TopHeaderComponent implements OnInit {
   login() {
     const dialogRef = this.dialog.open(LoginComponent);
     dialogRef.afterClosed().subscribe(result => {
-
     });
+  }
+
+  getMenu() {
+    this.menu = this.headerService.menu;
+  }
+
+  home() {
+    this.router.navigateByUrl("/");
   }
 
 }

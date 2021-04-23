@@ -70,3 +70,17 @@ $color-white: white;
 .right-descr p {
   width: 90%;
 }
+
+@media screen and (max-width: 992px) {
+  .content {
+    margin-top: -150px;
+    margin-bottom: 50px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .right-child {
+    display: flex;
+    flex-direction: column;
+  }
+}

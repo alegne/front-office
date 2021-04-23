@@ -101,7 +101,7 @@ $color-white: white;
   text-align: center;
   height: fit-content;
   padding-top: 5%;
-  padding-right: 30px;
+  padding-right: 0px;
   width: fit-content;
   position: absolute;
   right: 20px;
@@ -125,13 +125,14 @@ $color-white: white;
 
 .content-action-header .menu-action .p #img-profile {
   height: 22px;
-    width: 22px;
-    margin-right: 10px;
+  width: 22px;
+  margin-right: 0px;
 }
 
 .content-action-header .menu-action .p span {
   position: relative;
   top: 3px;
+  left: 5px;
 }
 
 .content-logo-uf {
@@ -180,8 +181,8 @@ $color-white: white;
 }
 
 .univ-eni {
-  font-size: 32px;
-  letter-spacing: 2px;
+  font-size: 30px;
+  letter-spacing: 3px;
   word-spacing: 10px;
   font-variant: petite-caps;
 }
@@ -283,7 +284,7 @@ $color-white: white;
     position: absolute;
     width: 60px;
     left: 10px;
-    top: 85px;
+    top: -27px;
   }
   // #flags {
   //   margin-top: 85%;
@@ -298,6 +299,15 @@ $color-white: white;
     top: 25px;
     left: -10px;
 }
+}
+
+@media screen and (max-width: 310px) {
+  img#logo-eni {
+    position: absolute;
+    width: 60px;
+    left: 10px;
+    top: 85px;
+  }
 }
 
 // wrapped 1

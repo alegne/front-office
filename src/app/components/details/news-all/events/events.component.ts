@@ -1,6 +1,7 @@
 import { Actuality, NewsService } from './../../../../services/news/news.service';
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
+import { ControlContainer } from '@angular/forms';
 
 @Component({
   selector: 'app-events',
@@ -43,6 +44,13 @@ export class EventsComponent implements OnInit {
     }
     this.currentPagination = page;
     this.last_news = this.news.slice(this.minPagination, this.maxPagination);
+    // var scrollTo = $("#contain-other-intern");//#contain-other-intern
+    // var container = $(".contain-other-com");
+    // var position = scrollTo.offset().top - container.offset().top + container.scrollTop();
+    // container.scrollTop(position);
+    $([document.documentElement, document.body]).animate({
+      scrollTop: $("#contain-other-intern").offset().top
+    }, 500);
   }
 
 }

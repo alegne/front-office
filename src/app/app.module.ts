@@ -20,6 +20,9 @@ import { GestureConfig, MatProgressSpinnerModule, MatButtonModule, MatCardModule
 import { NewsAllComponent } from './components/details/news-all/news-all.component';
 import { ActualityComponent } from './components/details/news-all/actuality/actuality.component';
 import { EventsComponent } from './components/details/news-all/events/events.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { AnimateOnScrollModule } from 'ng2-animate-on-scroll';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
   entryComponents: [
@@ -38,12 +41,14 @@ import { EventsComponent } from './components/details/news-all/events/events.com
     LoginComponent,
     NewsAllComponent,
     ActualityComponent,
-    EventsComponent
+    EventsComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    AnimateOnScrollModule.forRoot(),
     FormsModule,
 		ReactiveFormsModule,
     MatCardModule,
@@ -62,7 +67,8 @@ import { EventsComponent } from './components/details/news-all/events/events.com
 		MatIconModule,
 		MatExpansionModule,
 		MatListModule,
-		MatBadgeModule
+		MatBadgeModule,
+    AngularFontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

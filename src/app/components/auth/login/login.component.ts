@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
 
 	signin: FormGroup;
 	hide = true;
+  isLogin: boolean = false;
 
   constructor(public router: Router, private formBuilder: FormBuilder) { }
 
@@ -52,6 +53,7 @@ export class LoginComponent implements OnInit {
 	signUp() {}
 
 	onConnect() {
+    this.isLogin = true;
 		const signinValue = this.signin.value;
 		console.log(signinValue);
 	}

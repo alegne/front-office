@@ -6,9 +6,14 @@ $first-color : #0c2d50;
 #carouselExampleFade {
   height: 650px;
 }
+
+.btn_continue:hover {
+  background: #f3ecec1f !important;
+}
+
 @media screen and (max-width: 991.98px) {
   #carouselExampleFade {
-    height: 50vh;
+    height: 380px;
   }
 }
 
@@ -22,7 +27,7 @@ $first-color : #0c2d50;
   }
 
   #carouselExampleFade {
-    height: 30vh;
+    height: 350px;
   }
 
   .carousel-control-prev, .carousel-control-next {
@@ -41,7 +46,7 @@ $first-color : #0c2d50;
   }
 
   #carouselExampleFade {
-    height: 29vh;
+    height: 300px;
   }
 }
 

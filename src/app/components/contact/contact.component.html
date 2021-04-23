@@ -1,0 +1,89 @@
+<app-top-header></app-top-header>
+
+<div class="main">
+  <div class="contain-main">
+    <div class="main-head">
+      <h2>
+        ECOLE
+      </h2>
+      <h6>
+        Nationale Informatique
+      </h6>
+      <p>
+        <i class="fas fa-map-marker-alt"></i> &nbsp; Tanambao
+      </p>
+      <p>
+        <i class="fas fa-map-marked-alt"></i> &nbsp; FIANARANTSOA I
+      </p>
+      <p>
+        <i class="fas fa-envelope-open-text"></i> &nbsp; BP : 1487 - Code 301
+      </p>
+      <p>
+        <i class="fas fa-globe-africa"></i> &nbsp;MADAGASCAR
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="contain-contact">
+  <div class="title-mapped">
+    Avez-vous des questions ?
+  </div>
+
+  <form class="form" [formGroup]="contactForm">
+    <div>
+      <label for="email">E-mail</label>
+      <input type="text" name="email" id="email" class="form-control"
+      formControlName="email" placeholder="Votre adresse email">
+
+      <div *ngIf="submitted && form.email.errors">
+        <small *ngIf="form.email.errors.required" class="form-text error-text ">
+          Adresse email requis
+        </small>
+        <small *ngIf="form.email.errors.email" class="form-text error-text ">
+          Veuillez mettre un format email valide
+        </small>
+      </div>
+    </div>
+
+    <!-- <div>
+      <label for="numero">Téléphone</label>
+      <input type="text" name="numero" id="numero" class="form-control"
+      formControlName="numero" placeholder="Téléphone">
+    </div> -->
+
+    <div>
+      <label for="fonction">Objet</label>
+      <input type="text" name="objet" id="objet" class="form-control" formControlName="objet"
+        placeholder="Votre objet">
+      <div *ngIf="submitted && form.objet.errors">
+        <small *ngIf="form.objet.errors.required" class="form-text error-text ">Objet requis</small>
+      </div>
+    </div>
+
+    <div>
+      <label for="message">Message</label>
+      <textarea rows="5" name="message" id="message" class="form-control" formControlName="message" placeholder="Votre message"></textarea>
+      <div *ngIf="submitted && form.message.errors">
+        <small *ngIf="form.message.errors.required" class="form-text error-text ">Message requis</small>
+      </div>
+    </div>
+
+    <div class="contain-submit">
+      <button type="submit" (click)="openConfirm($event)">
+        Envoyer
+      </button>
+    </div>
+
+  </form>
+</div>
+
+<div class="mapped">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3370.0503978815673!2d47.091204214744295!3d-21.455131093075888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x21e7bed737f377b5%3A0xb8558e55587dd811!2sEcole%20Nationale%20d%20Informatique!5e1!3m2!1sfr!2smg!4v1619166207585!5m2!1sfr!2smg"
+  width="100%" height="450"
+  style="border:0;"
+  allowfullscreen="" loading="lazy">
+</iframe>
+</div>
+
+<app-footer></app-footer>

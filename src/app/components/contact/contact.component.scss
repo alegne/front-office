@@ -1,0 +1,135 @@
+$first-color : #0c2d50;
+$second-color : #002247;
+
+.main {
+    height: 700px;
+    width: 100%;
+    background-image: url("./../../../assets/images/background/Anon151-Boundless-Banner-hd.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.mapped {
+    height: 300px;
+    width: 100%;
+    background: rgb(104, 102, 102);
+}
+
+.contain-contact {
+  position: absolute;
+  background: white;
+  width: 50%;
+  top: 400px;
+  right: 2vh;
+  border-radius: 3px;
+  padding: 45px;
+}
+
+.title-mapped {
+  text-align: center;
+  font-weight: bold;
+  color: $first-color;
+  font-size: 25px;
+  font-variant: small-caps;
+  font-family: none;
+}
+
+label {
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.contain-submit {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.contain-submit button {
+  height: 50px;
+  width: 150px;
+  background-color: $first-color;
+  color: white;
+  border: none;
+}
+
+small.form-text.error-text {
+  color: red;
+  text-align: right;
+  padding-right: 5px;
+}
+
+input {
+  height: 50px !important;
+}
+
+.main {
+  padding-top: 50px;
+  padding-left: 50px;
+}
+
+.contain-main {
+  padding: 20px;
+  width: 250px;
+  border: 2px solid $first-color;
+  font-weight: bold;
+}
+
+.main-head h2 {
+  letter-spacing: 24px !important;
+}
+
+.main-head h6 {
+  position: relative;
+  white-space: nowrap;
+  word-spacing: 20px;
+  letter-spacing: 1px;
+  bottom: 13px;
+}
+.main-head p {
+  font-weight: bold;
+}
+
+@media only screen and (min-width: 1700px) {
+  .contain-contact {
+    width: 600px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .contain-contact {
+    position: absolute;
+    background: white;
+    width: 91%;
+    top: 600px;
+    right: 2vh;
+    border-radius: 3px;
+    padding: 45px;
+  }
+
+  .main {
+    height: 880px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .contain-contact {
+    position: absolute;
+    background: white;
+    width: 98%;
+    top: 600px;
+    right: 1%;
+    border-radius: 3px;
+    padding: 45px;
+  }
+
+}
+
+@media screen and (max-width: 310px) {
+  .main {
+    padding-top: 50px;
+    padding-left: 0px;
+}
+}
