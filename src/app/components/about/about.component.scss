@@ -1,0 +1,218 @@
+$first-color : #0c2d50;
+$second-color : #002247;
+
+.cc {
+  background-color: whitesmoke;
+}
+
+.main {
+  width: 100%;
+  height: 400px;
+  background-image: url("./../../../assets/images/ENI/a-propos-de-nous.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.7;
+  padding-top: 50px;
+  padding-left: 50px;
+}
+
+.main-contain {
+  padding: 20px;
+  width: 300px;
+  border: 2px solid $first-color;
+  color: $first-color;
+}
+
+.main-contain h3 {
+  font-size: 50px;
+  letter-spacing: 25px;
+}
+
+.main-contain p {
+  letter-spacing: 4px;
+}
+
+.bottomy {
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.bottomy-one, .bottomy-two {
+  width: 50%;
+  height: 3px;
+  background-color: $first-color;
+}
+
+.bottomy-center {
+  margin-left: 1%;
+  margin-right: 1%;
+  position: relative;
+  bottom: 10px;
+}
+
+.main-title {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  color: $first-color;
+}
+
+.main-title h3 {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 25px;
+  letter-spacing: 5px;
+}
+
+/*----------------------------------------*/
+/*  17.1 Teachers Area
+/*----------------------------------------*/
+.teachers-area {padding: 0 0 140px; margin-top: 40px;}
+.single-teacher-item {
+    box-shadow: 1px 0 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+    transition: all 0.5s !important;
+    cursor: pointer;
+}
+.single-teacher-item:hover {box-shadow: 0 6px 20px rgba(34, 30, 31, 0.3);}
+.single-teacher-image > a {display: inline-block; position: relative;}
+.single-teacher-image > a img, .single-teacher-image > a {width: 100%;}
+.single-teacher-image > a:after {
+    content: "";
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    position: absolute;
+    top: 0;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    width: 100%;
+}
+.single-teacher-item:hover .single-teacher-image > a:after {
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+}
+.single-teacher-text {
+    background: #f6f6f6 none repeat scroll 0 0;
+    border-bottom: 3px solid #86bc42;
+    padding: 20px 26px 90px;
+    text-align: center;
+    transition: all 0.4s;
+}
+.single-teacher-item:hover .single-teacher-text {
+    margin-top: -45px;
+    padding: 20px 26px 66px;
+    position: absolute;
+    z-index: 9;
+}
+.single-teacher-text > h3 {
+	font-family: raleway;
+	font-weight: 600;
+	margin-bottom: 4px;
+	padding-top: 20px;
+	font-size: 24px;
+}
+.single-teacher-item:hover .single-teacher-text > h3 {padding-top: 0;}
+.single-teacher-text > h3 a {color: #222222; transition: all 0.3s;}
+.single-teacher-text > h4 {font-family: raleway; font-weight: 500;}
+.single-teacher-text > p {display: none; padding-top: 13px;}
+.single-teacher-item:hover .single-teacher-text p {display: block;}
+.social-links > a {
+    border: 1px solid #2d3e50;
+    border-radius: 50%;
+    color: #2d3e50;
+    display: inline-block;
+    font-size: 14px;
+    height: 27px;
+    line-height: 25px;
+    margin: 0 3px;
+    text-align: center;
+    width: 27px;
+}
+.social-links > a:hover {color: #ffffff;}
+.social-links {
+    bottom: 38px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    width: 100%;
+    -webkit-transition: all 0.3s ease 0s;
+            transition: all 0.3s ease 0s
+}
+.single-teacher-item:hover .social-links {bottom: 25px;}
+.single-course-details {
+    background: #f6f6f6 none repeat scroll 0 0;
+    border-bottom: 3px solid #86bc42;
+    margin-bottom: 80px;
+    padding: 33px 0;
+}
+.single-course-details .single-item-text {padding-right: 48px;}
+.course-details-area a img {margin-left: -35px;}
+.single-course-details a {display: block;}
+.single-course-details .col-md-6:first-child {padding-right: 3px;}
+
+.details {
+  margin-left: 10%;
+  margin-right: 10%;
+  height: 500px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding-right: 20px;
+}
+
+.details::-webkit-scrollbar {
+  width: 3px;
+  background: white;
+}
+
+.details h3 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  white-space: nowrap;
+  width: 25%;
+  padding-bottom: 5px;
+  border-bottom: 3px solid $first-color;
+
+}
+
+.details h3 i {
+  margin-right: 20px;
+  width: 3px;
+  font-size: 20px;
+  position: relative;
+  bottom: 10px;
+}
+
+.details div, .details p {
+  text-align: justify;
+}
+
+.space {
+  margin-bottom: 80px;
+}
+
+.mimi {
+  height: -15px;
+}
+
+.contain-img {
+  width: 100%;
+  height: 300px;
+  margin-top: 30px;
+}
+
+.contain-img img {
+ width: 100%;
+ height: 100%;
+}

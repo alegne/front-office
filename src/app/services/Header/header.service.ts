@@ -23,8 +23,8 @@ export class HeaderService {
       slug : "annonces"
     },
     {
-      titre : "Blog",
-      slug : "#"
+      titre : "A Propos",
+      slug : "Apropos"
     },
     {
       titre : "Contact",

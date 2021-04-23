@@ -1,3 +1,4 @@
+import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ActualityComponent } from './components/details/news-all/actuality/actuality.component';
 import { NewsAllComponent } from './components/details/news-all/news-all.component';
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path : 'contact',
     component: ContactComponent
+  },
+  {
+    path : 'Apropos',
+    component: AboutComponent
   }
 ];
 

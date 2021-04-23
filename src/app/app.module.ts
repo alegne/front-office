@@ -23,6 +23,8 @@ import { EventsComponent } from './components/details/news-all/events/events.com
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { AnimateOnScrollModule } from 'ng2-animate-on-scroll';
 import { ContactComponent } from './components/contact/contact.component';
+import { AboutComponent } from './components/about/about.component';
+import { ScrollSpyDirective } from './components/about/scroll-spy.directive';
 
 @NgModule({
   entryComponents: [
@@ -30,6 +32,7 @@ import { ContactComponent } from './components/contact/contact.component';
 	],
   declarations: [
     AppComponent,
+    ScrollSpyDirective,
     HomeComponent,
     HeaderComponent,
     FooterComponent,
@@ -42,7 +45,8 @@ import { ContactComponent } from './components/contact/contact.component';
     NewsAllComponent,
     ActualityComponent,
     EventsComponent,
-    ContactComponent
+    ContactComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,263 @@
+<app-top-header></app-top-header>
+<div class="main">
+  <div class="main-contain">
+    <h3>
+      ECOLE
+    </h3>
+    <p>
+      Nationale Informatique
+    </p>
+  </div>
+</div>
+
+
+<div class="container-fluid">
+  <div class="main-title">
+    <h3>
+      Références
+    </h3>
+    <p>
+      Lorem ipsum dolor sit ameru
+    </p>
+    <div class="bottomy">
+      <p class="bottomy-one"></p>
+      <div class="bottomy-center">
+        <i class="fas fa-asterisk"></i>
+      </div>
+      <p class="bottomy-two"></p>
+    </div>
+  </div>
+</div>
+
+                <!--Teachers Area Start-->
+                <div class="teachers-area padding-top">
+                  <div class="container">
+                      <div class="row" id="scrollspy-nav">
+                          <div class="col-lg-3 col-md-6 col-12">
+                              <div class="single-teacher-item" (click)="scrollTo('information')">
+                                  <div class="single-teacher-image">
+                                      <a>
+                                        <!-- <img src="img/teacher/l-1.jpg" alt=""> -->
+                                      </a>
+                                  </div>
+                                  <div class="single-teacher-text">
+                                      <h3>
+                                        <a>
+                                        Information
+                                      </a>
+                                      </h3>
+                                      <h4>Ordre général</h4>
+                                      <p>
+                                        L' Ecole Nationale d'Informatique, en abrégé ENI, est un établissement d'enseignement
+                                        supérieur rattaché académiquement et administrativement à l'Université de Fianarantsoa.
+                                      </p>
+                                      <div class="social-links">
+                                          <a><i class="fas fa-info-circle"></i></a>
+                                          <a><i class="fas fa-landmark"></i></a>
+                                          <a><i class="fas fa-graduation-cap"></i></a>
+                                          <a><i class="fas fa-chalkboard-teacher"></i></a>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-lg-3 col-md-6 col-12">
+                              <div class="single-teacher-item" (click)="scrollTo('historique')">
+                                  <div class="single-teacher-image">
+                                      <a>
+                                        <!-- <img src="img/teacher/l-2.jpg" alt=""> -->
+                                      </a>
+                                  </div>
+                                  <div class="single-teacher-text">
+                                      <h3><a>Historique</a></h3>
+                                      <h4>Décret</h4>
+                                      <p>
+                                        ENI se positionne sur l'échiquier socio-éducatif malgache comme étant le plus puissant
+                                        secteur de diffusion et de vulgarisation des connaissances et des technologies informatiques.
+                                      </p>
+                                      <div class="social-links">
+                                        <a><i class="fas fa-info-circle"></i></a>
+                                          <a><i class="fas fa-landmark"></i></a>
+                                          <a><i class="fas fa-graduation-cap"></i></a>
+                                          <a><i class="fas fa-chalkboard-teacher"></i></a>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-lg-3 col-md-6 col-12">
+                              <div class="single-teacher-item" (click)="scrollTo('mission')">
+                                  <div class="single-teacher-image">
+                                      <a>
+                                        <!-- <img src="img/teacher/l-3.jpg" alt=""> -->
+                                      </a>
+                                  </div>
+                                  <div class="single-teacher-text">
+                                      <h3><a>Missions</a></h3>
+                                      <h4>Formation</h4>
+                                      <p>
+                                        ENI a pour mission de former des
+                                        spécialistes informaticiens compétents et opérationnels de différents niveaux.
+                                      </p>
+                                      <div class="social-links">
+                                        <a><i class="fas fa-info-circle"></i></a>
+                                          <a><i class="fas fa-landmark"></i></a>
+                                          <a><i class="fas fa-graduation-cap"></i></a>
+                                          <a><i class="fas fa-chalkboard-teacher"></i></a>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-lg-3 col-md-6 col-12">
+                              <div class="single-teacher-item" (click)="scrollTo('specialisation')">
+                                  <div class="single-teacher-image">
+                                      <a>
+                                        <!-- <img src="img/teacher/l-4.jpg" alt=""> -->
+                                      </a>
+                                  </div>
+                                  <div class="single-teacher-text">
+                                      <h3><a>Spécialisation</a></h3>
+                                      <h4>Domaine</h4>
+                                      <p>
+                                        Les activités de formation et de recherche organisées
+                                        à l'ENI portent sur plusieurs domaines.
+                                      </p>
+                                      <div class="social-links">
+                                        <a><i class="fas fa-info-circle"></i></a>
+                                          <a><i class="fas fa-landmark"></i></a>
+                                          <a><i class="fas fa-graduation-cap"></i></a>
+                                          <a><i class="fas fa-chalkboard-teacher"></i></a>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!--End of Teachers Area-->
+
+<div class="details" id="parentDiv" scrollSpy [spiedTags]="['DIV']"
+(sectionChange)="onSectionChange($event)">
+  <p class="mimi" id="information"></p>
+  <h3>
+    <i class="fas fa-info-circle"></i>
+    Information d'ordre général
+  </h3>
+  <p>
+    L' Ecole Nationale d'Informatique, en abrégé ENI, est un établissement d'enseignement
+    supérieur rattaché académiquement et administrativement à l'Université de Fianarantsoa.
+  </p>
+  <p>
+    Le siège de l'Ecole se trouve à Tanambao Fianarantsoa.  <br>
+    Boîte postale 1487, code 301. <br>
+    Téléphone : +261 34 05 733 36. <br>
+    Adresse électronique : eni@univ-fianar.mg. <br>
+  </p>
+
+  <div class="space"></div>
+  <p class="mimi" id="historique"></p>
+  <h3 id="historique">
+    <i class="fas fa-landmark"></i>
+    Historique
+  </h3>
+  <p>
+    L’ENI se positionne sur l’échiquier socio-éducatif malgache comme étant le plus puissant
+    secteur de diffusion et de vulgarisation des connaissances et des technologies informatiques.
+  </p>
+  <p>
+    Cette Ecole Supérieure peut être considérée aujourd’hui comme la vitrine et
+    la pépinière des élites informaticiennes du pays.
+  L’Ecole s’est constituée de façon progressive au sein du Centre Universitaire Régional (CUR) de Fianarantsoa.
+  </p>
+  <p>
+    De façon formelle, l’ENI était constituée et créée au sein du CUR
+    par le décret N° 83185 du 24 Mai 1983, comme étant le seul
+    établissement Universitaire Professionnalisé au niveau national,
+    destiné à former des techniciens et des Ingénieurs de haut niveau, aptes
+    à répondre aux besoins et exigences d’Informatisation des entreprises,
+    des sociétés et des organes implantés à Madagascar.
+  </p>
+
+  <div class="space"></div>
+  <p class="mimi" id="mission"></p>
+  <h3 id="mission">
+    <i class="fas fa-graduation-cap"></i>
+    Missions
+  </h3>
+  <div>
+    L’ENI a pour conséquent pour mission de former des
+    spécialistes informaticiens compétents et opérationnels de différents niveaux notamment :
+    <ul>
+      <li>
+        En fournissant aux étudiants des connaissances de base en informatique ;
+      </li>
+      <li>
+        En leur transmettant le savoir-faire requis, à travers la professionnalisation
+        des formations dispensées et en
+        essayant une meilleure adéquation des formations par rapport
+        aux besoins évolutifs des sociétés et des entreprises.
+      </li>
+      <li>
+        En initiant les étudiants aux activités de recherche dans les différents domaines des
+        Technologies de l'information et de la communication (TIC).
+      </li>
+    </ul>
+  </div>
+  <p>
+    L'implantation de cette Ecole Supérieure de technologie de pointe
+    dans un pays en développement et dans une Province à tissu
+    économique et industriel faiblement développé ne l'a pourtant
+    pas défavorisée, ni empêchée de former des spécialistes informaticiens de bon niveau,
+    qui sont recherchés par les entreprises, les sociétés et
+    les organismes publics et privés sur le marché de l'emploi.
+  </p>
+
+  <div class="space"></div>
+  <p class="mimi" id="specialisation"></p>
+  <h3 id="specialisation">
+    <i class="fas fa-chalkboard-teacher"></i>
+    Domaine de spécialisation
+  </h3>
+  <div>
+    Les activités de formation et de recherche organisées à l'ENI portent sur les domaines suivants :
+    <ul>
+      <li>
+        Génie logiciel et Base de Données ;
+      </li>
+      <li>
+        Administration des Systèmes et Réseaux ;
+      </li>
+      <li>
+        Informatique Générale
+      </li>
+      <li>
+        Modélisation informatique et mathématique des Systèmes complexes.
+      </li>
+    </ul>
+  </div>
+  <p>
+    D'une manière plus générale, les programmes des formations sont
+    basés sur l'informatique de gestion et sur l'informatique des
+    Systèmes et Réseaux. Et les modules de formation
+    intègrent aussi bien des éléments d'Informatique fondamentale
+    que des éléments d'Informatique appliquée.
+  </p>
+</div>
+
+<div class="row">
+  <div class="col-lg-4">
+    <div class="contain-img">
+      <img [src]="img1" alt="">
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <div class="contain-img">
+      <img [src]="img2" alt="">
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <div class="contain-img">
+      <img [src]="img3" alt="">
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>
