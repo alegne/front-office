@@ -28,11 +28,11 @@ export class ActualityComponent implements OnInit {
   currentPosteur = null;
   currentDate = null;
 
-  galleryOne : Gallery[] = [];
+  galleryOne : String[] = [];
 
-  galleryTwo : Gallery[] = [];
+  galleryTwo : String[] = [];
 
-  galleryTmp : Gallery[] = [];
+  galleryTmp : String[] = [];
 
   constructor(private newsService: NewsService, private activatedRoute : ActivatedRoute) {
     let type : string = this.activatedRoute.snapshot.paramMap.get("type");
@@ -79,13 +79,13 @@ export class ActualityComponent implements OnInit {
     let counter = this.galleryOne.length;
     let indice = 0;
     if (this.galleryOne.length > 0) {
-      while(this.galleryOne.length < 6) {
-        if (indice > counter) {
-          indice = 0;
-        }
-        this.galleryOne.push(this.galleryOne[indice]);
-        indice++;
-      }
+      // while(this.galleryOne.length < 6) {
+      //   if (indice > counter) {
+      //     indice = 0;
+      //   }
+      //   this.galleryOne.push(this.galleryOne[indice]);
+      //   indice++;
+      // }
       this.animateGalleryOne();
     }
   }
@@ -95,12 +95,8 @@ export class ActualityComponent implements OnInit {
     this.galleryTwo = null;
     this.galleryTwo = [];
     this.galleryTmp.forEach(element => {
-      if (element.path) {
-        let instance: Gallery = {
-          path : element.path,
-          alt: element.alt
-        };
-        this.galleryTwo.push(instance);
+      if (element) {
+        this.galleryTwo.push(element);
       }
     });
   }
@@ -163,7 +159,7 @@ export class ActualityComponent implements OnInit {
         for (let index = 0; index < nbItem; index++) {
           tabMax.push(index);
         }
-        console.log(tabMax);
+        // console.log(tabMax);
         for (let index = 0; index < nbItem; index++) {
           let max = tabMax.length;
           let random =  Math.floor(Math.random() * (max + 1));

@@ -1,20 +1,18 @@
-import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ContactService {
+export class NewsletterService {
   endpoint = environment.endpoint;
 
   constructor(private http: HttpClient) { }
 
-  async postMessage(email: string, objet: string, message: string) {
+  async postEmail(email: string) {
     const options: any = {
-      email : email,
-      objet: objet,
-      message: message
+      email : email
     };
     const headers: any = new HttpHeaders({'Content-Type': 'application/json'});
 

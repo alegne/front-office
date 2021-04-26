@@ -6,7 +6,7 @@ export interface Actuality {
   date: string,
   posteur: string,
   image: string,
-  galerie : Gallery[],
+  galerie : string[],
   slug: string,
 }
 
@@ -34,30 +34,12 @@ export class NewsService {
       posteur: "Mc. Nawaz",
       image: "./../../../assets/images/course/1.jpg",
       galerie : [
-      {
-        path: "./../../../assets/images/latest/2.jpg",
-        alt: "Hello World"
-      },
-      {
-        path: "./../../../assets/images/latest/3.jpg",
-        alt: "Hello World"
-      },
-      {
-        path: "./../../../assets/images/latest/4.jpg",
-        alt: "Hello World"
-      },
-      {
-        path: "./../../../assets/images/latest/1.jpg",
-        alt: "Hello World"
-      },
-      {
-        path: "./../../../assets/images/course/2.jpg",
-        alt: "Hello World"
-      },
-      {
-        path: "./../../../assets/images/latest/1.jpg",
-        alt: "Hello World"
-      },
+        "./../../../assets/images/latest/2.jpg",
+        "./../../../assets/images/latest/3.jpg",
+        "./../../../assets/images/latest/4.jpg",
+        "./../../../assets/images/latest/1.jpg",
+        "./../../../assets/images/course/2.jpg",
+        "./../../../assets/images/latest/1.jpg"
     ],
       slug: "",
     },
@@ -68,18 +50,9 @@ export class NewsService {
       posteur: "Subas Das",
       image: "./../../../assets/images/course/2.jpg",
       galerie : [
-        {
-          path: "./../../../assets/images/course/2.jpg",
-          alt: "Hello World"
-        },
-        {
-          path: "./../../../assets/images/latest/3.jpg",
-          alt: "Hello World"
-        },
-        {
-          path: "./../../../assets/images/latest/4.jpg",
-          alt: "Hello World"
-        },
+          "./../../../assets/images/course/2.jpg",
+          "./../../../assets/images/latest/3.jpg",
+          "./../../../assets/images/latest/4.jpg",
       ],
       slug: "",
     },
@@ -90,19 +63,10 @@ export class NewsService {
       posteur: "Momin Boss",
       image: "./../../../assets/images/course/3.jpg",
       galerie : [
-        {
-          path: "./../../../assets/images/latest/2.jpg",
-          alt: "Hello World"
-        },
-        {
-          path: "./../../../assets/images/course/3.jpg",
-          alt: "Hello World"
-        },
-        {
-          path: "./../../../assets/images/latest/4.jpg",
-          alt: "Hello World"
-        },
-      ],
+        "./../../../assets/images/course/2.jpg",
+        "./../../../assets/images/latest/3.jpg",
+        "./../../../assets/images/latest/4.jpg",
+    ],
       slug: "",
     },
     {
@@ -112,19 +76,11 @@ export class NewsService {
       posteur: "Mc. Nawaz",
       image: "./../../../assets/images/course/1.jpg",
       galerie : [
-        {
-          path: "./../../../assets/images/latest/2.jpg",
-          alt: "Hello World"
-        },
-        {
-          path: "./../../../assets/images/course/3.jpg",
-          alt: "Hello World"
-        },
-        {
-          path: "./../../../assets/images/latest/4.jpg",
-          alt: "Hello World"
-        },
-      ],      slug: "",
+        "./../../../assets/images/course/2.jpg",
+        "./../../../assets/images/latest/3.jpg",
+        "./../../../assets/images/latest/4.jpg",
+    ],
+      slug: "",
     },
     {
       titre: "Illustrator2 CC 2017",
@@ -133,19 +89,11 @@ export class NewsService {
       posteur: "Subas Das",
       image: "./../../../assets/images/course/2.jpg",
       galerie : [
-        {
-          path: "./../../../assets/images/course/2.jpg",
-          alt: "Hello World"
-        },
-        {
-          path: "./../../../assets/images/latest/3.jpg",
-          alt: "Hello World"
-        },
-        {
-          path: "./../../../assets/images/latest/4.jpg",
-          alt: "Hello World"
-        },
-      ],      slug: "",
+        "./../../../assets/images/course/2.jpg",
+        "./../../../assets/images/latest/3.jpg",
+        "./../../../assets/images/latest/4.jpg",
+    ],
+    slug: "",
     },
     {
       titre: "Indesign2 CC 2017",
@@ -154,19 +102,11 @@ export class NewsService {
       posteur: "Momin Boss",
       image: "./../../../assets/images/course/3.jpg",
       galerie : [
-        {
-          path: "./../../../assets/images/latest/2.jpg",
-          alt: "Hello World"
-        },
-        {
-          path: "./../../../assets/images/latest/3.jpg",
-          alt: "Hello World"
-        },
-        {
-          path: "./../../../assets/images/latest/4.jpg",
-          alt: "Hello World"
-        },
-      ],      slug: "",
+        "./../../../assets/images/course/2.jpg",
+        "./../../../assets/images/latest/3.jpg",
+        "./../../../assets/images/latest/4.jpg",
+    ],
+      slug: "",
     },
     {
       titre: "Photoshop3 CC 2017",
@@ -175,19 +115,11 @@ export class NewsService {
       posteur: "Mc. Nawaz",
       image: "./../../../assets/images/course/1.jpg",
       galerie : [
-        {
-          path: "./../../../assets/images/latest/2.jpg",
-          alt: "Hello World"
-        },
-        {
-          path: "./../../../assets/images/latest/3.jpg",
-          alt: "Hello World"
-        },
-        {
-          path: "./../../../assets/images/latest/4.jpg",
-          alt: "Hello World"
-        },
-      ],      slug: "",
+          "./../../../assets/images/course/2.jpg",
+          "./../../../assets/images/latest/3.jpg",
+          "./../../../assets/images/latest/4.jpg",
+      ],
+      slug: "",
     },
     {
       titre: "Illustrator3 CC 2017",
@@ -196,19 +128,11 @@ export class NewsService {
       posteur: "Subas Das",
       image: "./../../../assets/images/course/2.jpg",
       galerie : [
-        {
-          path: "./../../../assets/images/latest/2.jpg",
-          alt: "Hello World"
-        },
-        {
-          path: "./../../../assets/images/latest/3.jpg",
-          alt: "Hello World"
-        },
-        {
-          path: "./../../../assets/images/latest/4.jpg",
-          alt: "Hello World"
-        },
-      ],      slug: "",
+        "./../../../assets/images/course/2.jpg",
+        "./../../../assets/images/latest/3.jpg",
+        "./../../../assets/images/latest/4.jpg",
+    ],
+      slug: "",
     },
     {
       titre: "Indesign3 CC 2017",
@@ -217,19 +141,11 @@ export class NewsService {
       posteur: "Momin Boss",
       image: "./../../../assets/images/course/3.jpg",
       galerie : [
-        {
-          path: "./../../../assets/images/latest/2.jpg",
-          alt: "Hello World"
-        },
-        {
-          path: "./../../../assets/images/latest/3.jpg",
-          alt: "Hello World"
-        },
-        {
-          path: "./../../../assets/images/latest/4.jpg",
-          alt: "Hello World"
-        },
-      ],      slug: "",
+        "./../../../assets/images/course/2.jpg",
+        "./../../../assets/images/latest/3.jpg",
+        "./../../../assets/images/latest/4.jpg",
+    ],
+      slug: "",
     }
   ];
 
@@ -242,10 +158,7 @@ export class NewsService {
       slug : "#",
       image : "./../../../assets/images/slider/gasy1.png",
       galerie : [
-        {
-        path: "./../../../assets/images/slider/gasy1.png",
-        alt: "News"
-        }
+        "./../../../assets/images/slider/gasy1.png",
       ],
       date: "28 Avril 2015",
       posteur: "Momin Boss"
@@ -258,14 +171,8 @@ export class NewsService {
       slug : "#",
       image : "./../../../assets/images/slider/gasy2.jpg",
       galerie : [
-        {
-          path: "./../../../assets/images/slider/gasy2.jpg",
-          alt: "News"
-        },
-        {
-          path: "./../../../assets/images/slider/gasy3.jpg",
-          alt: "News"
-        }
+          "./../../../assets/images/slider/gasy2.jpg",
+          "./../../../assets/images/slider/gasy3.jpg",
       ],
       date: "28 Avril 2015",
       posteur: "Momin Boss"
@@ -278,18 +185,9 @@ export class NewsService {
     slug : "#",
     image : "./../../../assets/images/slider/gasy3.jpg",
     galerie : [
-      {
-        path: "./../../../assets/images/slider/gasy3.jpg",
-        alt: "News"
-      },
-      {
-        path: "./../../../assets/images/slider/gasy2.jpg",
-        alt: "News"
-      },
-      {
-      path: "./../../../assets/images/slider/gasy1.png",
-      alt: "News"
-      }
+        "./../../../assets/images/slider/gasy3.jpg",
+        "./../../../assets/images/slider/gasy2.jpg",
+        "./../../../assets/images/slider/gasy1.png",
     ],
     date: "28 Avril 2015",
     posteur: "Momin Boss"
@@ -301,22 +199,10 @@ export class NewsService {
       slug : "#",
       image : "./../../../assets/images/slider/Trudel-Images-couverture-02-1024x576.jpg",
       galerie : [
-        {
-          path: "./../../../assets/images/slider/Trudel-Images-couverture-02-1024x576.jpg",
-          alt: "News"
-        },
-        {
-          path: "./../../../assets/images/slider/gasy3.jpg",
-          alt: "News"
-        },
-        {
-          path: "./../../../assets/images/slider/gasy2.jpg",
-          alt: "News"
-        },
-        {
-        path: "./../../../assets/images/slider/gasy1.png",
-        alt: "News"
-        }
+          "./../../../assets/images/slider/Trudel-Images-couverture-02-1024x576.jpg",
+          "./../../../assets/images/slider/gasy3.jpg",
+          "./../../../assets/images/slider/gasy2.jpg",
+          "./../../../assets/images/slider/gasy1.png",
       ],
       date: "28 Avril 2015",
       posteur: "Momin Boss"
@@ -328,26 +214,11 @@ export class NewsService {
       slug : "#",
       image : "./../../../assets/images/slider/Trudel-Images-couverture-06-1024x576.jpg",
       galerie : [
-        {
-          path: "./../../../assets/images/slider/Trudel-Images-couverture-06-1024x576.jpg",
-          alt: "News"
-        },
-        {
-          path: "./../../../assets/images/slider/Trudel-Images-couverture-02-1024x576.jpg",
-          alt: "News"
-        },
-        {
-          path: "./../../../assets/images/slider/gasy3.jpg",
-          alt: "News"
-        },
-        {
-          path: "./../../../assets/images/slider/gasy2.jpg",
-          alt: "News"
-        },
-        {
-        path: "./../../../assets/images/slider/gasy1.png",
-        alt: "News"
-        }
+        "./../../../assets/images/slider/Trudel-Images-couverture-06-1024x576.jpg",
+        "./../../../assets/images/slider/Trudel-Images-couverture-02-1024x576.jpg",
+        "./../../../assets/images/slider/gasy3.jpg",
+        "./../../../assets/images/slider/gasy2.jpg",
+        "./../../../assets/images/slider/gasy1.png",
       ],
       date: "28 Avril 2015",
       posteur: "Momin Boss"
@@ -359,10 +230,7 @@ export class NewsService {
     slug : "#",
     image : "./../../../assets/images/slider/Trudel-Images-couverture-07-1024x576.jpg",
     galerie : [
-      {
-        path: "./../../../assets/images/slider/Trudel-Images-couverture-07-1024x576.jpg",
-        alt: "News"
-      }
+        "./../../../assets/images/slider/Trudel-Images-couverture-07-1024x576.jpg",
     ],
     date: "28 Avril 2015",
     posteur: "Momin Boss"
@@ -374,10 +242,7 @@ export class NewsService {
       slug : "#",
       image : "./../../../assets/images/slider/Trudel-Images-couverture-06-1024x576.jpg",
       galerie : [
-        {
-          path: "./../../../assets/images/slider/Trudel-Images-couverture-06-1024x576.jpg",
-          alt: "News"
-        }
+        "./../../../assets/images/slider/Trudel-Images-couverture-06-1024x576.jpg",
       ],
       date: "28 Avril 2015",
       posteur: "Momin Boss"
@@ -389,10 +254,7 @@ export class NewsService {
     slug : "#",
     image : "./../../../assets/images/slider/Trudel-Images-couverture-07-1024x576.jpg",
     galerie : [
-      {
-        path: "./../../../assets/images/slider/Trudel-Images-couverture-07-1024x576.jpg",
-        alt: "News"
-      }
+      "./../../../assets/images/slider/Trudel-Images-couverture-07-1024x576.jpg",
     ],
     date: "28 Avril 2015",
     posteur: "Momin Boss"
@@ -405,10 +267,8 @@ export class NewsService {
       slug : "#",
       image : "./../../../assets/images/slider/gasy1.png",
       galerie : [
-        {
-          path: "./../../../assets/images/slider/gasy1.png",
-          alt: "News"
-        }
+          "./../../../assets/images/slider/gasy1.png",
+
       ],
       date: "28 Avril 2015",
       posteur: "Momin Boss"
@@ -421,10 +281,7 @@ export class NewsService {
       slug : "#",
       image : "./../../../assets/images/slider/gasy2.jpg",
       galerie : [
-        {
-          path: "./../../../assets/images/slider/gasy2.jpg",
-          alt: "News"
-        }
+          "./../../../assets/images/slider/gasy2.jpg",
       ],
       date: "28 Avril 2015",
       posteur: "Momin Boss"
@@ -437,10 +294,7 @@ export class NewsService {
     slug : "#",
     image : "./../../../assets/images/slider/gasy3.jpg",
     galerie : [
-      {
-        path: "./../../../assets/images/slider/gasy3.jpg",
-        alt: "News"
-      }
+      "./../../../assets/images/slider/gasy3.jpg",
     ],
     date: "28 Avril 2015",
     posteur: "Momin Boss"

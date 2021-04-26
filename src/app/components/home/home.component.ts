@@ -1,3 +1,4 @@
+import { ConfigurationsService } from './../../services/configurations/configurations.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private config: ConfigurationsService) { }
 
   ngOnInit() {
+    this.getConfiguration();
   }
 
   seeActu(titre, date, posteur) {
@@ -21,6 +23,10 @@ export class HomeComponent implements OnInit {
   seeNews(titre, date, posteur) {
     let str = "/evenements/nouvelles/" + titre + "/" + date + "/" + posteur+ "";
     this.router.navigateByUrl(str);
+  }
+
+  getConfiguration() {
+    this.config.getConfigurations();
   }
 
 }

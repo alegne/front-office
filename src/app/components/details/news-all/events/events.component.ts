@@ -1,7 +1,9 @@
+import { PopupEventComponent } from './../popup-event/popup-event.component';
 import { Actuality, NewsService } from './../../../../services/news/news.service';
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 import { ControlContainer } from '@angular/forms';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-events',
@@ -17,7 +19,7 @@ export class EventsComponent implements OnInit {
   currentPagination = 1;
   minPagination = 3;
   maxPagination = 6;
-  constructor(public newsService: NewsService) { }
+  constructor(public newsService: NewsService, private dialog: MatDialog) { }
 
   ngOnInit() {
     this.news = this.newsService.news;
@@ -51,6 +53,20 @@ export class EventsComponent implements OnInit {
     $([document.documentElement, document.body]).animate({
       scrollTop: $("#contain-other-intern").offset().top
     }, 500);
+  }
+
+  lire(annonce: Actuality) {
+    let data = {
+      titre: annonce.titre,
+      description: annonce.description,
+      date: annonce.date,
+      posteur: annonce.posteur,
+      image: annonce.image,
+      galerie: annonce.galerie
+    }
+    const dialogRef = this.dialog.open(PopupEventComponent, {data});
+    dialogRef.afterClosed().subscribe(result => {
+    });
   }
 
 }

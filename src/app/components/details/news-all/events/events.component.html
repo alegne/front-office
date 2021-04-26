@@ -21,7 +21,7 @@
               <p class="contain-date">{{item.date}}</p>
               <p class="contain-description">{{item.description}}</p>
 
-              <div class="lire-plus">
+              <div class="lire-plus" (click)="lire(item)">
                 Lire le communiqué
                 <span>
                   <i class="fas fa-arrow-right"></i>
@@ -51,7 +51,7 @@
               {{item.description.substring(0, 100)}}...
             </p>
 
-            <div class="lire-plus">
+            <div class="lire-plus" (click)="lire(item)">
               Lire le communiqué
               <span>
                 <i class="fas fa-arrow-right"></i>

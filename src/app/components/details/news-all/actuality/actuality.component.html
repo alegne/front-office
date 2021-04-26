@@ -48,19 +48,23 @@
   </div>
   <div class="row">
     <div class="col-lg-12">
-      <div class="contain-gallerie">
+      <div class="contain-gallerie" *ngIf="galleryOne.length > 0">
 
         <div class="contain-gallerie-one">
           <div class="img" *ngFor="let item of galleryOne">
-            <img [src]="item.path" alt="" class="image">
+            <img [src]="item" alt="" class="image">
             <div class="overlay">
-              <div class="text">{{item.alt}}</div>
+              <div class="text">
+                <span *ngIf="!isNews">Actualité</span>
+                <span *ngIf="isNews">Nouvelle</span>
+              </div>
             </div>
           </div>
         </div>
 
         <div class="text-gallerie">
-          galeries
+          <span *ngIf="galleryOne.length === 1">galerie</span>
+          <span *ngIf="galleryOne.length > 1">galeries</span>
         </div>
         <div class="bar-gallerie">
         </div>

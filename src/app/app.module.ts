@@ -1,3 +1,10 @@
+import { ContactService } from './services/contact/contact.service';
+import { NewsletterService } from './services/newsletter/newsletter.service';
+import { NewsService } from './services/news/news.service';
+import { FooterService } from './services/Footer/footer.service';
+import { HeaderService } from './services/Header/header.service';
+import { ConfigurationsService } from './services/configurations/configurations.service';
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -26,10 +33,12 @@ import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './components/about/about.component';
 import { ScrollSpyDirective } from './components/about/scroll-spy.directive';
 import { SlideTopComponent } from './slide-top/slide-top.component';
+import { PopupEventComponent } from './components/details/news-all/popup-event/popup-event.component';
 
 @NgModule({
   entryComponents: [
-		LoginComponent
+		LoginComponent,
+    PopupEventComponent
 	],
   declarations: [
     AppComponent,
@@ -48,7 +57,8 @@ import { SlideTopComponent } from './slide-top/slide-top.component';
     EventsComponent,
     ContactComponent,
     AboutComponent,
-    SlideTopComponent
+    SlideTopComponent,
+    PopupEventComponent
   ],
   imports: [
     BrowserModule,
@@ -73,10 +83,18 @@ import { SlideTopComponent } from './slide-top/slide-top.component';
 		MatIconModule,
 		MatExpansionModule,
 		MatListModule,
+    HttpClientModule,
 		MatBadgeModule,
     AngularFontAwesomeModule
   ],
-  providers: [],
+  providers: [
+    ConfigurationsService,
+    HeaderService,
+    FooterService,
+    NewsService,
+    NewsletterService,
+    ContactService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

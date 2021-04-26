@@ -34,7 +34,7 @@ $second-color : #002247;
 }
 
 .bottomy {
-  width: 40%;
+  width: 25%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -47,10 +47,14 @@ $second-color : #002247;
 }
 
 .bottomy-center {
-  margin-left: 1%;
-  margin-right: 1%;
+  margin-left: 5%;
+  margin-right: 5%;
   position: relative;
-  bottom: 10px;
+  bottom: 15px;
+
+  i {
+    font-size: 30px;
+  }
 }
 
 .main-title {
@@ -103,7 +107,7 @@ $second-color : #002247;
 }
 .single-teacher-text {
     background: #f6f6f6 none repeat scroll 0 0;
-    border-bottom: 3px solid #86bc42;
+    border-bottom: 3px solid $first-color;
     padding: 20px 26px 90px;
     text-align: center;
     transition: all 0.4s;
@@ -153,7 +157,7 @@ $second-color : #002247;
 .single-teacher-item:hover .social-links {bottom: 25px;}
 .single-course-details {
     background: #f6f6f6 none repeat scroll 0 0;
-    border-bottom: 3px solid #86bc42;
+    border-bottom: 3px solid $first-color;
     margin-bottom: 80px;
     padding: 33px 0;
 }
@@ -180,18 +184,18 @@ $second-color : #002247;
   margin-top: 20px;
   margin-bottom: 20px;
   white-space: nowrap;
-  width: 25%;
+  width: 30%;
   padding-bottom: 5px;
   border-bottom: 3px solid $first-color;
 
 }
 
 .details h3 i {
-  margin-right: 20px;
-  width: 3px;
-  font-size: 20px;
+  margin-right: 2px;
+  /* width: 17px; */
+  font-size: 30px;
   position: relative;
-  bottom: 10px;
+  bottom: 3px;
 }
 
 .details div, .details p {
@@ -217,6 +221,40 @@ $second-color : #002247;
  height: 100%;
 }
 
+// .contain-img {
+//   position: relative;
+//   width: 50%;
+// }
+
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #33333391;
+  overflow: hidden;
+  width: 0;
+  height: 90%;
+  transition: .5s ease;
+}
+
+.contain-img:hover .overlay {
+  width: 100%;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+
 @media screen and (max-width: 480px) {
   .details h3 {
     margin-top: 20px;
@@ -234,3 +272,10 @@ $second-color : #002247;
   }
 }
 
+.contain-text {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  opacity: 0.7;
+}

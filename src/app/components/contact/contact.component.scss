@@ -4,7 +4,8 @@ $second-color : #002247;
 .main {
     height: 700px;
     width: 100%;
-    background-image: url("./../../../assets/images/background/Anon151-Boundless-Banner-hd.jpg");
+    // background-image: url("./../../../assets/images/background/Anon151-Boundless-Banner-hd.jpg");
+    background-image: linear-gradient(to bottom, #ffffff, #ffffffa4, #ffffff6b, #ffffff09, #ffffff00),url("./../../../assets/images/background/Vue-aérienne-1024x414.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -19,7 +20,7 @@ $second-color : #002247;
 .contain-contact {
   position: absolute;
   background: white;
-  width: 50%;
+  width: 40%;
   top: 400px;
   right: 2vh;
   border-radius: 3px;
@@ -30,8 +31,8 @@ $second-color : #002247;
   text-align: center;
   font-weight: bold;
   color: $first-color;
-  font-size: 25px;
-  font-variant: small-caps;
+  font-size: 30px;
+  // font-variant: small-caps;
   font-family: none;
 }
 
@@ -71,10 +72,15 @@ input {
 }
 
 .contain-main {
+  // padding: 20px;
+  // width: 250px;
+  border: 2px solid #0c2d50;
+  // font-weight: bold;
   padding: 20px;
   width: 250px;
-  border: 2px solid $first-color;
-  font-weight: bold;
+  // border: 2px solid rgba(255, 255, 255, 0.521);
+  font-weight: 500;
+  color: #0c2d50;
 }
 
 .main-head h2 {
