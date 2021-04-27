@@ -7,11 +7,11 @@ import * as $ from 'jquery';
 
 
 @Component({
-  selector: 'app-top-header',
-  templateUrl: './top-header.component.html',
-  styleUrls: ['./top-header.component.scss', './tmp.scss']
+  selector: 'app-top-header-slide',
+  templateUrl: './top-header-slide.component.html',
+  styleUrls: ['./top-header-slide.component.scss', './tmp.scss']
 })
-export class TopHeaderComponent implements OnInit {
+export class TopHeaderSlideComponent implements OnInit {
   menu : Menu[];
   langues = [
     {
@@ -36,10 +36,10 @@ export class TopHeaderComponent implements OnInit {
   }
 
   initJs() {
-    $("#best-menu-mobile-main").on('click', function() {
-      $("#external-content-main").toggle();
+    $("#best-menu-mobile").on('click', function() {
+      $("#external-content").toggle();
       setTimeout(() => {
-        $("#mobile-main").toggleClass('navigation');
+        $("#mobile").toggleClass('navigation');
       }, 10);
     });
   }

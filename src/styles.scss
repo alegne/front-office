@@ -24,8 +24,8 @@ body {
   width: 100%;
   margin-top: 20px !important;
   margin-bottom: 5px !important;
-  overflow: hidden;
-  overflow-y: hidden !important;
+  // overflow: hidden;
+  overflow-y: auto !important;
   overflow-x: hidden !important;
 }
 
@@ -43,8 +43,8 @@ mat-form-field {
     .slideLeft {
       animation-name: slideLeft;
       -webkit-animation-name: slideLeft;
-      animation-duration: 1.8s;
-      -webkit-animation-duration: 1.8s;
+      animation-duration: 1.2s;
+      -webkit-animation-duration: 1.2s;
       width: 100%;
       z-index: 200;
     }
@@ -52,11 +52,11 @@ mat-form-field {
     @keyframes slideLeft {
       0% {
         color : rgba(0,0,0,0);
-        -webkit-transform: translateY(50%);
+        -webkit-transform: translateX(50%);
       }
       100% {
         color: white;
-        -webkit-transform: translateY(0%);
+        -webkit-transform: translateX(0%);
       }
     }
 
@@ -81,6 +81,46 @@ mat-form-field {
         background-color: rgba(0,0,0,0);
         opacity: 1;
         -webkit-transform: translateY(0%);
+      }
+    }
+
+    // Animate header
+    .slideUpHeader {
+      animation-name: slideUpHeader;
+      -webkit-animation-name: slideUpHeader;
+      animation-duration: 0.5s;
+      -webkit-animation-duration: 0.5s;
+    }
+
+    @keyframes slideUpHeader {
+      0% {
+        opacity: 0;
+        // display: block !important;
+        // -webkit-transform: translateY(50%);
+      }
+      100% {
+        opacity: 1;
+        // -webkit-transform: translateY(0%);
+      }
+    }
+
+    .fadeUpHeader {
+      animation-name: fadeUpHeader;
+      -webkit-animation-name: fadeUpHeader;
+      animation-duration: 0.7s;
+      -webkit-animation-duration: 0.7s;
+      // display: none;
+    }
+
+    @keyframes fadeUpHeader {
+      0% {
+        opacity: 1;
+        // -webkit-transform: translateY(50%);
+      }
+      100% {
+        opacity: 0;
+        // -webkit-transform: translateY(0%);
+        // display: none !important;
       }
     }
 

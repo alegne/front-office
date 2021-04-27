@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  endpoint: " http://127.0.0.1:8000/api",
+  // endpoint: " http://127.0.0.1:8000/api",
+  endpoint: "https://eni-site.herokuapp.com/api",
   url: "https://eni-site.herokuapp.com/api"
 };
 /*

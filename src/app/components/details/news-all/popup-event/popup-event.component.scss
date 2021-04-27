@@ -4,6 +4,7 @@
 
 .img-popup {
   width: 100%;
+  height: 40vh !important;
 }
 
 .inside-popup {
@@ -33,11 +34,25 @@
   padding: 10px;
   height: 300px;
   overflow-y: scroll;
+  text-align: justify;
 }
 
 .rightSide::-webkit-scrollbar {
   width: 1px;
   background-color: white;
+}
+
+.contain-title {
+  width: 100%;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.contain-date, .contain-posteur {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 @media screen and (max-width: 992px) {

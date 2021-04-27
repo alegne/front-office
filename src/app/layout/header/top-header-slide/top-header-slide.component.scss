@@ -1,0 +1,386 @@
+$first-color : #0c2d50;
+$second-color : #002247;
+$color-white: white;
+
+#mimi-main {
+  position: fixed;
+  z-index: 500;
+  width: 100%;
+  top: 0px;
+}
+
+.mobile-univ-eni {
+  display: none;
+}
+
+.top-content {
+  display: flex;
+  flex-direction: column;
+  height: 170px;
+  background: transparent;
+}
+
+.flag-mobile {
+  display: none;
+}
+
+.first-content {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: row;
+  height: 120px;
+  background-color: #0c2d50c2;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.second-content {
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  background-color: #002247ef ;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.second-content .my-menu:last-child {
+  border-right: none !important;
+}
+
+.second-content .my-menu {
+  border-right: 3px solid $first-color;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+
+.second-content .my-menu:hover {
+  background-color: #117abe;
+}
+
+.second-content .my-menu a {
+  color: $color-white;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0px;
+  font-size: 14px;
+}
+
+.second-content .my-menu a:hover {
+  text-decoration: none;
+}
+
+.content-logo {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: $color-white;
+}
+
+@media screen and (max-width: 920px) {
+  .content-logo-uf {
+    top: 5px;
+    left: 5px;
+  }
+
+  #warped, #warped1 {
+    display: none !important;
+  }
+
+  #flags {
+    margin-right: 10px;
+  }
+}
+
+.content-action-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  height: fit-content;
+  padding-top: 35px;
+  padding-right: 0px;
+  width: fit-content;
+  position: absolute;
+  right: 20px;
+}
+
+.content-action-header .menu-action .p {
+  color: $color-white;
+  margin-right: 30px;
+  cursor: pointer;
+  padding: 8px;
+  font-weight: normal;
+  letter-spacing: 1px;
+  width: 150px;
+  background-color: $second-color;
+}
+
+#flags {
+  width: 40px;
+  height: 40px;
+}
+
+.content-action-header .menu-action .p #img-profile {
+  height: 22px;
+  width: 22px;
+  margin-right: 0px;
+}
+
+.content-action-header .menu-action .p span {
+  position: relative;
+  top: 3px;
+  left: 5px;
+}
+
+.content-logo-uf {
+  position: absolute;
+  top: 10px;
+  left:15px;
+  cursor: pointer;
+}
+
+#logo-uf {
+  height: 90px;
+}
+
+#logo-eni {
+  height: 100px;
+}
+
+.my-menu-2 {
+  display: none;
+  padding: 7px;
+  margin: 0px;
+  height: 50px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.my-menu-2 .bar {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  width: 30px;
+  height: 3px;
+  background-color: $color-white;
+}
+
+.univ-fianar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.univ-fianar #uf {
+  height: 30px;
+}
+
+.univ-fianar p {
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 20px;
+  font-variant: petite-caps;
+}
+
+.univ-eni {
+  font-size: 30px;
+  letter-spacing: 3px;
+  word-spacing: 10px;
+  font-variant: petite-caps;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 1100px) {
+  .content-action-header .menu-action .p span {
+    display: none;
+  }
+
+  .content-action-header .menu-action .p {
+    margin-right: 30px;
+    padding: 8px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    width: 70px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .univ-eni {
+    font-size: 25px;
+    letter-spacing: 0px;
+    word-spacing: 5px;
+    font-variant: petite-caps;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .univ-fianar p {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 15px;
+    font-variant: petite-caps;
+  }
+
+  .univ-fianar #uf {
+    height: 25px;
+  }
+}
+
+@media (max-width: 950px) and (min-width: 800px) {
+  .content-action-header {
+    right: 0px;
+  }
+
+  .menu-action:first-child {
+    margin-right: -15px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .content-logo-uf {
+    position: absolute;
+    top: 10px;
+    left: 0px;
+    right: 0px;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #logo-uf {
+    padding-left: 5px;
+  }
+
+  .content-action-header .menu-action .p {
+    display: none;
+  }
+
+  #flags {
+    margin-top: 0%;
+    width: 50px;
+    height: 50px;
+    padding: 6px;
+    cursor: pointer;
+  }
+
+  .second-content {
+    justify-content: flex-end;
+  }
+
+  .my-menu-2 {
+    display: block;
+  }
+
+  .flag-mobile {
+    display: block;
+  }
+
+  .menu-action {
+    display: none;
+  }
+
+  .my-menu {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .univ-eni {
+    display: none;
+  }
+
+  .mobile-univ-eni {
+    display: block;
+    font-size: 15px;
+    letter-spacing: 3px;
+    word-spacing: 10px;
+    font-variant: petite-caps;
+    font-weight: 500;
+    color: #ffffff;
+    line-height: 8px;
+  }
+}
+
+
+
+@media screen and (max-width: 380px) {
+  img#logo-uf {
+    height: 50px;
+  }
+
+  img#logo-eni {
+    height: 60px;
+  }
+
+  #warped1, #warped2 {
+    display: none !important;
+  }
+
+  .content-logo-uf {
+    position: absolute;
+    top: 3px;
+  }
+
+  .top-content {
+    height: 150px;
+  }
+
+  .first-content {
+    height: 100px;
+  }
+}
+
+@media screen and (max-width: 310px) {
+  img#logo-uf {
+    height: 30px;
+  }
+
+  img#logo-eni {
+    height: 40px;
+  }
+}
+
+  #external-content {
+    display: none;
+    transition: all 0.3s;
+  }
+
+  li#login-mobile {
+    background: $second-color !important;
+    height: 60px !important;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+li#login-mobile span {
+    font-weight: normal;
+    position: relative;
+    top: 3px;
+    font-size: 20px;
+    color: $color-white;
+}
+
+img#img-profile-mobile {
+  height: 25px;
+  margin-right: 10px;
+}

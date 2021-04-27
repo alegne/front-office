@@ -10,13 +10,14 @@ import * as $ from 'jquery';
   ]
 })
 export class DirectorWordComponent implements OnInit {
+  imgDirector = "./../../../assets/images/ENI/directeur.jpeg";
 
   constructor() { }
 
   ngOnInit() {
-      window.onscroll = function() {
+      document.onscroll = function() {
       if (document.body.scrollTop > 900 || document.documentElement.scrollTop > 900) {
-        document.getElementById("head-director-words").className = "slideLeft";
+        // document.getElementById("head-director-words").className = "slideLeft";
         document.getElementById("director-words").className = "slideLeft";
       }
       // else {

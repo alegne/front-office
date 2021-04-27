@@ -19,7 +19,7 @@
               <img [src]="item.image" alt="" class="contain-img">
               <h4 class="contain-title">{{item.titre}}</h4>
               <p class="contain-date">{{item.date}}</p>
-              <p class="contain-description">{{item.description}}</p>
+              <p class="contain-description">{{item.description.substring(0, 200)}}...</p>
 
               <div class="lire-plus" (click)="lire(item)">
                 Lire le communiqué

@@ -2,6 +2,10 @@ $first-color : #0c2d50;
 $second-color : #002247;
 $color-white: white;
 
+* {
+  font-family: Roboto, "Helvetica Neue", sans-serif !important;
+}
+
 .course-area .section-title-wrapper {margin-bottom: 122px;}
 .single-item-image a {display: inline-block;}
 .single-item-image {
@@ -45,7 +49,7 @@ $color-white: white;
     margin-right: 11px;
 }
 .single-item-text-info span span {color: #2d3e50;}
-.single-item-text > p {color: #222222;}
+.single-item-text > p {color: #222222;margin-bottom: 50px;}
 .single-item-content {
     margin-bottom: 44px;
     overflow: hidden;
@@ -180,4 +184,10 @@ $color-white: white;
 
 .row-title-actu {
   margin-bottom: -50px;
+}
+
+.container-fluid.contain-actu {
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 90%;
 }

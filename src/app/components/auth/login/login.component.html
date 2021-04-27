@@ -1,35 +1,56 @@
 <div class="container-fluid">
 <div class="content row">
   <div class="left-side col-lg-6">
-    <div class="main-one">
-      <span>se</span>Connecter
+    <div class="contain-txt">
+      <div class="txt-one">
+        ECOLE
+      </div>
+      <div class="txt-two">
+        NATIONALE INFORMATIQUE
+      </div>
     </div>
-    <div class="bar"></div>
+
+    <div class="main-one">
+      Vous faites partie de l' Ecole Nationale d'Informatique ?
+    </div>
+    <!-- <div class="bar"></div> -->
     <div class="main-two">
       <form [formGroup]="signin" (ngSubmit)="onConnect()">
-        <br>
-        <div class="content-form-field">
+      <div class="content-form-field field">
           <mat-form-field>
-            <mat-label>Identifiant</mat-label>
+            <mat-label>En tant que</mat-label>
+            <mat-select disableRipple formControlName="type" required>
+              <mat-option value="enseignant">Enseignant</mat-option>
+              <mat-option value="etudiant">Etudiant</mat-option>
+            </mat-select>
+            <mat-icon matSuffix>user</mat-icon>
+          </mat-form-field>
+      </div>
+
+      <div class="content-form-field field">
+          <mat-form-field>
+            <mat-label>Identifiant/Email</mat-label>
             <input matInput formControlName="email" autocomplete="off" required>
             <mat-icon matSuffix>account_circle</mat-icon>
-            <mat-hint>Entrer votre identifiant</mat-hint>
           </mat-form-field>
-        </div>
+      </div>
 
-      <br><br>
-      <div class="content-form-field">
+      <div class="content-form-field field">
         <mat-form-field>
           <mat-label>Mot de passe</mat-label>
           <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required>
           <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-          <mat-hint *ngIf="!passwordInput.value">Entrer votre mot de passe</mat-hint>
           </mat-form-field>
       </div>
-      <div class="forgot-pass">
+      <!-- <div class="forgot-pass">
         Mot de passe <span>oublié</span> ?
-      </div>
+      </div> -->
 
+      <div class="contain-error">
+        <p *ngIf="error">
+          {{error}}
+        </p>
+      </div>
 
       <div class="content-btn">
           <button class="btn_connecter" type="submit">
@@ -39,7 +60,6 @@
             </span>
         </button>
       </div>
-      <img [src]="logo" alt="" id="logo-eni-popup">
     </form>
     </div>
   </div>

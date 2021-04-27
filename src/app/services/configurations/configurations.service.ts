@@ -10,13 +10,7 @@ export class ConfigurationsService {
 
   constructor(private http: HttpClient) { }
 
-  async getConfigurations() {
-    await this.http.get(`${this.endpoint}/configurations`).subscribe(
-      (data) => {
-        console.log(data);
-      }, err => {
-        console.log(err);
-      }
-    )
+  getConfigurations() {
+    return this.http.get(`${this.endpoint}/configurations`);
   }
 }

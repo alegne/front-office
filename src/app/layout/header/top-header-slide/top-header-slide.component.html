@@ -1,15 +1,18 @@
+<div id="mimi-main">
+
 <div class="top-content" id="top-content">
   <div class="first-content">
     <div class="content-logo">
-      <div class="univ-fianar">
-        <img [src]="logoUf" alt="" id="uf">
-        <p>
-          Université de Fianarantsoa
-        </p>
-        <img [src]="logoUf" alt="" id="uf">
-      </div>
       <div class="univ-eni">
         Ecole Nationale Informatique
+      </div>
+      <div class="mobile-univ-eni">
+        <p class="firstly">
+          Ecole
+        </p>
+        <p class="secondly">
+          Nationale Informatique
+        </p>
       </div>
     </div>
 
@@ -28,13 +31,8 @@
     </div>
 
     <div class="content-logo-uf"  (click)="home()">
-      <div id='warped1'>
-        <span class='w0'>E</span><span class='w1'>n</span><span class='w2'>s</span><span class='w3'>e</span><span class='w4'>m</span><span class='w5'>b</span><span class='w6'>l</span><span class='w7'>e</span>
-      </div>
+      <img [src]="logoUf" alt="" id="logo-uf">
       <img [src]="logo" alt="logo-UF" id="logo-eni">
-      <div id='warped'>
-        <span class='w0'>E</span><span class='w1'>x</span><span class='w2'>c</span><span class='w3'>e</span><span class='w4'>l</span><span class='w5'>l</span><span class='w6'>e</span><span class='w7'>n</span><span class='w8'>c</span><span class='w9'>e</span>
-    </div>
     </div>
   </div>
 
@@ -44,7 +42,7 @@
         {{item.titre}}
       </a>
     </div>
-    <div class="my-menu-2" id="best-menu-mobile-main">
+    <div class="my-menu-2" id="best-menu-mobile">
       <div class="bar"></div>
       <div class="bar"></div>
       <div class="bar"></div>
@@ -55,8 +53,8 @@
   </div>
 </div>
 
-<div class="external-content" id="external-content-main">
-  <div id="mobile-main" class="demo2">
+<div class="external-content" id="external-content">
+  <div id="mobile" class="demo1">
     <ul id="nav">
       <li *ngFor="let item of menu">
         {{item.titre}}
@@ -71,6 +69,8 @@
   </div>
 </div>
 
+
+</div>
 
 
 

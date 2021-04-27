@@ -22,7 +22,7 @@ export class AboutComponent implements OnInit {
   scrollTo(section) {
     document.querySelector('#' + section)
     .scrollIntoView();
-    document.getElementById("parentDiv").scrollTop -= 80;
+    document.getElementById("parentDiv").scrollTop -= 200;
   }
 
   constructor() { }

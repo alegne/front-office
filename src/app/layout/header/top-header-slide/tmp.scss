@@ -47,7 +47,7 @@
 }
 
 
-#mobile-main {
+#mobile {
   height: 100vh;
   width: 40vh;
   background:#7988a5;
@@ -96,7 +96,7 @@
   }
 }
 
-.demo2.navigation {
+.demo1.navigation {
   #mobileBodyContent {
     @include scale(0.85);
     margin-left:260px;

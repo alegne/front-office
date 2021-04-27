@@ -4,24 +4,24 @@
   </div>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-lg-6">
-        <div class="leftSide">
-          <h4 class="main-title">
+      <div class="col-lg-12">
+        <div class="contain-title">
+          <h2 class="main-title">
             {{titre}}
-          </h4>
-          <div class="detail">
-            <p>
-              <span class="date">
-                Du {{date}}
-              </span> <br>
-              <span class="posteur">
-                Par {{posteur}}
-              </span>
-            </p>
-          </div>
+          </h2>
         </div>
       </div>
       <div class="col-lg-6">
+        <div class="contain-date">
+          Du : {{date}}
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="contain-posteur">
+          Posté par : {{posteur}}
+        </div>
+      </div>
+      <div class="col-lg-12">
         <div class="rightSide">
           <p class="desc">
             {{description}}

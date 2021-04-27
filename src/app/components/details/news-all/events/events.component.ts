@@ -51,7 +51,7 @@ export class EventsComponent implements OnInit {
     // var position = scrollTo.offset().top - container.offset().top + container.scrollTop();
     // container.scrollTop(position);
     $([document.documentElement, document.body]).animate({
-      scrollTop: $("#contain-other-intern").offset().top
+      scrollTop: $("#contain-other-intern").offset().top - 200
     }, 500);
   }
 

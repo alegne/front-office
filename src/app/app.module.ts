@@ -1,3 +1,4 @@
+import { LoginService } from './services/login/login.service';
 import { ContactService } from './services/contact/contact.service';
 import { NewsletterService } from './services/newsletter/newsletter.service';
 import { NewsService } from './services/news/news.service';
@@ -34,6 +35,8 @@ import { AboutComponent } from './components/about/about.component';
 import { ScrollSpyDirective } from './components/about/scroll-spy.directive';
 import { SlideTopComponent } from './slide-top/slide-top.component';
 import { PopupEventComponent } from './components/details/news-all/popup-event/popup-event.component';
+import { TopHeaderSlideComponent } from './layout/header/top-header-slide/top-header-slide.component';
+import { MainHeaderComponent } from './layout/header/main-header/main-header.component';
 
 @NgModule({
   entryComponents: [
@@ -58,7 +61,9 @@ import { PopupEventComponent } from './components/details/news-all/popup-event/p
     ContactComponent,
     AboutComponent,
     SlideTopComponent,
-    PopupEventComponent
+    PopupEventComponent,
+    TopHeaderSlideComponent,
+    MainHeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -93,7 +98,8 @@ import { PopupEventComponent } from './components/details/news-all/popup-event/p
     FooterService,
     NewsService,
     NewsletterService,
-    ContactService
+    ContactService,
+    LoginService
   ],
   bootstrap: [AppComponent]
 })
