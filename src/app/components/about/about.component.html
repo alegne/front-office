@@ -47,9 +47,8 @@
                                       </a>
                                       </h3>
                                       <h4>Ordre général</h4>
-                                      <p>
-                                        L' Ecole Nationale d'Informatique, en abrégé ENI, est un établissement d'enseignement
-                                        supérieur rattaché académiquement et administrativement à l'Université de Fianarantsoa.
+                                      <p *ngIf="information">
+                                        {{information.substring(0, 150)}}...
                                       </p>
                                       <!-- <div class="social-links">
                                           <a><i class="fas fa-info-circle"></i></a>
@@ -70,9 +69,8 @@
                                   <div class="single-teacher-text">
                                       <h3><a>Historique</a></h3>
                                       <h4>Décret</h4>
-                                      <p>
-                                        ENI se positionne sur l'échiquier socio-éducatif malgache comme étant le plus puissant
-                                        secteur de diffusion et de vulgarisation des connaissances et des technologies informatiques.
+                                      <p *ngIf="historique">
+                                        {{historique.substring(0, 150)}}...
                                       </p>
                                       <!-- <div class="social-links">
                                         <a><i class="fas fa-info-circle"></i></a>
@@ -93,9 +91,8 @@
                                   <div class="single-teacher-text">
                                       <h3><a>Missions</a></h3>
                                       <h4>Formation</h4>
-                                      <p>
-                                        ENI a pour mission de former des
-                                        spécialistes informaticiens compétents et opérationnels de différents niveaux.
+                                      <p *ngIf="mission">
+                                        {{mission.substring(0, 150)}}...
                                       </p>
                                       <!-- <div class="social-links">
                                         <a><i class="fas fa-info-circle"></i></a>
@@ -116,9 +113,8 @@
                                   <div class="single-teacher-text">
                                       <h3><a>Spécialisation</a></h3>
                                       <h4>Domaine</h4>
-                                      <p>
-                                        Les activités de formation et de recherche organisées
-                                        à l'ENI portent sur plusieurs domaines.
+                                      <p *ngIf="specification">
+                                        {{specification.substring(0, 150)}}...
                                       </p>
                                       <!-- <div class="social-links">
                                         <a><i class="fas fa-info-circle"></i></a>
@@ -142,10 +138,13 @@
     Information d'ordre général
   </h3>
   <p>
+    {{information}}
+  </p>
+  <p *ngIf="!information">
     L' Ecole Nationale d'Informatique, en abrégé ENI, est un établissement d'enseignement
     supérieur rattaché académiquement et administrativement à l'Université de Fianarantsoa.
   </p>
-  <p>
+  <p *ngIf="!information">
     Le siège de l'Ecole se trouve à Tanambao Fianarantsoa.  <br>
     Boîte postale 1487, code 301. <br>
     Téléphone : +261 34 05 733 36. <br>
@@ -158,16 +157,17 @@
     <i class="fas fa-landmark"></i>
     Historique
   </h3>
-  <p>
+    {{historique}}
+  <p *ngIf="!historique">
     L’ENI se positionne sur l’échiquier socio-éducatif malgache comme étant le plus puissant
     secteur de diffusion et de vulgarisation des connaissances et des technologies informatiques.
   </p>
-  <p>
+  <p *ngIf="!historique">
     Cette Ecole Supérieure peut être considérée aujourd’hui comme la vitrine et
     la pépinière des élites informaticiennes du pays.
   L’Ecole s’est constituée de façon progressive au sein du Centre Universitaire Régional (CUR) de Fianarantsoa.
   </p>
-  <p>
+  <p *ngIf="!historique">
     De façon formelle, l’ENI était constituée et créée au sein du CUR
     par le décret N° 83185 du 24 Mai 1983, comme étant le seul
     établissement Universitaire Professionnalisé au niveau national,
@@ -183,6 +183,9 @@
     Missions
   </h3>
   <div>
+    {{mission}}
+  </div>
+  <div *ngIf="!mission">
     L’ENI a pour conséquent pour mission de former des
     spécialistes informaticiens compétents et opérationnels de différents niveaux notamment :
     <ul>
@@ -201,7 +204,7 @@
       </li>
     </ul>
   </div>
-  <p>
+  <p *ngIf="!mission">
     L'implantation de cette Ecole Supérieure de technologie de pointe
     dans un pays en développement et dans une Province à tissu
     économique et industriel faiblement développé ne l'a pourtant
@@ -217,6 +220,9 @@
     Domaine de spécialisation
   </h3>
   <div>
+    {{specification}}
+  </div>
+  <div *ngIf="!specification">
     Les activités de formation et de recherche organisées à l'ENI portent sur les domaines suivants :
     <ul>
       <li>
@@ -233,7 +239,7 @@
       </li>
     </ul>
   </div>
-  <p>
+  <p *ngIf="!specification">
     D'une manière plus générale, les programmes des formations sont
     basés sur l'informatique de gestion et sur l'informatique des
     Systèmes et Réseaux. Et les modules de formation

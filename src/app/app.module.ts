@@ -1,3 +1,4 @@
+import { AnnoncesService } from './services/annonces/annonces.service';
 import { LoginService } from './services/login/login.service';
 import { ContactService } from './services/contact/contact.service';
 import { NewsletterService } from './services/newsletter/newsletter.service';
@@ -99,7 +100,8 @@ import { MainHeaderComponent } from './layout/header/main-header/main-header.com
     NewsService,
     NewsletterService,
     ContactService,
-    LoginService
+    LoginService,
+    AnnoncesService
   ],
   bootstrap: [AppComponent]
 })

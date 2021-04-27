@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
+import { ConfigurationsService } from 'src/app/services/configurations/configurations.service';
 @Component({
   selector: 'app-director-word',
   templateUrl: './director-word.component.html',
@@ -10,26 +11,36 @@ import * as $ from 'jquery';
   ]
 })
 export class DirectorWordComponent implements OnInit {
+  // https://res.cloudinary.com/team-stenny/image/upload/v1619532580/directeur_itg66p.jpg
   imgDirector = "./../../../assets/images/ENI/directeur.jpeg";
+  nameDirector = "";
+  wordDirector = "";
 
-  constructor() { }
+  constructor(private confService: ConfigurationsService) { }
 
   ngOnInit() {
       document.onscroll = function() {
       if (document.body.scrollTop > 900 || document.documentElement.scrollTop > 900) {
-        // document.getElementById("head-director-words").className = "slideLeft";
         document.getElementById("director-words").className = "slideLeft";
       }
-      // else {
-      //   document.getElementById("director-words").className = "";
-      //   document.getElementById("head-director-words").className = "";
-
-      // }
     }
+    this.getConf();
   }
 
-  oulala() {
-    alert("alert");
+  getConf() {
+    this.confService.getConfigurations().subscribe(
+      (data: any[]) => {
+        // console.log(data);
+        data.forEach(el => {
+          if (el.cle == "nom_directeur") this.nameDirector = el.valeur;
+          if (el.cle == "mot_directeur") this.wordDirector = el.valeur;
+          if (el.cle == "image_directeur") this.imgDirector = el.valeur;
+        });
+        return data;
+      }, err => {
+        console.log(err);
+      }
+    )
   }
 
 }

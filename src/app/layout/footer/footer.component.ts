@@ -15,6 +15,15 @@ import { Router } from '@angular/router';
 export class FooterComponent implements OnInit {
   logo = "./../../../assets/images/ENI/logo-ENl.png";
   menu = null;
+  facebook = "";
+  youtube = "";
+  twitter = "";
+  instagram = "";
+  telephone = "+261 34 05 733 36";
+  callPhone = "tel:+261 34 05 733 36";
+  email = "eni@univ-fianar.mg";
+  adresse = "MADAGASCAR";
+  site = "www.univ-fianar.mg/";
   constructor(private router : Router, public headerService: HeaderService, private confService: ConfigurationsService) { }
 
   ngOnInit() {
@@ -28,8 +37,21 @@ export class FooterComponent implements OnInit {
 
   getConf() {
     this.confService.getConfigurations().subscribe(
-      (data) => {
-        console.log(data);
+      (data: any[]) => {
+        // console.log(data);
+        data.forEach(el => {
+          if (el.cle == "lien_facebook") this.facebook = el.valeur;
+          if (el.cle == "lien_twitter") this.twitter = el.valeur;
+          if (el.cle == "lien_youtube") this.youtube = el.valeur;
+          if (el.cle == "lien_instagram") this.instagram = el.valeur;
+          if (el.cle == "email") this.email = el.valeur;
+          if (el.cle == "adresse") this.adresse = el.valeur;
+          if (el.cle == "lien_site") this.site = el.valeur;
+          if (el.cle == "telephone") {
+            this.telephone = el.valeur;
+            this.callPhone = "tel:" + el.valeur;
+          }
+        });
         return data;
       }, err => {
         console.log(err);

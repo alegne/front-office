@@ -1,3 +1,4 @@
+import { AnnoncesService } from './../../../../services/annonces/annonces.service';
 import { PopupEventComponent } from './../popup-event/popup-event.component';
 import { Actuality, NewsService } from './../../../../services/news/news.service';
 import { Component, OnInit } from '@angular/core';
@@ -5,27 +6,39 @@ import * as $ from 'jquery';
 import { ControlContainer } from '@angular/forms';
 import { MatDialog } from '@angular/material';
 
+interface Annonce {
+  date_creation: string,
+  date_mise_jour: string,
+  description: string,
+  galerie: string[],
+  id: number,
+  image: string,
+  niveaux: string[],
+  parcours: string[],
+  titre: string,
+  type: string
+}
+
+
 @Component({
   selector: 'app-events',
   templateUrl: './events.component.html',
   styleUrls: ['./events.component.scss']
 })
 export class EventsComponent implements OnInit {
-  news : Actuality[];
-  three_news: Actuality[];
-  last_news: Actuality[];
+  news : Annonce[];
+  three_news: Annonce[];
+  last_news: Annonce[];
 
   nbPagination: number[] = [];
   currentPagination = 1;
   minPagination = 3;
   maxPagination = 6;
-  constructor(public newsService: NewsService, private dialog: MatDialog) { }
+  constructor(public newsService: NewsService, private dialog: MatDialog, private annonceService: AnnoncesService) { }
 
   ngOnInit() {
-    this.news = this.newsService.news;
-    this.three_news =  this.news.slice(0 , 3);
-    this.last_news = this.news.slice(this.minPagination, this.maxPagination);
-    this.initPagination();
+    this.getTopAnnonces();
+    this.getAnnonces();
   }
 
   initPagination() {
@@ -67,6 +80,106 @@ export class EventsComponent implements OnInit {
     const dialogRef = this.dialog.open(PopupEventComponent, {data});
     dialogRef.afterClosed().subscribe(result => {
     });
+  }
+
+  getAnnonces() {
+    this.annonceService.getAnnonces().subscribe(
+      (data :any) => {
+        let list: any[] = data.data;
+        list.forEach(element => {
+          element.date_creation = this.changeDate(element.date_creation);
+          element.date_mise_jour = this.changeDate(element.date_mise_jour);
+        });
+        console.log(list);
+        this.news = list;
+        this.last_news = this.news.slice(this.news.length -3, this.news.length);
+        this.initPagination();
+      }, (err) => {
+        console.log(err);
+      }
+    )
+  }
+
+  getTopAnnonces() {
+    this.annonceService.getTopAnnonces().subscribe(
+      (data :any) => {
+        let list: any[] = data.data;
+        list.forEach(element => {
+          element.date_creation = this.changeDate(element.date_creation);
+          element.date_mise_jour = this.changeDate(element.date_mise_jour);
+        });
+        console.log(list);
+        this.three_news = list;
+
+      }, (err) => {
+        console.log(err);
+      }
+    )
+  }
+
+  changeDate(data) {
+    let annee = data.substring(0,4);
+    let mois = data.substring(5,7);
+    let jour = data.substring(8,10);
+    let heure =  data.substring(11,16);
+    // console.log(jour +  " " + this.voirMois(mois) + " " + annee+ " à " + heure);
+    var newDate = jour +  " " + this.voirMois(mois) + " " + annee + " à " + heure;
+    return newDate;
+  }
+
+  voirMois(mois) {
+    let newMois = "";
+    switch(mois) {
+      case "01" : {
+        newMois = "Janvier";
+        break;
+      }
+      case "02" : {
+        newMois = "Février";
+        break;
+      }
+      case "03" : {
+        newMois = "Mars";
+        break;
+      }
+      case "04" : {
+        newMois = "Avril";
+        break;
+      }
+      case "05" : {
+        newMois = "Mai";
+        break;
+      }
+      case "06" : {
+        newMois = "Juin";
+        break;
+      }
+      case "07" : {
+        newMois = "Juillet";
+        break;
+      }
+      case "08" : {
+        newMois = "Août";
+        break;
+      }
+      case "09" : {
+        newMois = "Septembre";
+        break;
+      }
+      case "10" : {
+        newMois = "Octobre";
+        break;
+      }
+      case "11" : {
+        newMois = "Novembre";
+        break;
+      }
+      case "12" : {
+        newMois = "Décembre";
+        break;
+      }
+    }
+    return newMois;
   }
 
 }
