@@ -1,4 +1,4 @@
-import { Actuality, NewsService, Gallery } from './../../../../services/news/news.service';
+import { Actuality, NewsService, Gallery, Actu } from './../../../../services/news/news.service';
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 import { ActivatedRoute } from '@angular/router';
@@ -12,10 +12,21 @@ import { ActivatedRoute } from '@angular/router';
   ]
 })
 export class ActualityComponent implements OnInit {
-  currentActu: Actuality = null;
-  listActu: Actuality[] = null;
-  four_actu: Actuality[];
-  last_actus: Actuality[];
+  currentActu: Actu = {
+    "id": 0,
+    "slug": "",
+    "titre": "",
+    "posteur": "",
+    "date_creation": "",
+    "description": "",
+    "image": "",
+    "type": "",
+    "date_mise_jour": "",
+    "galerie": [""]
+  };
+  listActu: Actu[] = [];
+  four_actu: Actu[];
+  last_actus: Actu[];
 
   nbPagination: number[] = [];
   currentPagination = 1;
@@ -33,6 +44,8 @@ export class ActualityComponent implements OnInit {
   galleryTwo : String[] = [];
 
   galleryTmp : String[] = [];
+
+  defaultImg = "./../../../../../assets/images/course/1.jpg";
 
   constructor(private newsService: NewsService, private activatedRoute : ActivatedRoute) {
     let type : string = this.activatedRoute.snapshot.paramMap.get("type");
@@ -52,30 +65,28 @@ export class ActualityComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
-    if (this.isNews) {
-      this.listActu = this.newsService.news;
-    } else {
-      this.listActu = this.newsService.actus;
-    }
-    this.initCurrent();
-    this.four_actu =  this.listActu.slice(0 , 4);
-    this.last_actus = this.listActu.slice(this.minPagination, this.maxPagination);
-    this.initPagination();
-    if (this.currentTitre && this.currentDate && this.currentPosteur) {
-      this.showActu(this.currentTitre, this.currentDate, this.currentPosteur);
-    }
+  async ngOnInit() {
+    // if (this.isNews) {
+    //   this.listActu = this.newsService.news;
+    // } else {
+    //   this.listActu = this.newsService.actus;
+    // }
+    await this.getEvenements();
   }
 
   initCurrent() {
-    this.currentActu = this.listActu[0];
-    this.initGalleryOne();
-    this.initGalleryTwo();
+    if (this.currentActu) {
+      this.initGalleryOne();
+      this.initGalleryTwo();
+    }
   }
 
   initGalleryOne() {
     this.galleryOne = this.currentActu.galerie;
     this.galleryTmp = this.currentActu.galerie;
+    if (this.galleryOne == null) {
+      return;
+    }
     let counter = this.galleryOne.length;
     let indice = 0;
     if (this.galleryOne.length > 0) {
@@ -94,6 +105,9 @@ export class ActualityComponent implements OnInit {
     this.galleryTmp = this.currentActu.galerie;
     this.galleryTwo = null;
     this.galleryTwo = [];
+    if (this.galleryTmp == null) {
+      return;
+    }
     this.galleryTmp.forEach(element => {
       if (element) {
         this.galleryTwo.push(element);
@@ -122,19 +136,36 @@ export class ActualityComponent implements OnInit {
   }
 
   showActu(titre, date, posteur) {
-    let tempActu: Actuality = null;
+    console.log("show");
+    let tempActu: Actu = null;
     this.listActu.forEach(element => {
-      if (element.titre == titre && element.date == date && element.posteur == posteur) {
+      // console.log(element.titre + " et " + titre);
+      // console.log(element.date_mise_jour + " et " + date);
+      // console.log(element.posteur + " et " + posteur);
+      if (element.titre == titre && element.date_mise_jour == date && element.posteur == posteur) {
+        console.log("ito");
         tempActu = element;
       }
     });
     this.currentActu = tempActu;
+
     this.stopAnimation();
-    this.galleryOne = this.currentActu.galerie;
-    this.galleryTmp = this.currentActu.galerie;
-    // this.galleryTwo = [];
-    this.initGalleryOne();
-    this.initGalleryTwo();
+    if (this.currentActu) {
+      if (this.currentActu !== undefined) {
+        this.galleryOne = this.currentActu.galerie;
+        this.galleryTmp = this.currentActu.galerie;
+        this.initGalleryOne();
+        this.initGalleryTwo();
+      }
+    } else {
+      this.currentActu = this.listActu[this.listActu.length - 1];
+      if (this.currentActu !== undefined) {
+        this.galleryOne = this.currentActu.galerie;
+        this.galleryTmp = this.currentActu.galerie;
+        this.initGalleryOne();
+        this.initGalleryTwo();
+      }
+    }
     this.slideToToppy();
   }
 
@@ -169,6 +200,9 @@ export class ActualityComponent implements OnInit {
                 random =  Math.floor(Math.random() * (max + 1));
               }
             }
+            if (this.galleryOne == null || this.galleryTwo == null) {
+              continue;
+            }
           this.galleryOne[index] = this.galleryTwo[random];
           let ind = tabMax.indexOf(random);
           tabMax.splice(ind, 1);
@@ -179,6 +213,148 @@ export class ActualityComponent implements OnInit {
 
   stopAnimation() {
     clearInterval(this.timerInterval);
+  }
+
+  changeDate(data, isUpdate: boolean) {
+    let annee = data.substring(0,4);
+    let mois = data.substring(5,7);
+    let jour = data.substring(8,10);
+    let heure =  data.substring(11,16);
+    // console.log(jour +  " " + this.voirMois(mois) + " " + annee+ " à " + heure);
+    if (isUpdate) {
+      var newDate = jour +  " " + this.voirMois(mois) + " " + annee + " à " + heure;
+    } else {
+      var newDate = jour +  " " + this.voirMois(mois) + " " + annee;
+    }
+    return newDate;
+  }
+
+  voirMois(mois) {
+    let newMois = "";
+    switch(mois) {
+      case "01" : {
+        newMois = "Janvier";
+        break;
+      }
+      case "02" : {
+        newMois = "Février";
+        break;
+      }
+      case "03" : {
+        newMois = "Mars";
+        break;
+      }
+      case "04" : {
+        newMois = "Avril";
+        break;
+      }
+      case "05" : {
+        newMois = "Mai";
+        break;
+      }
+      case "06" : {
+        newMois = "Juin";
+        break;
+      }
+      case "07" : {
+        newMois = "Juillet";
+        break;
+      }
+      case "08" : {
+        newMois = "Août";
+        break;
+      }
+      case "09" : {
+        newMois = "Septembre";
+        break;
+      }
+      case "10" : {
+        newMois = "Octobre";
+        break;
+      }
+      case "11" : {
+        newMois = "Novembre";
+        break;
+      }
+      case "12" : {
+        newMois = "Décembre";
+        break;
+      }
+    }
+    return newMois;
+  }
+
+  // async getCurrent() {
+  //   if (this.isNews) {
+  //     await this.newsService.getTopNouvelle().subscribe(
+  //       (data: any) => {
+  //         let list: any[] = data.data;
+  //         let current = list[0];
+  //         console.log("Current");
+  //         console.log(current);
+  //       }, (err) => {
+  //         console.log(err);
+  //       }
+  //     )
+  //   } else {
+  //     await this.newsService.getTopActualite().subscribe(
+  //       (data: any) => {
+  //         let list: any[] = data.data;
+  //         let current = list[0];
+  //         console.log("Current");
+  //         console.log(current);
+  //       }, (err) => {
+  //         console.log(err);
+  //       }
+  //     )
+  //   }
+  // }
+
+  async getEvenements() {
+    await this.newsService.getEvenements().subscribe(
+      (data :any) => {
+        // console.log(data);
+        let list: any[] = data.data;
+        list.forEach(element => {
+          // console.log(element);
+          let isO : boolean = true;
+          let isN : boolean = false;
+          element.date_creation = this.changeDate(element.date_creation, isO);
+          element.date_mise_jour = this.changeDate(element.date_mise_jour, isN);
+          if (element.image == null) {
+              element.image = this.defaultImg;
+          }
+          if (element.galerie == null) {
+            element.galerie = [];
+            for (let index = 0; index < 3; index++) {
+              let ind = index + 1;
+              let url = "./../../../../../assets/images/course/" + ind +".jpg"
+              element.galerie.push(url);
+            }
+          }
+          if (this.isNews && element.type == "nouvelle") {
+            this.listActu.push(element);
+          } else if (!this.isNews && element.type == "actualite") {
+            this.listActu.push(element);
+          }
+        });
+        // this.listActu = list;
+        this.currentActu = this.listActu[this.listActu.length - 1];
+        this.four_actu =  this.listActu.slice(0 , 4);
+        this.last_actus = this.listActu.slice(this.minPagination, this.maxPagination);
+        console.log(this.listActu);
+        // console.log("Lenght " + this.listActu.length);
+        this.initCurrent();
+        this.initPagination();
+        if (this.currentTitre && this.currentDate && this.currentPosteur) {
+          console.log("mis tonga");
+          this.showActu(this.currentTitre, this.currentDate, this.currentPosteur);
+        }
+        return this.listActu;
+      }, (err) => {
+        console.log(err);
+      }
+    )
   }
 
 }

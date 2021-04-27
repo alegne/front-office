@@ -12,8 +12,8 @@
                               <div class="newsletter-form angle">
                                   <form action="#" id="mc-form" class="mc-form footer-newsletter fix">
                                       <div class="subscribe-form">
-                                          <input id="mc-email" type="email" name="email" placeholder="Votre adresse email...">
-                                          <button id="mc-submit" type="submit">S'INSCRIRE</button>
+                                          <input [(ngModel)]="emailNewsletter" id="mc-email" type="email" name="email" placeholder="Votre adresse email...">
+                                          <button id="mc-submit" type="submit" (click)="newsletter()">S'INSCRIRE</button>
                                       </div>
                                   </form>
                                   <!-- mailchimp-alerts Start -->

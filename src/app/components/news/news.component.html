@@ -29,14 +29,14 @@
                                   <div class="single-item-text">
                                       <h4><a>{{item.titre}}</a></h4>
                                       <div class="single-item-text-info">
-                                          <span>By: <span>{{item.posteur}}</span></span>
-                                          <span>Date: <span>{{item.date}}</span></span>
+                                          <span>By: <span>{{item.posteur}}</span></span> <br>
+                                          <span>Date: <span>{{item.date_mise_jour}}</span></span>
                                       </div>
                                       <p>
                                         {{item.description.substring(0, 150)}}...
                                       </p>
                                   </div>
-                                  <div class="button-bottom" (click)="seeActu(item.titre, item.date, item.posteur)">
+                                  <div class="button-bottom" (click)="seeActu(item.titre, item.date_mise_jour, item.posteur)">
                                       <a class="button-default">Voir l'actualité</a>
                                   </div>
                               </div>

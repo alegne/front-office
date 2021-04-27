@@ -1,5 +1,5 @@
 import { Router } from '@angular/router';
-import { Actuality, NewsService } from './../../services/news/news.service';
+import { Actu, Actuality, NewsService } from './../../services/news/news.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -12,14 +12,15 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class NewsComponent implements OnInit {
-  actuality: Actuality[] = [];
-  actualities: Actuality[];
+  actuality: Actu[] = [];
+  actualities: Actu[];
   noActu = false;
   constructor(public newsService: NewsService, private router: Router) { }
 
   ngOnInit() {
-    this.actualities = this.newsService.actus;
-    this.initLastActuality();
+    // this.actualities = this.newsService.actus;
+    this.getTopActus();
+    //this.initLastActuality();
   }
 
   initLastActuality() {
@@ -39,6 +40,106 @@ export class NewsComponent implements OnInit {
   seeActu(titre, date, posteur) {
     let str = "/evenements/" + titre + "/" + date + "/" + posteur+ "";
     this.router.navigateByUrl(str);
+  }
+
+  async getTopActus() {
+    await this.newsService.getTopActualite().subscribe(
+            (data: any) => {
+              let list: any[] = data.data;
+              list.forEach((element, index) => {
+                if (element.image == null) {
+                  let indice = index + 1;
+                  let url = "./../../../assets/images/course/" + indice +".jpg";
+                  element.image = url;
+              }
+              if (element.galerie == null) {
+                element.galerie = [];
+                for (let index = 0; index < 3; index++) {
+                  let ind = index + 1;
+                  let url = "./../../../assets/images/course/" + ind +".jpg"
+                  element.galerie.push(url);
+                }
+              }
+              let isO : boolean = true;
+              let isN : boolean = false;
+              element.date_creation = this.changeDate(element.date_creation, isO);
+              element.date_mise_jour = this.changeDate(element.date_mise_jour, isN);
+
+            });
+            this.actuality = list;
+            //console.log(this.actuality);
+            }, (err) => {
+              console.log(err);
+            }
+    );
+  }
+
+  changeDate(data, isUpdate: boolean) {
+    let annee = data.substring(0,4);
+    let mois = data.substring(5,7);
+    let jour = data.substring(8,10);
+    let heure =  data.substring(11,16);
+    if (isUpdate) {
+      var newDate = jour +  " " + this.voirMois(mois) + " " + annee + " à " + heure;
+    } else {
+      var newDate = jour +  " " + this.voirMois(mois) + " " + annee;
+    }
+    return newDate;
+  }
+
+  voirMois(mois) {
+    let newMois = "";
+    switch(mois) {
+      case "01" : {
+        newMois = "Janvier";
+        break;
+      }
+      case "02" : {
+        newMois = "Février";
+        break;
+      }
+      case "03" : {
+        newMois = "Mars";
+        break;
+      }
+      case "04" : {
+        newMois = "Avril";
+        break;
+      }
+      case "05" : {
+        newMois = "Mai";
+        break;
+      }
+      case "06" : {
+        newMois = "Juin";
+        break;
+      }
+      case "07" : {
+        newMois = "Juillet";
+        break;
+      }
+      case "08" : {
+        newMois = "Août";
+        break;
+      }
+      case "09" : {
+        newMois = "Septembre";
+        break;
+      }
+      case "10" : {
+        newMois = "Octobre";
+        break;
+      }
+      case "11" : {
+        newMois = "Novembre";
+        break;
+      }
+      case "12" : {
+        newMois = "Décembre";
+        break;
+      }
+    }
+    return newMois;
   }
 
 }

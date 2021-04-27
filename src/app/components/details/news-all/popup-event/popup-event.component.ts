@@ -7,11 +7,11 @@ import { MAT_DIALOG_DATA } from '@angular/material';
   styleUrls: ['./popup-event.component.scss']
 })
 export class PopupEventComponent implements OnInit {
-  titre: string;
-  description: string;
-  date: string;
-  posteur: string;
-  image: string;
+  titre: string = null;
+  description: string = null;
+  date: string = null;
+  posteur: string = null;
+  image: string = null;
   galerie: string[];
 
   constructor(@Inject(MAT_DIALOG_DATA) public data : {titre :string, description :string, date : string, posteur: string, image: string, galerie: string[]})

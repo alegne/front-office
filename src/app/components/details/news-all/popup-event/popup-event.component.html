@@ -12,12 +12,12 @@
         </div>
       </div>
       <div class="col-lg-6">
-        <div class="contain-date">
+        <div class="contain-date" *ngIf="date">
           Du : {{date}}
         </div>
       </div>
       <div class="col-lg-6">
-        <div class="contain-posteur">
+        <div class="contain-posteur" *ngIf="posteur">
           Posté par : {{posteur}}
         </div>
       </div>
@@ -27,6 +27,11 @@
             {{description}}
           </p>
         </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-3" *ngFor="let item of galerie">
+        <img [src]="item" alt="" class="image">
       </div>
     </div>
   </div>

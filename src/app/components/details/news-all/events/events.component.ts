@@ -68,12 +68,12 @@ export class EventsComponent implements OnInit {
     }, 500);
   }
 
-  lire(annonce: Actuality) {
+  lire(annonce: Annonce) {
     let data = {
       titre: annonce.titre,
       description: annonce.description,
-      date: annonce.date,
-      posteur: annonce.posteur,
+      date: annonce.date_creation,
+      // posteur: annonce.posteur,
       image: annonce.image,
       galerie: annonce.galerie
     }
@@ -87,8 +87,10 @@ export class EventsComponent implements OnInit {
       (data :any) => {
         let list: any[] = data.data;
         list.forEach(element => {
-          element.date_creation = this.changeDate(element.date_creation);
-          element.date_mise_jour = this.changeDate(element.date_mise_jour);
+          let isO : boolean = true;
+          let isN : boolean = false;
+          element.date_creation = this.changeDate(element.date_creation, isO);
+          element.date_mise_jour = this.changeDate(element.date_mise_jour, isN);
         });
         console.log(list);
         this.news = list;
@@ -105,8 +107,10 @@ export class EventsComponent implements OnInit {
       (data :any) => {
         let list: any[] = data.data;
         list.forEach(element => {
-          element.date_creation = this.changeDate(element.date_creation);
-          element.date_mise_jour = this.changeDate(element.date_mise_jour);
+          let isO : boolean = true;
+          let isN : boolean = false;
+          element.date_creation = this.changeDate(element.date_creation, isO);
+          element.date_mise_jour = this.changeDate(element.date_mise_jour, isN);
         });
         console.log(list);
         this.three_news = list;
@@ -117,13 +121,16 @@ export class EventsComponent implements OnInit {
     )
   }
 
-  changeDate(data) {
+  changeDate(data, isUpdate: boolean) {
     let annee = data.substring(0,4);
     let mois = data.substring(5,7);
     let jour = data.substring(8,10);
     let heure =  data.substring(11,16);
-    // console.log(jour +  " " + this.voirMois(mois) + " " + annee+ " à " + heure);
-    var newDate = jour +  " " + this.voirMois(mois) + " " + annee + " à " + heure;
+    if (isUpdate) {
+      var newDate = jour +  " " + this.voirMois(mois) + " " + annee + " à " + heure;
+    } else {
+      var newDate = jour +  " " + this.voirMois(mois) + " " + annee;
+    }
     return newDate;
   }
 

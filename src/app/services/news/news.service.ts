@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 export interface Actuality {
@@ -13,6 +14,19 @@ export interface Actuality {
 export interface Gallery {
   path: string,
   alt: string
+}
+
+export interface Actu {
+  "id": number,
+  "slug": string,
+  "titre": string,
+  "posteur": string,
+  "date_creation": string,
+  "description": string,
+  "image": string,
+  "type": string,
+  "date_mise_jour": string,
+  "galerie": string[]
 }
 
 @Injectable({
@@ -301,6 +315,19 @@ export class NewsService {
     }
   ];
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  getEvenements() {
+    return this.http.get(`${this.endpoint}/evenements`);
+  }
+
+  getTopActualite() {
+    return this.http.get(`${this.endpoint}/evenements/principal/top/actualite`);
+  }
+
+  getTopNouvelle() {
+    return this.http.get(`${this.endpoint}/evenements/principal/top/actualite`);
+  }
+
 
 }

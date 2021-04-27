@@ -34,7 +34,7 @@
     <div>
       <label for="email">E-mail</label>
       <input type="text" name="email" id="email" class="form-control"
-      formControlName="email" placeholder="Votre adresse email">
+      formControlName="email" placeholder="Votre adresse email" [(ngModel)]="email">
 
       <div *ngIf="submitted && form.email.errors">
         <small *ngIf="form.email.errors.required" class="form-text error-text ">
@@ -55,7 +55,7 @@
     <div>
       <label for="fonction">Objet</label>
       <input type="text" name="objet" id="objet" class="form-control" formControlName="objet"
-        placeholder="Votre objet">
+        placeholder="Votre objet" [(ngModel)]="objet">
       <div *ngIf="submitted && form.objet.errors">
         <small *ngIf="form.objet.errors.required" class="form-text error-text ">Objet requis</small>
       </div>
@@ -63,14 +63,16 @@
 
     <div>
       <label for="message">Message</label>
-      <textarea rows="5" name="message" id="message" class="form-control" formControlName="message" placeholder="Votre message"></textarea>
+      <textarea rows="5" name="message" id="message"
+      class="form-control" formControlName="message"
+      placeholder="Votre message" [(ngModel)]="message"></textarea>
       <div *ngIf="submitted && form.message.errors">
         <small *ngIf="form.message.errors.required" class="form-text error-text ">Message requis</small>
       </div>
     </div>
 
     <div class="contain-submit">
-      <button type="submit" (click)="openConfirm($event)">
+      <button type="submit" (click)="openConfirm()">
         Envoyer
       </button>
     </div>

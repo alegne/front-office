@@ -13,6 +13,10 @@
           <div class="line"></div>
       </div>
 
+      <div class="noAnnonce" *ngIf="three_news == null || three_news == undefined">
+        Aucune annonce
+      </div>
+
       <div class="row contain-com">
         <div class="col-lg-4" *ngFor="let item of three_news">
             <div class="contain">
@@ -61,7 +65,7 @@
         </div>
       </div>
     </div>
-    <div class="content-pagination">
+    <div class="content-pagination" *ngIf="nbPagination.length > 0">
       <span *ngFor="let item of nbPagination" (click)="page(item)" [ngClass]="{current : item === currentPagination}">
         {{item}}
       </span>
