@@ -12,8 +12,7 @@
                     <div class="about-container">
                       <h3 id="head-director-words">Mot du Directeur</h3>
                         <p id="director-words">
-                          <cite>
-                            {{wordDirector}}
+                          <cite [innerHTML]="wordDirector | sanitizeHtml">
                           </cite>
                           <br>
                         </p>
