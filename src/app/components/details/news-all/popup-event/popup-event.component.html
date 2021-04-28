@@ -23,9 +23,11 @@
       </div>
       <div class="col-lg-12">
         <div class="rightSide">
-          <div class="desc">
+          <!-- <div class="desc">
             {{description}}
-          </div>
+          </div> -->
+          <div class="desc" [innerHTML]="description | sanitizeHtml"></div>
+
         </div>
       </div>
     </div>

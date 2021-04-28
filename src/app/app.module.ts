@@ -1,3 +1,4 @@
+import { SanitizeHtml } from './sanitize-html.pipe';
 import { LoadingService } from './services/loading/loading.service';
 import { AnnoncesService } from './services/annonces/annonces.service';
 import { LoginService } from './services/login/login.service';
@@ -65,7 +66,8 @@ import { MainHeaderComponent } from './layout/header/main-header/main-header.com
     SlideTopComponent,
     PopupEventComponent,
     TopHeaderSlideComponent,
-    MainHeaderComponent
+    MainHeaderComponent,
+    SanitizeHtml
   ],
   imports: [
     BrowserModule,

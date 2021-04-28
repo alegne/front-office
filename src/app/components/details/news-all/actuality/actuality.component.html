@@ -1,6 +1,7 @@
 <span id="the-toppyy"></span>
 <app-main-header></app-main-header>
 
+
 <div class="contain-section container" id="the-toppy">
   <div class="top-tite" (click)="slideToActu()">
     <span *ngIf="!isNews">Les actualités</span>
@@ -31,9 +32,11 @@
         <h3 class="section-right-h3" *ngIf="currentActu">
           {{currentActu.titre}}
         </h3>
-        <div class="section-right-description" *ngIf="currentActu">
+        <!-- <div class="section-right-description" *ngIf="currentActu">
           {{currentActu.description}}
-        </div>
+        </div> -->
+        <div class="section-right-description" *ngIf="currentActu"
+        [innerHTML]="currentActu.description | sanitizeHtml"></div>
         <br><br>
         <!-- <div class="section-right-description">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -116,9 +119,11 @@
                                   <div class="single-item-comment-view">
                                     <span><i class="fa fa-calendar"></i>{{item.date_creation}}</span>
                                  </div>
-                                 <div>
+
+                                 <div [innerHTML]="item.description.substring(0, 100) | sanitizeHtml"></div>
+                                 <!-- <div>
                                   {{item.description.substring(0, 100)}}...
-                                  </div>
+                                  </div> -->
                                  <a class="button-default" (click)="showActu(item.titre, item.date_creation, item.posteur)">
                                    Afficher
                                   </a>

@@ -32,9 +32,11 @@
                                           <span>By: <span>{{item.posteur}}</span></span> <br>
                                           <span>Date: <span>{{item.date_mise_jour}}</span></span>
                                       </div>
-                                      <p>
+                                      <!-- <p>
                                         {{item.description.substring(0, 150)}}...
-                                      </p>
+                                      </p> -->
+                                      <div class="p" [innerHTML]="item.description.substring(0, 150) | sanitizeHtml">
+                                      </div>
                                   </div>
                                   <div class="button-bottom" (click)="seeActu(item.titre, item.date_mise_jour, item.posteur)">
                                       <a class="button-default">Voir l'actualité</a>

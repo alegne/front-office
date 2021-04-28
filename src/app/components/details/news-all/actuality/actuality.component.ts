@@ -3,6 +3,8 @@ import { Actuality, NewsService, Gallery, Actu } from './../../../../services/ne
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 import { ActivatedRoute } from '@angular/router';
+import { Pipe, PipeTransform } from '@angular/core';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-actuality',
@@ -12,7 +14,10 @@ import { ActivatedRoute } from '@angular/router';
     './../../../director-word/responsive.css'
   ]
 })
-export class ActualityComponent implements OnInit {
+@Pipe({
+  name: 'sanitizeHtml'
+})
+export class ActualityComponent implements OnInit, PipeTransform {
   currentActu: Actu = {
     "id": 0,
     "slug": "",
@@ -48,9 +53,12 @@ export class ActualityComponent implements OnInit {
 
   defaultImg = "./../../../../../assets/images/course/1.jpg";
 
+  wys = "<p>Holla</p><h4>Mama</h4>&lt;";
+
   constructor(private newsService: NewsService,
     private activatedRoute : ActivatedRoute,
-    private loadSrv: LoadingService) {
+    private loadSrv: LoadingService,
+    private _sanitizer: DomSanitizer) {
     let type : string = this.activatedRoute.snapshot.paramMap.get("type");
     let titre : string = this.activatedRoute.snapshot.paramMap.get("titre");
     let date : string = this.activatedRoute.snapshot.paramMap.get("date");
@@ -82,6 +90,10 @@ export class ActualityComponent implements OnInit {
       this.initGalleryOne();
       this.initGalleryTwo();
     }
+  }
+
+  transform(v: string) : SafeHtml {
+    return this._sanitizer.bypassSecurityTrustHtml(v);
   }
 
   initGalleryOne() {

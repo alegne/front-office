@@ -6,7 +6,9 @@
         <img [src]="item.image" class="d-block" alt="...">
         <div class="carousel-caption">
             <h2>{{item.titre}}</h2>
-            <p>{{item.description}}</p>
+            <p [innerHTML]="item.description.substring(0, 100) | sanitizeHtml">
+            </p>
+            <!-- <p>{{item.description}}</p> -->
             <div class="button-01" (click)="seeNews(item.titre, item.date_mise_jour, item.posteur)">
                 <ul>
                     <li class="btn_continue"><a>Continuer</a></li>
