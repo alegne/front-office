@@ -23,7 +23,9 @@
               <img [src]="item.image" alt="" class="contain-img">
               <h4 class="contain-title">{{item.titre}}</h4>
               <p class="contain-date">{{item.date_mise_jour}}</p>
-              <div class="contain-description">{{item.description.substring(0, 200)}}...</div>
+              <div class="contain-description" [innerHTML]="item.description.substring(0, 200) | sanitizeHtml"></div>
+
+              <!-- <div class="contain-description">{{item.description.substring(0, 200)}}...</div> -->
 
               <div class="lire-plus" (click)="lire(item)">
                 Lire le communiqué
@@ -51,9 +53,11 @@
             <p class="title-other">
               {{item.titre}}
             </p>
-            <div class="detail-other">
+            <div class="detail-other" [innerHTML]="item.description.substring(0, 100) | sanitizeHtml"></div>
+
+            <!-- <div class="detail-other">
               {{item.description.substring(0, 100)}}...
-            </div>
+            </div> -->
 
             <div class="lire-plus" (click)="lire(item)">
               Lire le communiqué
