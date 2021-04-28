@@ -51,6 +51,9 @@
       <img [src]="langues[0].flag" alt="" id="flags">
     </div>
   </div>
+  <div id="progress-man" *ngIf="isLoading">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </div>
 </div>
 
 <div class="external-content" id="external-content">
@@ -69,8 +72,10 @@
   </div>
 </div>
 
-
 </div>
+
+
+
 
 
 

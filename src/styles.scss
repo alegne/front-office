@@ -124,3 +124,20 @@ mat-form-field {
       }
     }
 
+    .error_snackbar {
+      background: red;
+      color: #ffffff;
+      font-weight: normal;
+    }
+
+    .success_snackbar {
+      background: #044973;
+      color: #ffffff;
+      font-weight: normal;
+    }
+
+    .info_snackbar {
+      background: #03661c;
+      color: #ffffff;
+      font-weight: normal;
+    }

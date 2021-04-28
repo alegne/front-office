@@ -1,3 +1,4 @@
+import { LoadingService } from './services/loading/loading.service';
 import { AnnoncesService } from './services/annonces/annonces.service';
 import { LoginService } from './services/login/login.service';
 import { ContactService } from './services/contact/contact.service';
@@ -25,7 +26,7 @@ import { LoginComponent } from './components/auth/login/login.component';
 import { GestureConfig, MatProgressSpinnerModule, MatButtonModule, MatCardModule, MatTabsModule,
   MatTableModule, MatFormFieldModule, MatInputModule, MatPaginatorModule, MatSelectModule, MatToolbarModule,
   MatSidenavModule, MatDialogModule, MatDatepickerModule, MatNativeDateModule, MatAutocompleteModule,
-  MatIconModule, MatExpansionModule, MatListModule, MatBadgeModule } from '@angular/material';
+  MatIconModule, MatExpansionModule, MatListModule, MatBadgeModule, MatProgressBarModule, MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material';
 import { NewsAllComponent } from './components/details/news-all/news-all.component';
 import { ActualityComponent } from './components/details/news-all/actuality/actuality.component';
 import { EventsComponent } from './components/details/news-all/events/events.component';
@@ -91,7 +92,9 @@ import { MainHeaderComponent } from './layout/header/main-header/main-header.com
 		MatListModule,
     HttpClientModule,
 		MatBadgeModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    MatProgressBarModule,
+    MatSnackBarModule
   ],
   providers: [
     ConfigurationsService,
@@ -101,7 +104,9 @@ import { MainHeaderComponent } from './layout/header/main-header/main-header.com
     NewsletterService,
     ContactService,
     LoginService,
-    AnnoncesService
+    AnnoncesService,
+    LoadingService,
+    {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2000}}
   ],
   bootstrap: [AppComponent]
 })

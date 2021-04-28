@@ -1,3 +1,4 @@
+import { LoadingService } from './../../services/loading/loading.service';
 import { Router } from '@angular/router';
 import { NewsService, Actuality, Actu } from './../../services/news/news.service';
 import { HeaderService } from './../../services/Header/header.service';
@@ -38,7 +39,8 @@ export class HeaderComponent implements OnInit {
   image3 =  "./../../../assets/images/course/3.jpg";
 
 
-  constructor(public headerService: HeaderService, public newsService: NewsService, private router: Router) { }
+  constructor(public headerService: HeaderService, public newsService: NewsService,
+    private router: Router, private loadSrv: LoadingService) { }
 
   ngOnInit() {
     this.menu = this.headerService.menu;
@@ -53,6 +55,7 @@ export class HeaderComponent implements OnInit {
   }
 
   async getTopNews() {
+    this.loadSrv.load(true);
     await this.newsService.getTopNouvelle().subscribe(
             (data: any) => {
               let list: any[] = data.data;
@@ -79,6 +82,7 @@ export class HeaderComponent implements OnInit {
               console.log(err);
             }
     );
+    this.loadSrv.load(false);
   }
 
   changeDate(data, isUpdate: boolean) {

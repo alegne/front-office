@@ -4,6 +4,7 @@ import { HeaderService } from './../../services/Header/header.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-footer',
@@ -33,7 +34,8 @@ export class FooterComponent implements OnInit {
   constructor(private router : Router,
     public headerService: HeaderService,
     private confService: ConfigurationsService,
-    private http: HttpClient) { }
+    private http: HttpClient,
+    private _snackBar: MatSnackBar) { }
 
   ngOnInit() {
     this.menu = this.headerService.menu;
@@ -42,6 +44,10 @@ export class FooterComponent implements OnInit {
 
   home() {
     this.router.navigateByUrl("/");
+  }
+
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action);
   }
 
   getConf() {
@@ -85,10 +91,33 @@ export class FooterComponent implements OnInit {
     };
     const headers: any = new HttpHeaders({'Content-Type': 'application/json'});
     this.http.post(`${this.endpoint}/newsletter`, options, headers).subscribe(
-      (data) => {
+      (data: any) => {
         console.log(data);
+        if (data) {
+          if (data.message == "sucess") {
+            this._snackBar.open(`Vous êtes maintenant abonné !`, "", {
+              duration: 1500,
+              horizontalPosition: "right",
+              verticalPosition: "bottom",
+              panelClass: ["success_snackbar"]
+          });
+          } else {
+            this._snackBar.open(`Une erreur est survenue`, "", {
+              duration: 1500,
+              horizontalPosition: "right",
+              verticalPosition: "bottom",
+              panelClass: ["error_snackbar"]
+          });
+          }
+        }
         this.emailNewsletter = "";
       }, err => {
+        this._snackBar.open(`Vous êtes dejà abonné`, "", {
+          duration: 1500,
+          horizontalPosition: "right",
+          verticalPosition: "bottom",
+          panelClass: ["info_snackbar"]
+      });
         console.log(err);
       }
     )

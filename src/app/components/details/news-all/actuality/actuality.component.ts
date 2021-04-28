@@ -1,3 +1,4 @@
+import { LoadingService } from './../../../../services/loading/loading.service';
 import { Actuality, NewsService, Gallery, Actu } from './../../../../services/news/news.service';
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
@@ -47,7 +48,9 @@ export class ActualityComponent implements OnInit {
 
   defaultImg = "./../../../../../assets/images/course/1.jpg";
 
-  constructor(private newsService: NewsService, private activatedRoute : ActivatedRoute) {
+  constructor(private newsService: NewsService,
+    private activatedRoute : ActivatedRoute,
+    private loadSrv: LoadingService) {
     let type : string = this.activatedRoute.snapshot.paramMap.get("type");
     let titre : string = this.activatedRoute.snapshot.paramMap.get("titre");
     let date : string = this.activatedRoute.snapshot.paramMap.get("date");
@@ -311,6 +314,7 @@ export class ActualityComponent implements OnInit {
   // }
 
   async getEvenements() {
+    this.loadSrv.load(true);
     await this.newsService.getEvenements().subscribe(
       (data :any) => {
         // console.log(data);
@@ -339,7 +343,7 @@ export class ActualityComponent implements OnInit {
           }
         });
         // this.listActu = list;
-        this.currentActu = this.listActu[this.listActu.length - 1];
+        this.currentActu = this.listActu[0];
         this.four_actu =  this.listActu.slice(0 , 4);
         this.last_actus = this.listActu.slice(this.minPagination, this.maxPagination);
         console.log(this.listActu);
@@ -354,7 +358,8 @@ export class ActualityComponent implements OnInit {
       }, (err) => {
         console.log(err);
       }
-    )
+    );
+    this.loadSrv.load(false);
   }
 
 }

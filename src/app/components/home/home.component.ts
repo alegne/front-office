@@ -12,21 +12,5 @@ export class HomeComponent implements OnInit {
   constructor(private router: Router, private config: ConfigurationsService) { }
 
   ngOnInit() {
-    this.getConfiguration();
   }
-
-  seeActu(titre, date, posteur) {
-    let str = "/evenements/" + titre + "/" + date + "/" + posteur+ "";
-    this.router.navigateByUrl(str);
-  }
-
-  seeNews(titre, date, posteur) {
-    let str = "/evenements/nouvelles/" + titre + "/" + date + "/" + posteur+ "";
-    this.router.navigateByUrl(str);
-  }
-
-  getConfiguration() {
-    this.config.getConfigurations();
-  }
-
 }

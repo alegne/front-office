@@ -1,4 +1,7 @@
 <div class="container-fluid">
+  <div id="progress-man">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </div>
 <div class="content row">
   <div class="left-side col-lg-6">
     <div class="contain-txt">
@@ -11,9 +14,9 @@
     </div>
 
     <div class="main-one">
-      Vous faites partie de l' Ecole Nationale d'Informatique ?
+      Connectez vous à votre propre compte
     </div>
-    <!-- <div class="bar"></div> -->
+    <div class="bar"></div>
     <div class="main-two">
       <form [formGroup]="signin" (ngSubmit)="onConnect()">
       <div class="content-form-field field">
@@ -23,7 +26,7 @@
               <mat-option value="enseignant">Enseignant</mat-option>
               <mat-option value="etudiant">Etudiant</mat-option>
             </mat-select>
-            <mat-icon matSuffix>user</mat-icon>
+            <mat-icon matSuffix>assignment_ind</mat-icon>
           </mat-form-field>
       </div>
 

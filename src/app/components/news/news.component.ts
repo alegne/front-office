@@ -1,3 +1,4 @@
+import { LoadingService } from './../../services/loading/loading.service';
 import { Router } from '@angular/router';
 import { Actu, Actuality, NewsService } from './../../services/news/news.service';
 import { Component, OnInit } from '@angular/core';
@@ -15,7 +16,7 @@ export class NewsComponent implements OnInit {
   actuality: Actu[] = [];
   actualities: Actu[];
   noActu = false;
-  constructor(public newsService: NewsService, private router: Router) { }
+  constructor(public newsService: NewsService, private router: Router, private loadSrv: LoadingService) { }
 
   ngOnInit() {
     // this.actualities = this.newsService.actus;
@@ -43,6 +44,7 @@ export class NewsComponent implements OnInit {
   }
 
   async getTopActus() {
+    this.loadSrv.load(true);
     await this.newsService.getTopActualite().subscribe(
             (data: any) => {
               let list: any[] = data.data;
@@ -72,6 +74,7 @@ export class NewsComponent implements OnInit {
               console.log(err);
             }
     );
+    this.loadSrv.load(false);
   }
 
   changeDate(data, isUpdate: boolean) {

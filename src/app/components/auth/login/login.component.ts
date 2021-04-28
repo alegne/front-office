@@ -1,3 +1,4 @@
+import { LoadingService } from './../../../services/loading/loading.service';
 import { LoginService } from './../../../services/login/login.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
@@ -32,7 +33,8 @@ export class LoginComponent implements OnInit {
 
   error = "";
 
-  constructor(public router: Router, private formBuilder: FormBuilder, private loginService: LoginService) { }
+  constructor(public router: Router, private formBuilder: FormBuilder,
+    private loginService: LoginService) { }
 
   ngOnInit() {
     this.initSignIn();
@@ -63,7 +65,7 @@ export class LoginComponent implements OnInit {
     this.isLogin = true;
 		const signinValue = this.signin.value;
     if (this.signin.invalid) {
-      this.error = "Veuillez completer le formulaire";
+      this.error = "Veuillez compléter le formulaire";
       this.isLogin = false;
     }
     let type = signinValue['type'];
@@ -85,7 +87,7 @@ export class LoginComponent implements OnInit {
             this.error = data.message;
           }
           else {
-            this.error = data.message
+            this.error = data.message;
           }
         }
       }, (error) => {

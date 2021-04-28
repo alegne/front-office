@@ -22,7 +22,7 @@
             <div class="contain">
               <img [src]="item.image" alt="" class="contain-img">
               <h4 class="contain-title">{{item.titre}}</h4>
-              <p class="contain-date">{{item.date_creation}}</p>
+              <p class="contain-date">{{item.date_mise_jour}}</p>
               <p class="contain-description">{{item.description.substring(0, 200)}}...</p>
 
               <div class="lire-plus" (click)="lire(item)">
@@ -46,7 +46,7 @@
         <div class="col-lg-7">
           <div class="description-other">
             <p class="date-other">
-              {{item.date_creation}}
+              {{item.date_mise_jour}}
             </p>
             <p class="title-other">
               {{item.titre}}

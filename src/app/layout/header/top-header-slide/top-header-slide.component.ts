@@ -1,9 +1,11 @@
+import { LoadingService } from './../../../services/loading/loading.service';
 import { HeaderService, Menu } from './../../../services/Header/header.service';
 import { LoginComponent } from './../../../components/auth/login/login.component';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import * as $ from 'jquery';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -28,9 +30,19 @@ export class TopHeaderSlideComponent implements OnInit {
   logoUf = "./../../../../assets/images/ENI/uf-light.png";
   profile = "./../../../../assets/images/icones/profile.png";
 
-  constructor(private router : Router, private dialog: MatDialog, private headerService: HeaderService) { }
+  loadSubscription = new Subscription();
+  isLoading = false;
+
+  constructor(private router : Router, private dialog: MatDialog,
+    private headerService: HeaderService, private loadService: LoadingService) { }
 
   ngOnInit() {
+    this.loadSubscription = this.loadService.loadSubject.subscribe(
+      (data: boolean) => {
+        this.isLoading = data;
+      }
+    );
+    this.isLoading = this.loadService.isLoading;
     this.getMenu();
     this.initJs();
   }

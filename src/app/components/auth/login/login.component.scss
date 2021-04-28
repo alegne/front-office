@@ -32,9 +32,10 @@ $radius: 10px;
 
 .main-one {
   margin-top: 18px;
-  font-size: 20px;
+  font-size: 21px;
   color: $first-color;
   font-weight: 500;
+  font-family: 'Font Awesome 5 Brands';
 }
 .main-two {
   margin-top: 20px;
@@ -80,8 +81,9 @@ button.btn_connecter:hover {
 }
 
 .bar {
+  margin-top: 5px;
   width: 100%;
-  height: 4px;
+  height: 2px;
   background-color: #0c2d50db;
 }
 
@@ -271,4 +273,10 @@ img#logo-eni-popup {
 
 .contain-error p {
   color: red;
+}
+
+div#progress-man {
+  width: 60%;
+  position: fixed;
+  margin-left: -13px !important;
 }

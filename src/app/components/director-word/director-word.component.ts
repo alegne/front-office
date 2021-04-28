@@ -30,7 +30,7 @@ export class DirectorWordComponent implements OnInit {
   getConf() {
     this.confService.getConfigurations().subscribe(
       (data: any[]) => {
-        // console.log(data);
+        console.log(data);
         data.forEach(el => {
           if (el.cle == "nom_directeur") this.nameDirector = el.valeur;
           if (el.cle == "mot_directeur") this.wordDirector = el.valeur;

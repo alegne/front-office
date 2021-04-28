@@ -1,3 +1,4 @@
+import { LoadingService } from './../../../../services/loading/loading.service';
 import { AnnoncesService } from './../../../../services/annonces/annonces.service';
 import { PopupEventComponent } from './../popup-event/popup-event.component';
 import { Actuality, NewsService } from './../../../../services/news/news.service';
@@ -34,7 +35,11 @@ export class EventsComponent implements OnInit {
   currentPagination = 1;
   minPagination = 3;
   maxPagination = 6;
-  constructor(public newsService: NewsService, private dialog: MatDialog, private annonceService: AnnoncesService) { }
+
+  defaultImg = "./../../../../../assets/images/background/Anon151-Boundless-Banner-hd.jpg";
+
+  constructor(public newsService: NewsService, private dialog: MatDialog,
+    private annonceService: AnnoncesService, private loadSrv: LoadingService) { }
 
   ngOnInit() {
     this.getTopAnnonces();
@@ -65,7 +70,7 @@ export class EventsComponent implements OnInit {
     // container.scrollTop(position);
     $([document.documentElement, document.body]).animate({
       scrollTop: $("#contain-other-intern").offset().top - 200
-    }, 500);
+    }, 200);
   }
 
   lire(annonce: Annonce) {
@@ -83,6 +88,7 @@ export class EventsComponent implements OnInit {
   }
 
   getAnnonces() {
+    this.loadSrv.load(true);
     this.annonceService.getAnnonces().subscribe(
       (data :any) => {
         let list: any[] = data.data;
@@ -91,15 +97,19 @@ export class EventsComponent implements OnInit {
           let isN : boolean = false;
           element.date_creation = this.changeDate(element.date_creation, isO);
           element.date_mise_jour = this.changeDate(element.date_mise_jour, isN);
+          if (element.image == null) {
+            element.image = this.defaultImg;
+        }
         });
         console.log(list);
         this.news = list;
-        this.last_news = this.news.slice(this.news.length -3, this.news.length);
+        this.last_news = this.news.slice(this.minPagination, this.maxPagination);
         this.initPagination();
       }, (err) => {
         console.log(err);
       }
-    )
+    );
+    this.loadSrv.load(false);
   }
 
   getTopAnnonces() {
@@ -111,6 +121,9 @@ export class EventsComponent implements OnInit {
           let isN : boolean = false;
           element.date_creation = this.changeDate(element.date_creation, isO);
           element.date_mise_jour = this.changeDate(element.date_mise_jour, isN);
+          if (element.image == null) {
+            element.image = this.defaultImg;
+          }
         });
         console.log(list);
         this.three_news = list;
