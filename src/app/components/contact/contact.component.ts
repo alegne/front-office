@@ -64,7 +64,7 @@ export class ContactComponent implements OnInit {
       "telephone": " "
     };
     const headers: any = new HttpHeaders({'Content-Type': 'application/json'});
-    this.http.post(`${this.endpoint}/newsletter`, options, headers).subscribe(
+    this.http.post(`${this.endpoint}/messages`, options, headers).subscribe(
       (data: any) => {
         // console.log(data);
         if (data.message == "sucess") {

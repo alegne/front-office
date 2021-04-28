@@ -23,7 +23,7 @@
               <img [src]="item.image" alt="" class="contain-img">
               <h4 class="contain-title">{{item.titre}}</h4>
               <p class="contain-date">{{item.date_mise_jour}}</p>
-              <p class="contain-description">{{item.description.substring(0, 200)}}...</p>
+              <div class="contain-description">{{item.description.substring(0, 200)}}...</div>
 
               <div class="lire-plus" (click)="lire(item)">
                 Lire le communiqué
@@ -51,9 +51,9 @@
             <p class="title-other">
               {{item.titre}}
             </p>
-            <p class="detail-other">
+            <div class="detail-other">
               {{item.description.substring(0, 100)}}...
-            </p>
+            </div>
 
             <div class="lire-plus" (click)="lire(item)">
               Lire le communiqué
