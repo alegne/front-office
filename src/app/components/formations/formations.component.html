@@ -24,7 +24,22 @@
                   <div class="teachers-area padding-top">
                     <div class="container-fluid contain-area">
                         <div class="row">
-                            <div class="col-lg-4 col-12">
+                              <div class="col-lg-4 col-12" *ngFor="let item of formations; let i = index">
+                                <div class="single-teacher-item">
+                                    <div class="single-teacher-image">
+                                    </div>
+                                    <div class="single-teacher-text one">
+                                        <h3><a>{{item.libelle}}</a></h3>
+                                        <h4 *ngIf="item.libelle == txt1">Bac + 3</h4>
+                                        <h4 *ngIf="item.libelle == txt2">Bac + 4</h4>
+                                        <h4 *ngIf="item.libelle == txt3">Bac + 5</h4>
+                                      <p class="descr-formation" [innerHTML]="item.description | sanitizeHtml">
+                                      </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- <div class="col-lg-4 col-12">
                                 <div class="single-teacher-item">
                                     <div class="single-teacher-image">
                                     </div>
@@ -37,8 +52,8 @@
                                         </p>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-4 col-12">
+                            </div> -->
+                            <!-- <div class="col-lg-4 col-12">
                                 <div class="single-teacher-item">
                                     <div class="single-teacher-image">
                                     </div>
@@ -51,8 +66,8 @@
                                         </p>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-4 col-12">
+                            </div> -->
+                            <!-- <div class="col-lg-4 col-12">
                                 <div class="single-teacher-item ">
                                     <div class="single-teacher-image">
                                     </div>
@@ -66,7 +81,7 @@
                                         </p>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>

@@ -11,12 +11,12 @@
                 <div class="col-lg-8 col-md-12">
                     <div class="about-container">
                       <h3 id="head-director-words">Mot du Directeur</h3>
-                        <p id="director-words">
-                          <cite>
-                            {{wordDirector}}
-                          </cite>
+                        <div id="director-words">
+                          
+                          <div [innerHTML]="wordDirector | sanitizeHtml">
+                          </div>
                           <br>
-                        </p>
+                        </div>
                         <div class="timber">
                           - Ecole Nationale Informatique -
                         </div>
