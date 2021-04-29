@@ -191,3 +191,13 @@ $color-white: white;
   margin-right: 5%;
   width: 90%;
 }
+
+#imgActu {
+  height: 200px !important;
+}
+
+@media screen and (max-width: 992px) {
+  .single-item {
+    margin-top: 80px;
+  }
+}

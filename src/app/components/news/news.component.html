@@ -21,10 +21,10 @@
                           </div>
                       </div>
                       <div class="row row-actu">
-                          <div class="col-lg-4 col-md-6" *ngFor="let item of actuality">
+                          <div class="col-lg-4" *ngFor="let item of actuality">
                               <div class="single-item">
                                   <div class="single-item-image overlay-effect">
-                                      <a [href]="item.slug"><img [src]="item.image" alt=""></a>
+                                      <a><img [src]="item.image" alt="" id="imgActu"></a>
                                   </div>
                                   <div class="single-item-text">
                                       <h4><a>{{item.titre}}</a></h4>

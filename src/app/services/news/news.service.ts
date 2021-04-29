@@ -326,7 +326,7 @@ export class NewsService {
   }
 
   getTopNouvelle() {
-    return this.http.get(`${this.endpoint}/evenements/principal/top/actualite`);
+    return this.http.get(`${this.endpoint}/evenements/principal/top/nouvelle`);
   }
 
 
