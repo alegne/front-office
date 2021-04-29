@@ -1,27 +1,27 @@
   <!--About Area Start-->
-    <div class="about-area">
-        <div class="container">
+    <div class="about-area container">
+        <div class="container-fuild">
             <div class="row">
-              <div class="contain-director">
+              <div class="contain-director col-md-8">
                 <img [src]="imgDirector" alt="" id="imgDirector">
                 <p class="name-director">
                   {{nameDirector}}
                 </p>
               </div>
-                <div class="col-lg-8 col-md-12">
-                    <div class="about-container">
-                      <h3 id="head-director-words">Mot du Directeur</h3>
-                        <div id="director-words">
-                          
-                          <div [innerHTML]="wordDirector | sanitizeHtml">
-                          </div>
-                          <br>
+              <div class="col-md-8">
+                  <div class="about-container">
+                    <h3 id="head-director-words">Mot du Directeur</h3>
+                      <div id="director-words">
+                        
+                        <div [innerHTML]="wordDirector | sanitizeHtml">
                         </div>
-                        <div class="timber">
-                          - Ecole Nationale Informatique -
-                        </div>
-                    </div>
-                </div>
+                        <br>
+                      </div>
+                      <div class="timber">
+                        - Ecole Nationale Informatique -
+                      </div>
+                  </div>
+              </div>
             </div>
         </div>
     </div>
