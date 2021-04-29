@@ -1,11 +1,13 @@
-$first-color : #0c2d50;
-$second-color : #002247;
+$first-color: #0c2d50;
+$second-color: #002247;
 
 * {
   font-family: Roboto, "Helvetica Neue", sans-serif !important;
 }
 
-.header-top:before, .about-area:before, .newsletter-area:before {
+.header-top:before,
+.about-area:before,
+.newsletter-area:before {
   content: "";
   height: 48px;
   position: absolute;
@@ -13,13 +15,15 @@ $second-color : #002247;
   top: 10px;
   width: 43%;
 }
-.header-top:after, .about-area:after, .newsletter-area:after {
+.header-top:after,
+.about-area:after,
+.newsletter-area:after {
   -moz-border-bottom-colors: none;
   -moz-border-left-colors: none;
   -moz-border-right-colors: none;
   -moz-border-top-colors: none;
   -o-border-image: none;
-      border-image: none;
+  border-image: none;
   border-style: solid;
   border-width: 24px 10px;
   content: "";
@@ -53,7 +57,7 @@ $second-color : #002247;
   border-width: 55px 30px;
   left: 49.2%;
   top: -20px;
-  right: auto
+  right: auto;
 }
 .about-area h3 {
   font-size: 30px;
@@ -67,10 +71,16 @@ $second-color : #002247;
   line-height: 26px;
   margin-bottom: 42px;
 }
-.about-container {margin-left: 70px;}
-.about-area .button-default {padding: 9px 41px;}
-.about-container > .button-default:hover {background: #ffffff none repeat scroll 0 0; color: #2d3e50;}
-
+.about-container {
+  margin-left: 70px;
+}
+.about-area .button-default {
+  padding: 9px 41px;
+}
+.about-container > .button-default:hover {
+  background: #ffffff none repeat scroll 0 0;
+  color: #2d3e50;
+}
 
 .timber {
   right: 20px;
@@ -84,19 +94,20 @@ $second-color : #002247;
 }
 
 .contain-director {
-  width: 220px;
-  position: absolute;
-  right: 20px;
+  //width: 220px;
+  // position: absolute;
+  // right: 250px;
   margin-top: 40px;
   text-align: center;
 }
 
 img#imgDirector {
-  width: 200px;
+  width: 250px;
+  height: 300px;
 }
 
 .name-director {
-  width: 100%!important;
+  width: 100% !important;
   text-align: center;
   display: flex;
   flex-direction: row;
@@ -114,9 +125,16 @@ img#imgDirector {
 }
 
 @media screen and (max-width: 767px) {
-  .about-area {margin-top: 80px !important; background: $first-color !important;}
-  .about-container {margin-left: -50px !important;}
-  .contain-director{margin-top: 150px;}
+  .about-area {
+    margin-top: 80px !important;
+    background: $first-color !important;
+  }
+  .about-container {
+    margin-left: -50px !important;
+  }
+  .contain-director {
+    margin-top: 150px;
+  }
   .about-area p {
     line-height: 26px;
     margin-bottom: 42px;
@@ -133,5 +151,14 @@ img#imgDirector {
     margin-bottom: 42px;
     width: 90%;
   }
-  .about-container {margin-left: 0px !important;}
+  .about-container {
+    margin-left: 0px !important;
+  }
+}
+
+@media screen and (min-width: 1550px) {
+  .contain-director {
+    position: absolute;
+    right: 250px;
+  }
 }
