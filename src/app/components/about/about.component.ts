@@ -12,7 +12,7 @@ import { Component, OnInit } from '@angular/core';
 export class AboutComponent implements OnInit {
 
   currentSection = 'information';
-  img1 = "./../../../assets/images/ENI/Etablissement.jpeg";
+  img1 = "./../../../assets/images/ENI/etudiants.jpg";
   img2 = "./../../../assets/images/ENI/etablissement2.jpg";
   img3 = "./../../../assets/images/ENI/news.gif";
   information: string = null;

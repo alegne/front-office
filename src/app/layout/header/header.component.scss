@@ -15,6 +15,10 @@ $first-color: #0c2d50;
   background: #f3ecec1f !important;
 }
 
+img.d-block {
+  width: 100% !important;
+}
+
 @media screen and (max-width: 991.98px) {
   #carouselExampleFade {
     height: 440px;

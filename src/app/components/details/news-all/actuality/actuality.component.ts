@@ -151,14 +151,14 @@ export class ActualityComponent implements OnInit, PipeTransform {
   }
 
   showActu(titre, date, posteur) {
-    console.log("show");
+    // console.log("show");
     let tempActu: Actu = null;
     this.listActu.forEach(element => {
       // console.log(element.titre + " et " + titre);
       // console.log(element.date_mise_jour + " et " + date);
       // console.log(element.posteur + " et " + posteur);
       if (element.titre == titre && element.date_mise_jour == date && element.posteur == posteur) {
-        console.log("ito");
+        // console.log("ito");
         tempActu = element;
       }
     });

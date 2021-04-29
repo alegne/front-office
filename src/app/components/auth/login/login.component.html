@@ -1,74 +1,74 @@
-<div class="container-fluid">
-  <div id="progress-man">
-    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-  </div>
-<div class="content row">
-  <div class="left-side col-lg-6">
-    <div class="contain-txt">
-      <div class="txt-one">
-        ECOLE
-      </div>
-      <div class="txt-two">
-        NATIONALE INFORMATIQUE
-      </div>
+  <div class="content">
+    <div id="progress-man">
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
     </div>
 
-    <div class="main-one">
-      Connectez vous à votre propre compte
-    </div>
-    <div class="bar"></div>
-    <div class="main-two">
-      <form [formGroup]="signin" (ngSubmit)="onConnect()">
-      <div class="content-form-field field">
-          <mat-form-field>
-            <mat-label>En tant que</mat-label>
-            <mat-select disableRipple formControlName="type" required>
-              <mat-option value="enseignant">Enseignant</mat-option>
-              <mat-option value="etudiant">Etudiant</mat-option>
-            </mat-select>
-            <mat-icon matSuffix>assignment_ind</mat-icon>
-          </mat-form-field>
+    
+      <div class="" id="loginheader">
+        <div class="left-side row">
+          <div class="cool-md-4 logoimg">
+            <img [src]="logo" alt="" id="logologin">
+          </div>
+          <div class="cool-md-8 logotitle">
+            E c o l e<br>N a t i o n a l e<br>I n f o r m a t i q u e
+          </div>
+        </div>
       </div>
 
-      <div class="content-form-field field">
-          <mat-form-field>
-            <mat-label>Identifiant/Email</mat-label>
-            <input matInput formControlName="email" autocomplete="off" required>
-            <mat-icon matSuffix>account_circle</mat-icon>
-          </mat-form-field>
+      <div class="left-side">
+        <div class="main-one">
+          Se Connecter
+        </div>
+        <div class="bar"></div>
+        <div class="main-two">
+          <form [formGroup]="signin" (ngSubmit)="onConnect()">
+          <div class="content-form-field field">
+              <mat-form-field>
+                <mat-label>En tant que</mat-label>
+                <mat-select disableRipple formControlName="type" required>
+                  <mat-option value="enseignant">Enseignant</mat-option>
+                  <mat-option value="etudiant">Etudiant</mat-option>
+                </mat-select>
+                <mat-icon matSuffix>assignment_ind</mat-icon>
+              </mat-form-field>
+          </div>
+  
+          <div class="content-form-field field">
+              <mat-form-field>
+                <mat-label>Identifiant/Email</mat-label>
+                <input matInput formControlName="email" autocomplete="off" required>
+                <mat-icon matSuffix>account_circle</mat-icon>
+              </mat-form-field>
+          </div>
+  
+          <div class="content-form-field field">
+            <mat-form-field>
+              <mat-label>Mot de passe</mat-label>
+              <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required>
+              <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </mat-form-field>
+          </div>
+          <!-- <div class="forgot-pass">
+            Mot de passe <span>oublié</span> ?
+          </div> -->
+  
+          <div class="contain-error">
+            <p *ngIf="error">
+              {{error}}
+            </p>
+          </div>
+  
+          <div class="content-btn">
+              <button class="btn_connecter" type="submit">
+                <div class="loader" *ngIf="isLogin">...</div>
+                <span *ngIf="!isLogin">
+                Connexion
+                </span>
+            </button>
+          </div>
+        </form>
+        </div>
       </div>
 
-      <div class="content-form-field field">
-        <mat-form-field>
-          <mat-label>Mot de passe</mat-label>
-          <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required>
-          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-          </mat-form-field>
-      </div>
-      <!-- <div class="forgot-pass">
-        Mot de passe <span>oublié</span> ?
-      </div> -->
-
-      <div class="contain-error">
-        <p *ngIf="error">
-          {{error}}
-        </p>
-      </div>
-
-      <div class="content-btn">
-          <button class="btn_connecter" type="submit">
-            <div class="loader" *ngIf="isLogin">...</div>
-            <span *ngIf="!isLogin">
-            Connexion
-            </span>
-        </button>
-      </div>
-    </form>
-    </div>
   </div>
-  <div class="right-side col-lg-6">
-    <img [src]="imgBack" alt="">
-  </div>
-</div>
-</div>
 

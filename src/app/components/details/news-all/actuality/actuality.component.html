@@ -113,7 +113,7 @@
                           <div class="single-latest-item">
                               <div class="single-latest-image">
                                   <!--<a [href]="item.slug">-->
-                                    <img [src]="item.image" alt="" (click)="showActu(item.titre, item.date_creation, item.posteur)">
+                                    <img [src]="item.image" alt="" (click)="showActu(item.titre, item.date_mise_jour, item.posteur)">
                                   <!--</a>-->
                               </div>
                               <div class="single-latest-text">
@@ -126,7 +126,9 @@
                                  <!-- <div>
                                   {{item.description.substring(0, 100)}}...
                                   </div> -->
-                                 <a class=" btn button-default" (click)="showActu(item.titre, item.date_creation, item.posteur)">
+
+                                 <a class="btn button-default" (click)="showActu(item.titre, item.date_mise_jour, item.posteur)">
+
                                    Afficher
                                   </a>
                               </div>
