@@ -120,15 +120,13 @@
                                   <h3><a>{{item.titre}}</a></h3>
                                   <div class="single-item-comment-view">
                                     <span><i class="fa fa-calendar"></i>{{item.date_creation}}</span>
-                                 </div>
+                                </div>
 
-                                 <div [innerHTML]="item.description.substring(0, 100) | sanitizeHtml"></div>
-                                 <!-- <div>
+                                <div [innerHTML]="item.description.substring(0, 100) | sanitizeHtml"></div>
+                                <!-- <div>
                                   {{item.description.substring(0, 100)}}...
                                   </div> -->
-
                                  <a class="btn button-default" (click)="showActu(item.titre, item.date_mise_jour, item.posteur)">
-
                                    Afficher
                                   </a>
                               </div>

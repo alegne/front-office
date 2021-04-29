@@ -116,6 +116,15 @@ $color-white: #ffffff;
   z-index: 9;
 }
 
+@media screen and (max-width: 992px) {
+  .single-teacher-item:hover .single-teacher-text {
+    margin-top: -45px;
+    padding: 20px 26px 66px;
+    position: relative;
+    z-index: 9;
+}
+}
+
 .single-teacher-item:hover .descr-formation {
   padding: 10px;
   height: 150px;
