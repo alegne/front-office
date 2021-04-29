@@ -1,7 +1,7 @@
 $first-color : #0c2d50;
 $second-color : #002247;
 $third-color: #117abe;
-$color-white: white;
+$color-white: #ffffff;
 
 .content, .contain-area {
   width: 90%;
@@ -102,7 +102,6 @@ $color-white: white;
 }
 
 .single-teacher-item:hover .descr-formation {
-  // background: #002247;
   padding: 10px;
   height: 150px;
   overflow-y: auto;
