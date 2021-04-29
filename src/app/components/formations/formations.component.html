@@ -24,12 +24,15 @@
                   <div class="teachers-area padding-top">
                     <div class="container-fluid contain-area">
                         <div class="row">
-                              <div class="col-lg-4 col-12" *ngFor="let item of formations; let i = index">
+                              <div class="col-lg-4" *ngFor="let item of formations; let i = index" [ngClass]="{'col-lg-12': formations.length == 1,'col-lg-6': formations.length == 2, 'col-lg-4' : formations.length > 2}">
                                 <div class="single-teacher-item">
                                     <div class="single-teacher-image">
                                     </div>
-                                    <div class="single-teacher-text one">
-                                        <h3><a>{{item.libelle}}</a></h3>
+                                    <!-- [ngClass]="{'one': i == 0, 'two': i == 1, 'three': i == 2}" -->
+                                    <div class="single-teacher-text"
+                                    [ngStyle]="{background: 'url('+ item.photo +')', 'background-size': 'cover',
+                                    'background-position': 'center'}">
+                                      <h3><a>{{item.libelle}}</a></h3>
                                         <h4 *ngIf="item.libelle == txt1">Bac + 3</h4>
                                         <h4 *ngIf="item.libelle == txt2">Bac + 4</h4>
                                         <h4 *ngIf="item.libelle == txt3">Bac + 5</h4>

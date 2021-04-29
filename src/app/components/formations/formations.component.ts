@@ -23,7 +23,7 @@ export class FormationsComponent implements OnInit {
   txt2 = "Master";
   txt3 = "Doctorat";
 
-  formations: Formation = [];
+  formations: Formation[] = [];
 
   constructor(private newsService: NewsService) { }
 
