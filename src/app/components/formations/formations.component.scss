@@ -100,6 +100,19 @@ $color-white: white;
     position: absolute;
     z-index: 9;
 }
+
+.single-teacher-item:hover .descr-formation {
+  // background: #002247;
+  padding: 10px;
+  height: 150px;
+  overflow-y: auto;
+}
+
+.descr-formation::-webkit-scrollbar {
+  width: 1px;
+  background: transparent;
+}
+
 .single-teacher-text > h3 {
 	font-family: raleway;
 	font-weight: 600;
@@ -168,6 +181,12 @@ $color-white: white;
   background-position: center !important;
   background-repeat: no-repeat !important;
 }
+
+.single-teacher-text {
+    height: 260px;
+    width: 100%;
+}
+
 
 @media screen and (max-width: 992px) {
   .single-teacher-item {

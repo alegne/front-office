@@ -1,4 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { NewsService } from './../../services/news/news.service';
+
+interface Formation {
+  id: number,
+  description: string,
+  libelle: string,
+  photo: string,
+  slug: string
+}
 
 @Component({
   selector: 'app-formations',
@@ -10,10 +19,29 @@ export class FormationsComponent implements OnInit {
   licence = "./../../../assets/images/slider/niv1.jpg";
   master = "./../../../assets/images/slider/niv2.jpg";
   doctorate = "./../../../assets/images/slider/niv3.jpg";
+  txt1 = "Licence";
+  txt2 = "Master";
+  txt3 = "Doctorat";
 
-  constructor() { }
+  formations: Formation = [];
+
+  constructor(private newsService: NewsService) { }
+
 
   ngOnInit() {
+    this.getFormation();
   }
 
+  getFormation() {
+    this.newsService.getFormation().subscribe(
+      (data: any) => {
+        console.log(data);
+        let tmp = data.data;
+        this.formations = tmp;
+        console.log(this.formations);
+      }, (err) => {
+        console.log(err);
+      }
+    )
+  }
 }

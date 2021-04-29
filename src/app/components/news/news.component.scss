@@ -196,6 +196,10 @@ $color-white: white;
   height: 200px !important;
 }
 
+.p {
+    min-height: 90px;
+}
+
 @media screen and (max-width: 992px) {
   .single-item {
     margin-top: 80px;
