@@ -40,6 +40,8 @@ import { SlideTopComponent } from './slide-top/slide-top.component';
 import { PopupEventComponent } from './components/details/news-all/popup-event/popup-event.component';
 import { TopHeaderSlideComponent } from './layout/header/top-header-slide/top-header-slide.component';
 import { MainHeaderComponent } from './layout/header/main-header/main-header.component';
+import { ClubsComponent } from './components/clubs/clubs.component';
+import { PublicationsComponent } from './components/clubs/publications/publications.component';
 
 @NgModule({
   entryComponents: [
@@ -67,7 +69,9 @@ import { MainHeaderComponent } from './layout/header/main-header/main-header.com
     PopupEventComponent,
     TopHeaderSlideComponent,
     MainHeaderComponent,
-    SanitizeHtml
+    SanitizeHtml,
+    ClubsComponent,
+    PublicationsComponent
   ],
   imports: [
     BrowserModule,

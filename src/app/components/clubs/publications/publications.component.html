@@ -1,0 +1,90 @@
+                <!--Event Area Start-->
+                <div class="event-area section-padding bg-white">
+                  <div class="container-fluid cint">
+                      <div class="row" id="top-row">
+                          <div class="col-md-12">
+                            <div class="section-title-wrapper">
+                              <div class="section-title">
+                                  <h4>PUBLICATIONS</h4>
+                                  <p>
+                                    Les récentes publications des clubs
+                                  </p>
+                                  <div class="bottomy">
+                                    <p class="bottomy-one"></p>
+                                    <div class="bottomy-center">
+                                      <fa name="book"></fa>
+                                    </div>
+                                    <p class="bottomy-two"></p>
+                                  </div>
+
+                              </div>
+                          </div>
+                          </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <div class="contain-sel">
+                            <div class="input-group mb-3">
+                              <select name="club" id="club-select"
+                              [ngModel]="selected" (ngModelChange)="onChange($event)"
+                              aria-label="Search term" aria-describedby="basic-addon">
+                                <option value="all">Lister tout</option>
+                                <option [value]="item.libelle" *ngFor="let item of clubs">{{item.libelle}}</option>
+                              </select>
+                              <div class="input-group-append">
+                                <button class="btn btn-secondary" type="button">
+                                  <fa name="search"></fa>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row rowwy">
+                          <div class="col-lg-4  main-col" *ngFor="let item of four_actu">
+                              <div class="single-event-item">
+                                  <div class="single-event-image">
+                                      <a>
+                                          <img [src]="item.image" alt="" class="imaged">
+                                          <span><span>
+                                            {{item.date_creation.substring(0,2)}}
+                                          </span>
+                                          {{item.date_creation.substring(3,7)}}
+                                        </span>
+                                      </a>
+                                  </div>
+                                  <div class="single-event-text">
+                                      <h3><a>{{item.titre}}</a></h3>
+                                      <div class="single-item-comment-view">
+                                        <span><i class="fa fa-tasks"></i>{{item.club}} - </span>
+                                        <span><i class="fa fa-edit"></i>{{item.posteur}}</span>
+                                    </div>
+                                    <div class="desc" [innerHTML]="item.description | sanitizeHtml">
+                                    </div>
+                                    <div class="daty">
+                                      <i class="fa fa-calendar"></i>
+                                      <span>
+                                        {{item.date_mise_jour}}
+                                      </span>
+                                    </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <div class="content-pagination">
+                            <span *ngFor="let item of nbPagination" (click)="page(item)" [ngClass]="{current : item === currentPagination}">
+                              {{item}}
+                            </span>
+                            <span (click)="page(currentPagination+1)">
+                              <i class="fas fa-arrow-right"></i>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+              <!--End of Event Area-->
