@@ -105,11 +105,12 @@ export class EventsComponent implements OnInit {
         this.news = list;
         this.last_news = this.news.slice(this.minPagination, this.maxPagination);
         this.initPagination();
+        this.loadSrv.load(false);
       }, (err) => {
         console.log(err);
+        this.loadSrv.load(false);
       }
     );
-    this.loadSrv.load(false);
   }
 
   getTopAnnonces() {

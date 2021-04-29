@@ -5,10 +5,10 @@
 export const environment = {
   production: false,
 
-  // endpoint: "http://127.0.0.1:8000/api",
-  // url: "http://127.0.0.1:8000/api",
-  endpoint: "http://toor.cactus.eni.mg/api",
-  url: "http://toor.cactus.eni.mg/api"
+  endpoint: "http://127.0.0.1:8000/api",
+  url: "http://127.0.0.1:8000/api",
+  // endpoint: "http://toor.cactus.eni.mg/api",
+  // url: "http://toor.cactus.eni.mg/api"
 
 
 };

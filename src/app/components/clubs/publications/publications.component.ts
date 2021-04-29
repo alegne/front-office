@@ -1,3 +1,4 @@
+import { LoadingService } from './../../../services/loading/loading.service';
 import { Component, OnInit } from '@angular/core';
 import { Article, Club, ClubsService } from 'src/app/services/clubs/clubs.service';
 import * as $ from 'jquery';
@@ -25,14 +26,16 @@ export class PublicationsComponent implements OnInit {
 
   selected = "all";
 
-  constructor(private clubService: ClubsService) { }
+  constructor(private clubService: ClubsService, private loadService: LoadingService) { }
 
   ngOnInit() {
+    this.loadService.load(true);
     this.getPublications();
     this.getClubs();
   }
 
   onChange(value) {
+    this.loadService.load(true);
     this.pubs = [];
     this.selected = value;
     if (value == "all") {
@@ -48,6 +51,7 @@ export class PublicationsComponent implements OnInit {
     this.initPagination();
     this.four_actu =  this.pubs.slice(0 , 9);
     this.last_actus = this.pubs.slice(this.minPagination, this.maxPagination);
+    this.loadService.load(false);
   }
 
   initPagination() {
@@ -101,8 +105,10 @@ export class PublicationsComponent implements OnInit {
         this.initPagination();
         this.four_actu =  this.pubs.slice(0 , 9);
         this.last_actus = this.pubs.slice(this.minPagination, this.maxPagination);
+        this.loadService.load(false);
       }, (err) => {
         console.log(err);
+        this.loadService.load(false);
       }
     )
   }
