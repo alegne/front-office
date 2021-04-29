@@ -17,6 +17,7 @@ import { MatSnackBar } from '@angular/material';
 })
 export class FooterComponent implements OnInit {
   logo = "./../../../assets/images/ENI/logo-ENl.png";
+  logoUf = "./../../../assets/images/ENI/uf-light.png";
   menu = null;
   facebook = "";
   youtube = "";

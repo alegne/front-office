@@ -112,7 +112,9 @@
                         <div class="col-lg-6 col-md-12 col-12" *ngFor="let item of four_actu; let i=index">
                           <div class="single-latest-item">
                               <div class="single-latest-image">
-                                  <a [href]="item.slug"><img [src]="item.image" alt=""></a>
+                                  <!--<a [href]="item.slug">-->
+                                    <img [src]="item.image" alt="" (click)="showActu(item.titre, item.date_mise_jour, item.posteur)">
+                                  <!--</a>-->
                               </div>
                               <div class="single-latest-text">
                                   <h3><a>{{item.titre}}</a></h3>
@@ -124,8 +126,8 @@
                                 <!-- <div>
                                   {{item.description.substring(0, 100)}}...
                                   </div> -->
-                                <a class="button-default" (click)="showActu(item.titre, item.date_mise_jour, item.posteur)">
-                                  Afficher
+                                 <a class="btn button-default" (click)="showActu(item.titre, item.date_mise_jour, item.posteur)">
+                                   Afficher
                                   </a>
                               </div>
                           </div>
