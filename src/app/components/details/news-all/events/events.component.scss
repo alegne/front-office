@@ -64,9 +64,15 @@ $marginTop: 30px;
     padding: 15px;
     padding-bottom: 20px !important;
     color: #000000a6;
+    height: 200px;
+    overflow-y: auto;
   }
 }
 
+.contain-description::-webkit-scrollbar {
+    width: 1px;
+    background-color: transparent;
+}
 
 .contain-com .contain .contain-title {
   font-size: 20px;
