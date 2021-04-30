@@ -79,7 +79,10 @@ export class LoginComponent implements OnInit {
         // data = {ok, token, id, url}
         if (data) {
           if (data.ok == true) {
-            let url = data.url + "/" + data.id + "/" + type + "/" + data.token;
+            // let url = data.url + "/" + data.id + "/" + type + "/" + data.token;
+
+            let url = data.url + '?token=' + data.token + '&id=' + data.id + '&type=' + data.type
+
             //console.log(url);
             window.location.href = url;
           } else if (data.ok == false) {
