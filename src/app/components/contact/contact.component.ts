@@ -18,6 +18,7 @@ export class ContactComponent implements OnInit {
   email = "";
   objet = "";
   message = "";
+  telephone = "";
 
   endpoint = environment.endpoint;
 
@@ -28,7 +29,8 @@ export class ContactComponent implements OnInit {
       objet :['',Validators.required],
     //   numeroUser: ['',[Validators.required, Validators.pattern(/^(?=\D*\d).{12,13}$/)]],
       // numero: ['',[Validators.pattern(/^(?=\D*\d).{2}\s(?=\D*\d).{2,3}\s(?=\D*\d).{2,3}\s(?=\D*\d).{2,3}$/)]],
-      message: ['',Validators.required]
+      message: ['',Validators.required],
+      telephone: ['',Validators.required],
     })
    }
 
@@ -52,16 +54,16 @@ export class ContactComponent implements OnInit {
     }
     // window.scroll(0,0);
     let data = this.contactForm.value;
-    this.postMessage(data.email, data.objet, data.message);
+    this.postMessage(data.email, data.objet, data.message, data.telephone);
   }
 
-  postMessage(email: string, objet: string, message: string) {
+  postMessage(email: string, objet: string, message: string, telephone: string) {
     this.loadSrv.load(true);
     let options = {
       "email" : email,
       "objet" : objet,
       "message": message,
-      "telephone": " "
+      "telephone": telephone,
     };
     const headers: any = new HttpHeaders({'Content-Type': 'application/json'});
     this.http.post(`${this.endpoint}/messages`, options, headers).subscribe(
@@ -77,6 +79,7 @@ export class ContactComponent implements OnInit {
         this.email = "";
         this.objet = "";
         this.message = "";
+        this.telephone = "";
         } else {
           this._snackBar.open("Veuillez réessayer plustard","", {
             duration: 1500,

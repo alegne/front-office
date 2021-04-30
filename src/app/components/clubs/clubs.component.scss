@@ -1,0 +1,33 @@
+$first-color: #0c2d50;
+$second-color: #002247;
+
+.mainy {
+  width: 100%;
+  background-color: $first-color;
+}
+
+.d-block {
+  width: 100%;
+  height: 400px;
+  max-width: 600px;
+  min-width: 230px;
+  min-height: 400px;
+  margin-top: 30px;
+}
+
+#clubimg {
+  margin: auto;
+}
+
+div#myCarousel {
+  width: 100% !important;
+  //margin-left: -15px !important;
+  margin: auto;
+  /* margin-right: 27px !important; */
+}
+
+.descriClub {
+  top: 30px !important;
+  right: 30px;
+  //vertical-align: middle !important;
+}

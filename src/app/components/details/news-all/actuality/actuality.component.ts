@@ -366,12 +366,13 @@ export class ActualityComponent implements OnInit, PipeTransform {
           console.log("mis tonga");
           this.showActu(this.currentTitre, this.currentDate, this.currentPosteur);
         }
+        this.loadSrv.load(false);
         return this.listActu;
       }, (err) => {
+        this.loadSrv.load(false);
         console.log(err);
       }
     );
-    this.loadSrv.load(false);
   }
 
 }

@@ -1,5 +1,5 @@
-$first-color : #0c2d50;
-$second-color : #002247;
+$first-color: #0c2d50;
+$second-color: #002247;
 $color-white: white;
 
 #mimi-main {
@@ -39,7 +39,7 @@ $color-white: white;
   display: flex;
   flex-direction: row;
   height: 50px;
-  background-color: #002247ef ;
+  background-color: #002247ef;
   justify-content: space-between;
   align-items: center;
 }
@@ -96,7 +96,8 @@ $color-white: white;
     left: 5px;
   }
 
-  #warped, #warped1 {
+  #warped,
+  #warped1 {
     display: none !important;
   }
 
@@ -122,16 +123,17 @@ $color-white: white;
   color: $color-white;
   margin-right: 30px;
   cursor: pointer;
-  padding: 8px;
+  letter-spacing: 1px;
+  padding: 10px;
   font-weight: normal;
   letter-spacing: 1px;
-  width: 150px;
-  background-color: $second-color;
+  width: 160px;
+  border-radius: 10px;
 }
 
 #flags {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
 }
 
 .content-action-header .menu-action .p #img-profile {
@@ -149,7 +151,7 @@ $color-white: white;
 .content-logo-uf {
   position: absolute;
   top: 10px;
-  left:15px;
+  left: 15px;
   cursor: pointer;
 }
 
@@ -318,8 +320,6 @@ $color-white: white;
   }
 }
 
-
-
 @media screen and (max-width: 380px) {
   img#logo-uf {
     height: 50px;
@@ -329,7 +329,8 @@ $color-white: white;
     height: 60px;
   }
 
-  #warped1, #warped2 {
+  #warped1,
+  #warped2 {
     display: none !important;
   }
 
@@ -357,27 +358,33 @@ $color-white: white;
   }
 }
 
-  #external-content {
-    display: none;
-    transition: all 0.3s;
-  }
+#external-content {
+  display: none;
+  transition: all 0.3s;
+}
 
-  li#login-mobile {
-    background: $second-color !important;
-    height: 60px !important;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+#menu-colapse {
+  border-radius: 8px;
+  padding: 10px;
+}
+
+li#login-mobile {
+  background: $second-color !important;
+  height: 60px !important;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 10px;
 }
 
 li#login-mobile span {
-    font-weight: normal;
-    position: relative;
-    top: 3px;
-    font-size: 20px;
-    color: $color-white;
+  font-weight: normal;
+  position: relative;
+  top: 3px;
+  font-size: 20px;
+  color: $color-white;
 }
 
 img#img-profile-mobile {

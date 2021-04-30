@@ -3,12 +3,11 @@
 <div class="main">
   <div class="contain-main">
     <div class="main-head">
-      <h2>
-        ECOLE
-      </h2>
-      <h6>
-        Nationale Informatique
-      </h6>
+      <h5>
+        Ecole Nationale Informatique
+      </h5>
+     
+      <br>
       <p>
         <i class="fas fa-map-marker-alt"></i> &nbsp; Tanambao
       </p>
@@ -46,11 +45,14 @@
       </div>
     </div>
 
-    <!-- <div>
-      <label for="numero">Téléphone</label>
-      <input type="text" name="numero" id="numero" class="form-control"
-      formControlName="numero" placeholder="Téléphone">
-    </div> -->
+    <div>
+      <label for="telephone">Téléphone</label>
+      <input type="text" name="telephone" id="telephone" class="form-control"
+      formControlName="telephone" placeholder="Téléphone" [(ngModel)]="telephone">
+      <div *ngIf="submitted && form.telephone.errors">
+        <small *ngIf="form.telephone.errors.required" class="form-text error-text ">Numero telephone requis</small>
+      </div>
+    </div>
 
     <div>
       <label for="fonction">Objet</label>

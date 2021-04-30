@@ -8,8 +8,6 @@ export const environment = {
 
   endpoint: "http://site.cactus.eni.mg/api",
   url: "http://site.cactus.eni.mg/api"
-
-
 };
 /*
  * For easier debugging in development mode, you can import the following file

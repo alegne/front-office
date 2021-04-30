@@ -23,6 +23,10 @@ export class HeaderService {
       slug : "annonces"
     },
     {
+      titre : "Clubs",
+      slug : "clubs"
+    },
+    {
       titre : "A Propos",
       slug : "Apropos"
     },

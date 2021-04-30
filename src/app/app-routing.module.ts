@@ -1,3 +1,4 @@
+import { ClubsComponent } from './components/clubs/clubs.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ActualityComponent } from './components/details/news-all/actuality/actuality.component';
@@ -40,6 +41,10 @@ const routes: Routes = [
   {
     path : 'Apropos',
     component: AboutComponent
+  },
+  {
+    path : 'clubs',
+    component: ClubsComponent
   }
 ];
 
