@@ -292,12 +292,12 @@ $color-white: white;
     position: absolute;
     width: 50px;
   }
-  img#logo-eni {
-    position: absolute;
-    width: 60px;
-    left: 10px;
-    top: -27px;
-  }
+  // img#logo-eni {
+  //   position: absolute;
+  //   width: 60px;
+  //   left: 10px;
+  //   top: -27px;
+  // }
   // #flags {
   //   margin-top: 85%;
   // }
@@ -719,4 +719,59 @@ img#img-profile-mobile {
   height: 25px;
   left: 135.34px;
   top: 115.28px;
+}
+
+
+@media screen and (max-width: 670px) {
+  .univ-fianar p {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 20px;
+    font-variant: petite-caps;
+  }
+
+  .univ-eni {
+    font-size: 24px;
+    letter-spacing: 1px;
+    word-spacing: 5px;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #ffffff;
+  }
+
+}
+
+@media screen and (max-width: 560px) {
+  #logo-eni {
+    position: absolute;
+    width: 60px;
+    top: -9px;
+    left: -15px;
+}
+}
+
+@media screen and (max-width: 450px) {
+  #logo-eni {
+      position: absolute;
+      width: 60px;
+      top: 100px;
+      left: -15px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .univ-fianar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 5px;
+    margin-top: -10px;
+}
+
+img#logo-eni {
+  position: absolute;
+  width: 46px;
+  left: 12px;
+  top: 97px;
+}
 }

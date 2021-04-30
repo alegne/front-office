@@ -29,8 +29,7 @@ export class ContactComponent implements OnInit {
       objet :['',Validators.required],
     //   numeroUser: ['',[Validators.required, Validators.pattern(/^(?=\D*\d).{12,13}$/)]],
       // numero: ['',[Validators.pattern(/^(?=\D*\d).{2}\s(?=\D*\d).{2,3}\s(?=\D*\d).{2,3}\s(?=\D*\d).{2,3}$/)]],
-      message: ['',Validators.required],
-      telephone: ['',Validators.required],
+      message: ['',Validators.required]
     })
    }
 
@@ -54,16 +53,16 @@ export class ContactComponent implements OnInit {
     }
     // window.scroll(0,0);
     let data = this.contactForm.value;
-    this.postMessage(data.email, data.objet, data.message, data.telephone);
+    this.postMessage(data.email, data.objet, data.message);
   }
 
-  postMessage(email: string, objet: string, message: string, telephone: string) {
+  postMessage(email: string, objet: string, message: string) {
     this.loadSrv.load(true);
     let options = {
       "email" : email,
       "objet" : objet,
       "message": message,
-      "telephone": telephone,
+      "telephone": "",
     };
     const headers: any = new HttpHeaders({'Content-Type': 'application/json'});
     this.http.post(`${this.endpoint}/messages`, options, headers).subscribe(

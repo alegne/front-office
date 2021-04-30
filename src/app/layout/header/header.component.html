@@ -1,6 +1,6 @@
 <app-main-header></app-main-header>
 
-  <section id="carouselExampleFade" class="carousel slide carousel-fade slider" data-ride="carousel">
+  <section id="carouselExampleFade" [ngClass]="{'noData': news.length == 0}" class="carousel slide carousel-fade slider" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item" *ngFor="let item of news; let i = index" [ngClass]="{active: i==0}">
         <img [src]="item.image" class="d-block" alt="...">

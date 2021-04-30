@@ -3,10 +3,15 @@
 <div class="main">
   <div class="contain-main">
     <div class="main-head">
-      <h5>
-        Ecole Nationale Informatique
-      </h5>
-     
+      <div class="contain-name">
+        <h5 class="txt1">
+          Ecole
+        </h5>
+        <h6 class="txt2">
+          Nationale Informatique
+        </h6>
+      </div>
+
       <br>
       <p>
         <i class="fas fa-map-marker-alt"></i> &nbsp; Tanambao
@@ -42,15 +47,6 @@
         <small *ngIf="form.email.errors.email" class="form-text error-text ">
           Veuillez mettre un format email valide
         </small>
-      </div>
-    </div>
-
-    <div>
-      <label for="telephone">Téléphone</label>
-      <input type="text" name="telephone" id="telephone" class="form-control"
-      formControlName="telephone" placeholder="Téléphone" [(ngModel)]="telephone">
-      <div *ngIf="submitted && form.telephone.errors">
-        <small *ngIf="form.telephone.errors.required" class="form-text error-text ">Numero telephone requis</small>
       </div>
     </div>
 

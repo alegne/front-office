@@ -2,6 +2,7 @@ import { LoadingService } from './../../services/loading/loading.service';
 import { Router } from '@angular/router';
 import { Actu, Actuality, NewsService } from './../../services/news/news.service';
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-news',
@@ -16,7 +17,8 @@ export class NewsComponent implements OnInit {
   actuality: Actu[] = [];
   actualities: Actu[];
   noActu = false;
-  constructor(public newsService: NewsService, private router: Router, private loadSrv: LoadingService) { }
+  constructor(public newsService: NewsService, private router: Router,
+    private loadSrv: LoadingService, private _snackBar: MatSnackBar) { }
 
   ngOnInit() {
     // this.actualities = this.newsService.actus;
@@ -69,8 +71,20 @@ export class NewsComponent implements OnInit {
 
             });
             this.actuality = list;
+            if(this.actualities.length == 0) {
+              this.noActu = true;
+            } else {
+              this.noActu = false;
+            }
             //console.log(this.actuality);
             }, (err) => {
+              this._snackBar.open(`Serveur inacessible`, "", {
+                duration: 1500,
+                horizontalPosition: "right",
+                verticalPosition: "bottom",
+                panelClass: ["error_snackbar"]
+              });
+              this.noActu = true;
               console.log(err);
             }
     );

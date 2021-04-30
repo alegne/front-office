@@ -2,6 +2,7 @@ import { LoadingService } from './../../../services/loading/loading.service';
 import { Component, OnInit } from '@angular/core';
 import { Article, Club, ClubsService } from 'src/app/services/clubs/clubs.service';
 import * as $ from 'jquery';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-publications',
@@ -25,8 +26,10 @@ export class PublicationsComponent implements OnInit {
 
 
   selected = "all";
+  noPub: boolean = true;
 
-  constructor(private clubService: ClubsService, private loadService: LoadingService) { }
+  constructor(private clubService: ClubsService,
+    private loadService: LoadingService, private _snackBar: MatSnackBar) { }
 
   ngOnInit() {
     this.loadService.load(true);
@@ -106,9 +109,21 @@ export class PublicationsComponent implements OnInit {
         this.four_actu =  this.pubs.slice(0 , 9);
         this.last_actus = this.pubs.slice(this.minPagination, this.maxPagination);
         this.loadService.load(false);
+        if (this.pubsTmp.length == 0) {
+          this.noPub = true;
+        } else {
+          this.noPub = false;
+        }
       }, (err) => {
+        this.noPub = true;
         console.log(err);
         this.loadService.load(false);
+        this._snackBar.open(`Serveur inacessible`, "", {
+          duration: 1500,
+          horizontalPosition: "right",
+          verticalPosition: "bottom",
+          panelClass: ["error_snackbar"]
+        });
       }
     )
   }

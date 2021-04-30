@@ -13,7 +13,7 @@ $second-color: #002247;
       #ffffff09,
       #ffffff00
     ),
-    url("./../../../assets/images/background/Vue-aérienne-1024x414.jpg");
+    url("./../../../assets/images/ENI/Etablissement.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -82,17 +82,20 @@ input {
 
 .contain-main {
   // padding: 20px;
-  // width: 250px;
-  //border: 2px solid #0c2d50;
+  width: 250px;
+  border: 2px solid #0c2d50;
   // font-weight: bold;
   padding: 20px;
-  width: 350px;
+  // width: 350px;
   // border: 2px solid rgba(255, 255, 255, 0.521);
   font-weight: 500;
   color: #0c2d50;
 }
 
-.main-head h5 {
+.txt1 {
+  font-size: 40px;
+  letter-spacing: 17px;
+  text-transform: uppercase;
 }
 
 .main-head h6 {

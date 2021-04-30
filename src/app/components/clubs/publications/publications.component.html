@@ -72,6 +72,11 @@
                                   </div>
                               </div>
                           </div>
+                          <div class="col-lg-12" *ngIf="noPub">
+                            <div class="no-actu">
+                              Aucune publication
+                            </div>
+                          </div>
                       </div>
                       <div class="row">
                         <div class="col-lg-12">
@@ -79,7 +84,7 @@
                             <span *ngFor="let item of nbPagination" (click)="page(item)" [ngClass]="{current : item === currentPagination}">
                               {{item}}
                             </span>
-                            <span (click)="page(currentPagination+1)">
+                            <span (click)="page(currentPagination+1)" *ngIf="!noPub">
                               <i class="fas fa-arrow-right"></i>
                             </span>
                           </div>

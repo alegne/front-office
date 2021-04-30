@@ -242,3 +242,17 @@ $color-white: #ffffff;
     margin-top: 40px;
   }
 }
+
+.no-news {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 130px;
+  margin-top: -30px;
+  background: whitesmoke;
+  color: $first-color;
+  font-weight: bold;
+  align-items: center;
+  border-radius: 5px;
+  font-size: 18px;
+}

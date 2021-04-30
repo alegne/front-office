@@ -10,7 +10,7 @@
     <fa name="globe" animation="spin"></fa>
   </div>
   <div class="row">
-    <div class="col-lg-5">
+    <div class="col-lg-5" *ngIf="!noNews">
       <div class="section-left">
         <div class="section-left-date">
           <p class="p1">
@@ -96,7 +96,7 @@
                                         <span *ngIf="!isNews">actualités</span>
                                         <span *ngIf="isNews">nouvelles</span>
                                       </h3>
-                                      <p>Lorem ipsum dolor sit ameru</p>
+                                      <p>Les informations partagées</p>
                                       <div class="bottomy">
                                         <p class="bottomy-one"></p>
                                         <div class="bottomy-center">
@@ -132,13 +132,22 @@
                               </div>
                           </div>
                       </div>
+                      <div class="col-lg-12" *ngIf="noNews">
+                        <div class="no-actu">
+                          Aucune &nbsp;
+                          <span *ngIf="isNews">nouvelle</span>
+                          <span *ngIf="!isNews">actualité</span>
+                          &nbsp;
+                          disponible
+                        </div>
+                      </div>
                       </div>
                   </div>
                   <div class="content-pagination">
                     <span *ngFor="let item of nbPagination" (click)="page(item)" [ngClass]="{current : item === currentPagination}">
                       {{item}}
                     </span>
-                    <span (click)="page(currentPagination+1)">
+                    <span (click)="page(currentPagination+1)" *ngIf="!noNews">
                       <i class="fas fa-arrow-right"></i>
                     </span>
                   </div>
