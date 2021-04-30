@@ -83,8 +83,9 @@ export class LoginComponent implements OnInit {
 
             let url = data.url + '?token=' + data.token + '&id=' + data.id + '&type=' + data.type
 
-            //console.log(url);
+            console.log('redirection', url);
             window.location.href = url;
+
           } else if (data.ok == false) {
             this.isLogin = false;
             this.error = data.message;
