@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { NewsService, Actuality, Actu } from './../../services/news/news.service';
 import { HeaderService } from './../../services/Header/header.service';
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-header',
@@ -40,7 +41,7 @@ export class HeaderComponent implements OnInit {
 
 
   constructor(public headerService: HeaderService, public newsService: NewsService,
-    private router: Router, private loadSrv: LoadingService) { }
+    private router: Router, private loadSrv: LoadingService, private _snackBar: MatSnackBar) { }
 
   ngOnInit() {
     this.menu = this.headerService.menu;
@@ -80,6 +81,12 @@ export class HeaderComponent implements OnInit {
             this.news = list;
             }, (err) => {
               console.log(err);
+              this._snackBar.open(`Serveur inacessible`, "", {
+                duration: 1500,
+                horizontalPosition: "right",
+                verticalPosition: "bottom",
+                panelClass: ["error_snackbar"]
+              });
             }
     );
     this.loadSrv.load(false);

@@ -5,6 +5,7 @@ import * as $ from 'jquery';
 import { ActivatedRoute } from '@angular/router';
 import { Pipe, PipeTransform } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-actuality',
@@ -55,10 +56,13 @@ export class ActualityComponent implements OnInit, PipeTransform {
 
   wys = "<p>Holla</p><h4>Mama</h4>&lt;";
 
+  noNews = true;
+
   constructor(private newsService: NewsService,
     private activatedRoute : ActivatedRoute,
     private loadSrv: LoadingService,
-    private _sanitizer: DomSanitizer) {
+    private _sanitizer: DomSanitizer,
+    private _snackBar: MatSnackBar) {
     let type : string = this.activatedRoute.snapshot.paramMap.get("type");
     let titre : string = this.activatedRoute.snapshot.paramMap.get("titre");
     let date : string = this.activatedRoute.snapshot.paramMap.get("date");
@@ -367,10 +371,22 @@ export class ActualityComponent implements OnInit, PipeTransform {
           this.showActu(this.currentTitre, this.currentDate, this.currentPosteur);
         }
         this.loadSrv.load(false);
+        if (this.listActu.length == 0) {
+          this.noNews = true;
+        } else {
+          this.noNews = false;
+        }
         return this.listActu;
       }, (err) => {
         this.loadSrv.load(false);
+        this.noNews = true;
         console.log(err);
+        this._snackBar.open(`Serveur inacessible`, "", {
+          duration: 1500,
+          horizontalPosition: "right",
+          verticalPosition: "bottom",
+          panelClass: ["error_snackbar"]
+        });
       }
     );
   }

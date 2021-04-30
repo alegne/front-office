@@ -22,7 +22,7 @@ export class FormationsComponent implements OnInit {
   txt1 = "Licence";
   txt2 = "Master";
   txt3 = "Doctorat";
-
+  noNews: boolean = false;
 
   formations: Formation[] = [];
 
@@ -40,8 +40,12 @@ export class FormationsComponent implements OnInit {
         let tmp = data.data;
         this.formations = tmp;
         console.log(this.formations);
+        if (this.formations.length == 0) {
+          this.noNews = true;
+        }
       }, (err) => {
         console.log(err);
+        this.noNews = true;
       }
     )
   }

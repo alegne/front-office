@@ -272,3 +272,17 @@ h3.section-right-h3 {
 .current {
   cursor: auto !important;
 }
+
+.no-actu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 130px;
+  margin-top: 0px;
+  background: whitesmoke;
+  color: $first-color;
+  font-weight: bold;
+  align-items: center;
+  border-radius: 5px;
+  font-size: 18px;
+}
