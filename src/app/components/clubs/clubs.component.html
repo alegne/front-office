@@ -8,14 +8,21 @@
       data-slide-to=" + i +" [ngClass]="{'active': i == 0}"></li>
 
     </ol>
-    <div class="carousel-inner" role="listbox">
+    <div class="carousel-inner container " role="listbox">
       <div class="carousel-item" *ngFor="let item of clubs; let i=index" [ngClass]="{'active': i == 0}">
-        <img class="d-block w-100" [src]="item.image" alt="club">
-          <div class="carousel-caption">
-            <h3>{{item.libelle}}</h3>
-            <div [innerHTML]="item.description | sanitizeHtml">
+        <div class="row" style="margin: auto !important;">
+          <div class="col-md-5 d-block">
+            <img class="img-fluid" id="clubimg" [src]="item.image" alt="club">
+          </div>
+          <div class="col-md-6 ">
+            <div class="carousel-caption descriClub">
+              <h3>{{item.libelle}}</h3>
+              <div [innerHTML]="item.description | sanitizeHtml">
+              </div>
             </div>
           </div>
+          
+        </div>
       </div>
     </div>
     <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">

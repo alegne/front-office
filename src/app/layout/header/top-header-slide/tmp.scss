@@ -1,79 +1,78 @@
 @mixin transition($params) {
   -webkit-transition: $params;
-     -moz-transition: $params;
-   -khtml-transition: $params;
-       -o-transition: $params;
-          transition: $params;
+  -moz-transition: $params;
+  -khtml-transition: $params;
+  -o-transition: $params;
+  transition: $params;
 }
 
 @mixin scale($params) {
   -webkit-transform: scale($params);
-     -moz-transform: scale($params);
-   -khtml-transform: scale($params);
-       -o-transform: scale($params);
-          transform: scale($params);
+  -moz-transform: scale($params);
+  -khtml-transform: scale($params);
+  -o-transform: scale($params);
+  transform: scale($params);
 }
 
 @mixin box-shadow($params) {
-  -webkit-box-shadow:$params;
-     -moz-box-shadow:$params;
-   -khtml-box-shadow:$params;
-       -o-box-shadow:$params;
-          box-shadow:$params;
+  -webkit-box-shadow: $params;
+  -moz-box-shadow: $params;
+  -khtml-box-shadow: $params;
+  -o-box-shadow: $params;
+  box-shadow: $params;
 }
 
 @mixin rotate($params) {
   -webkit-transform: rotate($params);
-     -moz-transform: rotate($params);
-   -khtml-transform: rotate($params);
-       -o-transform: rotate($params);
-          transform: rotate($params);
+  -moz-transform: rotate($params);
+  -khtml-transform: rotate($params);
+  -o-transform: rotate($params);
+  transform: rotate($params);
 }
 
 @mixin opacity($opacity) {
-  -webkit-opacity:$opacity;
-     -moz-opacity:$opacity;
-   -khtml-opacity:$opacity;
-       -o-opacity:$opacity;
-          opacity:$opacity;
+  -webkit-opacity: $opacity;
+  -moz-opacity: $opacity;
+  -khtml-opacity: $opacity;
+  -o-opacity: $opacity;
+  opacity: $opacity;
 }
 
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
-     -moz-border-radius: $radius;
-   -khtml-border-radius: $radius;
-       -o-border-radius: $radius;
-          border-radius: $radius;
+  -moz-border-radius: $radius;
+  -khtml-border-radius: $radius;
+  -o-border-radius: $radius;
+  border-radius: $radius;
 }
-
 
 #mobile {
   height: 100vh;
   width: 40vh;
-  background:#7988a5;
+  background: #0c2d50;
   position: absolute;
   z-index: 400;
   margin: 0px;
-  @include box-shadow(0px 0px 20px 0px rgba(0,0,0,0.1));
-  overflow:hidden;
+  @include box-shadow(0px 0px 20px 0px rgba(0, 0, 0, 0.048));
+  overflow: hidden;
 }
 #top-content {
-  @include box-shadow(0px 0px 20px 0px rgba(0,0,0,0.1));
-  overflow:hidden;
+  @include box-shadow(0px 0px 20px 0px rgba(0, 0, 0, 0.1));
+  overflow: hidden;
 }
 
 #nav {
-  position:absolute;
-  z-index:10;
-  list-style-type:none;
-  margin:15px 0 0 20px;
-  padding:0;
-  overflow:hidden;
+  position: absolute;
+  z-index: 10;
+  list-style-type: none;
+  margin: 15px 0 0 20px;
+  padding: 0;
+  overflow: hidden;
   li {
-    height:35px;
-    width:0;
-    margin:30px 0;
-    background:#eae8e5;
+    height: 35px;
+    width: 0;
+    margin: 30px 0;
+    background: #eae8e5;
     font-weight: 500;
     padding: 5px;
     @include transition(all 0.4s ease-in);
@@ -91,16 +90,14 @@
 
 .navigation {
   #nav li {
-    width:200px;
-    margin-left:0;
+    width: 200px;
+    margin-left: 0;
   }
 }
 
 .demo1.navigation {
   #mobileBodyContent {
     @include scale(0.85);
-    margin-left:260px;
+    margin-left: 260px;
   }
 }
-
-

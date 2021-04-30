@@ -21,7 +21,7 @@
         <div class="p" (click)="login()">
           <img [src]="profile" alt="" id="img-profile">
           <span>
-            Login
+            Se Connecter
           </span>
         </div>
       </div>
@@ -59,13 +59,13 @@
 <div class="external-content" id="external-content">
   <div id="mobile" class="demo1">
     <ul id="nav">
-      <li *ngFor="let item of menu">
+      <li *ngFor="let item of menu" id="menu-colapse">
         {{item.titre}}
       </li>
       <li id="login-mobile" (click)="login()">
         <img [src]="profile" alt="" id="img-profile-mobile">
         <span>
-          Login
+          Se Connecter
         </span>
       </li>
     </ul>
