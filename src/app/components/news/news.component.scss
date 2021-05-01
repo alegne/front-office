@@ -41,7 +41,7 @@ $color-white: white;
     background: #ffffff none repeat scroll 0 0;
     box-shadow: 0 2px 20px rgba(34, 30, 31, 0.4);
 }
-.single-item-text h4 {font-size: 20px; padding-top: 7px;}
+.single-item-text h4 {font-size: 20px; padding-top: 7px;height: 60px;}
 .single-item-text h4 a, .single-item-text h4 {color: #2d3e50;}
 .single-item-text-info span {
     color: #696969;
@@ -49,13 +49,14 @@ $color-white: white;
     margin-right: 11px;
 }
 .single-item-text-info span span {color: #2d3e50;}
-.single-item-text > .p {color: #222222;margin-bottom: 50px;}
+.single-item-text > .p {color: #222222;margin-bottom: 50px;height: 100px;}
 .single-item-content {
     margin-bottom: 44px;
     overflow: hidden;
     padding-top: 21px;
 }
-.single-item-text-info {margin-bottom: 18px; padding-top: 5px;}
+.single-item-text-info {margin-bottom: 18px; padding-top: 5px; font-size: 15px;}
+.single-item-text-info fa {margin-right: 10px;}
 .single-item-comment-view span {
     color: #696969;
     display: inline-block;

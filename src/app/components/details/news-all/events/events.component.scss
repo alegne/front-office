@@ -46,7 +46,9 @@ $marginTop: 30px;
 }
 
 .contain-img {
-  max-width: 100%;
+  width: 100%;
+  max-height: 200px;
+  min-height: 200px;
 }
 
 .contain-com {
@@ -59,12 +61,21 @@ $marginTop: 30px;
     padding-left: 15px;
     padding-right: 15px;
     color: #000000a6;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    font-size: 13px;
+    font-style: italic;
+  }
+  .contain-date fa {
+    margin-right: 10px;
   }
   .contain-description {
     padding: 15px;
     padding-bottom: 20px !important;
     color: #000000a6;
-    height: 200px;
+    height: 150px;
     overflow-y: auto;
   }
 }
@@ -135,7 +146,7 @@ $marginTop: 30px;
 }
 
 .description-other .detail-other {
-  font-weight: 500;
+  font-weight: normal;
 }
 
 .list-com .lire-plus {
@@ -165,6 +176,15 @@ $marginTop: 30px;
 
 .current {
   cursor: auto !important;
+}
+
+.date-other {
+  font-size: 16px;
+  font-style: italic;
+}
+
+.date-other fa {
+  margin-right: 10px;
 }
 
 @media screen and (min-width: 992px) {

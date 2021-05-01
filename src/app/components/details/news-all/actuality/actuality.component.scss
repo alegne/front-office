@@ -5,6 +5,14 @@ $second-color : #002247;
 /*  7. Latest News Area
 /*----------------------------------------*/
 .latest-area {padding: 120px 0 70px;}
+.single-latest-text {
+  height: 320px;
+}
+
+.single-latest-image img {
+  height: 290px;
+}
+
 .single-latest-text > h3 {
     font-family: raleway;
     font-size: 22px;
@@ -30,7 +38,8 @@ $second-color : #002247;
 .single-latest-item .single-item-comment-view span {margin-right: 13px;}
 .single-latest-item .single-item-comment-view {
     display: block;
-    margin-bottom: 2px;
+    margin-bottom: 6px;
+    margin-top: 6px;
 }
 .single-latest-item .button-default {
     font-size: 13px;

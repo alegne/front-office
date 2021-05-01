@@ -12,7 +12,7 @@ import { ConfigurationsService } from 'src/app/services/configurations/configura
 })
 export class DirectorWordComponent implements OnInit {
   // https://res.cloudinary.com/team-stenny/image/upload/v1619532580/directeur_itg66p.jpg
-  imgDirector = "./../../../assets/images/ENI/directeur.jpeg";
+  imgDirector = "";
   nameDirector = "";
   wordDirector = "";
 

@@ -61,8 +61,7 @@ export class ContactComponent implements OnInit {
     let options = {
       "email" : email,
       "objet" : objet,
-      "message": message,
-      "telephone": "",
+      "message": message
     };
     const headers: any = new HttpHeaders({'Content-Type': 'application/json'});
     this.http.post(`${this.endpoint}/messages`, options, headers).subscribe(

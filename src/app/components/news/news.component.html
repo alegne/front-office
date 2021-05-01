@@ -29,13 +29,13 @@
                                   <div class="single-item-text">
                                       <h4><a>{{item.titre}}</a></h4>
                                       <div class="single-item-text-info">
-                                          <span>By: <span>{{item.posteur}}</span></span> <br>
-                                          <span>Date: <span>{{item.date_mise_jour}}</span></span>
+                                          <span> <fa name="pen"></fa> <span>{{item.posteur}}</span></span> <br>
+                                          <span><fa name="calendar"></fa> <span>{{item.date_mise_jour}}</span></span>
                                       </div>
                                       <!-- <p>
                                         {{item.description.substring(0, 150)}}...
                                       </p> -->
-                                      <div class="p" [innerHTML]="item.description.substring(0, 150) | sanitizeHtml">
+                                      <div class="p" [innerHTML]="item.description.substring(0, 140)+'...' | sanitizeHtml">
                                       </div>
                                   </div>
                                   <div class="button-bottom" (click)="seeActu(item.titre, item.date_mise_jour, item.posteur)">

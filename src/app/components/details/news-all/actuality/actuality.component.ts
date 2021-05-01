@@ -52,7 +52,7 @@ export class ActualityComponent implements OnInit, PipeTransform {
 
   galleryTmp : String[] = [];
 
-  defaultImg = "./../../../../../assets/images/course/1.jpg";
+  defaultImg = "./../../../../../assets/images/background/grey.png";
 
   wys = "<p>Holla</p><h4>Mama</h4>&lt;";
 
@@ -241,7 +241,7 @@ export class ActualityComponent implements OnInit, PipeTransform {
     let heure =  data.substring(11,16);
     // console.log(jour +  " " + this.voirMois(mois) + " " + annee+ " à " + heure);
     if (isUpdate) {
-      var newDate = jour +  " " + this.voirMois(mois) + " " + annee + " à " + heure;
+      var newDate = jour +  " " + this.voirMois(mois) + " " + annee + "  " + heure;
     } else {
       var newDate = jour +  " " + this.voirMois(mois) + " " + annee;
     }
@@ -347,9 +347,7 @@ export class ActualityComponent implements OnInit, PipeTransform {
           if (element.galerie == null) {
             element.galerie = [];
             for (let index = 0; index < 3; index++) {
-              let ind = index + 1;
-              let url = "./../../../../../assets/images/course/" + ind +".jpg"
-              element.galerie.push(url);
+              element.galerie.push(this.defaultImg);
             }
           }
           if (this.isNews && element.type == "nouvelle") {

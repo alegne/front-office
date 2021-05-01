@@ -36,7 +36,7 @@ export class EventsComponent implements OnInit {
   minPagination = 3;
   maxPagination = 6;
 
-  defaultImg = "./../../../../../assets/images/background/Anon151-Boundless-Banner-hd.jpg";
+  defaultImg = "./../../../../../assets/images/background/grey.png";
 
   constructor(public newsService: NewsService, private dialog: MatDialog,
     private annonceService: AnnoncesService, private loadSrv: LoadingService) { }

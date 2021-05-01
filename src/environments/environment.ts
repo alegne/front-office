@@ -4,6 +4,8 @@
 
 export const environment = {
   production: false,
+  // endpoint: "http://127.0.0.1:8000/api",
+  // url: "http://127.0.0.1:8000/api"
   endpoint: "http://bcactus.aaeni.fr/api",
   url: "http://bcactus.aaeni.fr/api"
 };

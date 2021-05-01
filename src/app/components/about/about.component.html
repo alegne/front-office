@@ -47,9 +47,13 @@
                                       </a>
                                       </h3>
                                       <h4>Ordre général</h4>
-                                      <p *ngIf="information">
-                                        {{information.substring(0, 150)}}...
+
+                                      <p *ngIf="information"
+                                      [innerHTML]="information.substring(0, 100)+'...' | sanitizeHtml">
                                       </p>
+                                      <!-- <p >
+                                        {{information.substring(0, 150)}}...
+                                      </p> -->
                                       <!-- <div class="social-links">
                                           <a><i class="fas fa-info-circle"></i></a>
                                           <a><i class="fas fa-landmark"></i></a>
@@ -69,9 +73,12 @@
                                   <div class="single-teacher-text">
                                       <h3><a>Historique</a></h3>
                                       <h4>Décret</h4>
-                                      <p *ngIf="historique">
-                                        {{historique.substring(0, 150)}}...
+                                      <p *ngIf="historique"
+                                      [innerHTML]="historique.substring(0, 100)+'...' | sanitizeHtml">
                                       </p>
+                                      <!-- <p *ngIf="historique">
+                                        {{historique.substring(0, 150)}}...
+                                      </p> -->
                                       <!-- <div class="social-links">
                                         <a><i class="fas fa-info-circle"></i></a>
                                           <a><i class="fas fa-landmark"></i></a>
@@ -91,9 +98,12 @@
                                   <div class="single-teacher-text">
                                       <h3><a>Missions</a></h3>
                                       <h4>Formation</h4>
-                                      <p *ngIf="mission">
-                                        {{mission.substring(0, 150)}}...
+                                      <p *ngIf="mission"
+                                      [innerHTML]="mission.substring(0, 100)+'...' | sanitizeHtml">
                                       </p>
+                                      <!-- <p *ngIf="mission">
+                                        {{mission.substring(0, 150)}}...
+                                      </p> -->
                                       <!-- <div class="social-links">
                                         <a><i class="fas fa-info-circle"></i></a>
                                           <a><i class="fas fa-landmark"></i></a>
@@ -113,9 +123,12 @@
                                   <div class="single-teacher-text">
                                       <h3><a>Spécialisation</a></h3>
                                       <h4>Domaine</h4>
-                                      <p *ngIf="specification">
-                                        {{specification.substring(0, 150)}}...
+                                      <p *ngIf="specification"
+                                      [innerHTML]="specification.substring(0, 100)+'...' | sanitizeHtml">
                                       </p>
+                                      <!-- <p *ngIf="specification">
+                                        {{specification.substring(0, 150)}}...
+                                      </p> -->
                                       <!-- <div class="social-links">
                                         <a><i class="fas fa-info-circle"></i></a>
                                           <a><i class="fas fa-landmark"></i></a>
@@ -137,9 +150,11 @@
     <i class="fas fa-info-circle"></i>
     Information d'ordre général
   </h3>
-  <p>
-    {{information}}
+  <p [innerHTML]="information | sanitizeHtml">
   </p>
+  <!-- <p>
+    {{information}}
+  </p> -->
   <p *ngIf="!information">
     L' Ecole Nationale d'Informatique, en abrégé ENI, est un établissement d'enseignement
     supérieur rattaché académiquement et administrativement à l'Université de Fianarantsoa.
@@ -157,7 +172,8 @@
     <i class="fas fa-landmark"></i>
     Historique
   </h3>
-    {{historique}}
+  <p [innerHTML]="historique | sanitizeHtml">
+  </p>
   <p *ngIf="!historique">
     L’ENI se positionne sur l’échiquier socio-éducatif malgache comme étant le plus puissant
     secteur de diffusion et de vulgarisation des connaissances et des technologies informatiques.
@@ -182,9 +198,11 @@
     <i class="fas fa-graduation-cap"></i>
     Missions
   </h3>
-  <div>
-    {{mission}}
+  <div [innerHTML]="mission | sanitizeHtml">
   </div>
+  <!-- <div>
+    {{mission}}
+  </div> -->
   <div *ngIf="!mission">
     L’ENI a pour conséquent pour mission de former des
     spécialistes informaticiens compétents et opérationnels de différents niveaux notamment :
@@ -219,9 +237,11 @@
     <i class="fas fa-chalkboard-teacher"></i>
     Domaine de spécialisation
   </h3>
-  <div>
-    {{specification}}
+  <div [innerHTML]="specification | sanitizeHtml">
   </div>
+  <!-- <div>
+    {{specification}}
+  </div> -->
   <div *ngIf="!specification">
     Les activités de formation et de recherche organisées à l'ENI portent sur les domaines suivants :
     <ul>

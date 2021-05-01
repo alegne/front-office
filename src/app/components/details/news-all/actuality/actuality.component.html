@@ -122,7 +122,7 @@
                                     <span><i class="fa fa-calendar"></i>{{item.date_creation}}</span>
                                 </div>
 
-                                <div [innerHTML]="item.description.substring(0, 100) | sanitizeHtml"></div>
+                                <div [innerHTML]="item.description.substring(0, 100)+'...' | sanitizeHtml"></div>
                                 <!-- <div>
                                   {{item.description.substring(0, 100)}}...
                                   </div> -->
@@ -143,11 +143,11 @@
                       </div>
                       </div>
                   </div>
-                  <div class="content-pagination">
+                  <div class="content-pagination" *ngIf="nbPagination.length > 1">
                     <span *ngFor="let item of nbPagination" (click)="page(item)" [ngClass]="{current : item === currentPagination}">
                       {{item}}
                     </span>
-                    <span (click)="page(currentPagination+1)" *ngIf="!noNews">
+                    <span (click)="page(currentPagination+1)" *ngIf="!noNews && nbPagination.length > 1">
                       <i class="fas fa-arrow-right"></i>
                     </span>
                   </div>

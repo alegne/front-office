@@ -22,8 +22,12 @@
             <div class="contain">
               <img [src]="item.image" alt="" class="contain-img">
               <h4 class="contain-title">{{item.titre}}</h4>
-              <p class="contain-date">{{item.date_mise_jour}}</p>
-              <div class="contain-description" [innerHTML]="item.description.substring(0, 200) | sanitizeHtml"></div>
+              <p class="contain-date">
+                <fa name="calendar"></fa>
+                {{item.date_mise_jour}}
+              </p>
+              <div class="contain-description" [innerHTML]="item.description.substring(0, 120)+'...' | sanitizeHtml">
+              </div>
 
               <!-- <div class="contain-description">{{item.description.substring(0, 200)}}...</div> -->
 
@@ -47,13 +51,14 @@
         </div>
         <div class="col-lg-7">
           <div class="description-other">
-            <p class="date-other">
-              {{item.date_mise_jour}}
-            </p>
             <p class="title-other">
               {{item.titre}}
             </p>
-            <div class="detail-other" [innerHTML]="item.description.substring(0, 100) | sanitizeHtml"></div>
+            <p class="date-other">
+              <fa name="calendar"></fa>
+              {{item.date_mise_jour}}
+            </p>
+            <div class="detail-other" [innerHTML]="item.description.substring(0, 100)+'...' | sanitizeHtml"></div>
 
             <!-- <div class="detail-other">
               {{item.description.substring(0, 100)}}...
@@ -69,11 +74,11 @@
         </div>
       </div>
     </div>
-    <div class="content-pagination" *ngIf="nbPagination.length > 0">
+    <div class="content-pagination" *ngIf="nbPagination.length > 0 && nbPagination.length > 1">
       <span *ngFor="let item of nbPagination" (click)="page(item)" [ngClass]="{current : item === currentPagination}">
         {{item}}
       </span>
-      <span (click)="page(currentPagination+1)">
+      <span (click)="page(currentPagination+1)" *ngIf="nbPagination.length > 1">
         <i class="fas fa-arrow-right"></i>
       </span>
     </div>

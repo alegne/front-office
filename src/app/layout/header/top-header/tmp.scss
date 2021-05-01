@@ -47,15 +47,21 @@
 }
 
 #mobile-main {
-  height: 100vh;
+  height: 500px;
   width: 40vh;
   background: #0c2d50;
   position: absolute;
   z-index: 400;
   margin: 0px;
   @include box-shadow(0px 0px 20px 0px rgba(0, 0, 0, 0.1));
-  overflow: hidden;
+  overflow-y: auto;
 }
+
+#mobile-main::-webkit-scrollbar {
+  width: 1px;
+  background: transparent;
+}
+
 #top-content {
   @include box-shadow(0px 0px 20px 0px rgba(0, 0, 0, 0.1));
   overflow: hidden;

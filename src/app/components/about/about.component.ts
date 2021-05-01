@@ -27,7 +27,7 @@ export class AboutComponent implements OnInit {
   scrollTo(section) {
     document.querySelector('#' + section)
     .scrollIntoView();
-    document.getElementById("parentDiv").scrollTop -= 200;
+    document.getElementById("parentDiv").scrollTop -= 110;
   }
 
   constructor(private confService: ConfigurationsService) { }

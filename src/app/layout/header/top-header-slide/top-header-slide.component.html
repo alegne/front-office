@@ -60,7 +60,9 @@
   <div id="mobile" class="demo1">
     <ul id="nav">
       <li *ngFor="let item of menu" id="menu-colapse">
-        {{item.titre}}
+        <a [href]="item.slug" style="color: inherit;">
+          {{item.titre}}
+        </a>
       </li>
       <li id="login-mobile" (click)="login()">
         <img [src]="profile" alt="" id="img-profile-mobile">
