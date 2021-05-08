@@ -129,7 +129,8 @@ $color-white: white;
   font-weight: normal;
   letter-spacing: 1px;
   width: 160px;
-  border-radius: 10px;
+  // border-radius: 10px;
+  background-color: $second-color;
 }
 
 #flags {

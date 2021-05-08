@@ -1,7 +1,7 @@
 <span id="the-toppyy"></span>
 <app-main-header></app-main-header>
 
-
+<div id="mis_azy">
 <div class="contain-section container" id="the-toppy">
   <div class="top-tite" (click)="slideToActu()">
     <span *ngIf="!isNews">Les actualités</span>
@@ -56,8 +56,8 @@
             <img [src]="item" alt="" class="image">
             <div class="overlay">
               <div class="text">
-                <span *ngIf="!isNews">Actualité</span>
-                <span *ngIf="isNews">Nouvelle</span>
+                <!-- <span *ngIf="!isNews">Actualité</span>
+                <span *ngIf="isNews">Nouvelle</span> -->
               </div>
             </div>
           </div>
@@ -154,5 +154,6 @@
               </div>
               <!--End of Latest News Area-->
 
+</div>
 <app-footer></app-footer>
 

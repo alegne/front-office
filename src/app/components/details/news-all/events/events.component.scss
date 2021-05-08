@@ -3,6 +3,9 @@ $second-color : #002247;
 $color-white: white;
 $blue: #005cb9;
 
+@import url("http://getbootstrap.com.vn/examples/equal-height-columns/equal-height-columns.css");
+
+
 $marginTop: 30px;
 .main {
   width: 84%;
@@ -47,8 +50,8 @@ $marginTop: 30px;
 
 .contain-img {
   width: 100%;
-  max-height: 200px;
-  min-height: 200px;
+  // max-height: 200px;
+  // min-height: 200px;
 }
 
 .contain-com {

@@ -1,6 +1,10 @@
 $first-color: #0c2d50;
 $second-color: #002247;
 
+iframe#frame_id {
+  width: 100%;
+}
+
 .main {
   height: 700px;
   width: 100%;
@@ -127,7 +131,7 @@ input {
   }
 
   .main {
-    height: 880px;
+    height: 1000px;
   }
 }
 
@@ -236,3 +240,4 @@ input {
       0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
   }
 }
+

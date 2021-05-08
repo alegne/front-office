@@ -14,10 +14,10 @@ export class HeaderService {
       titre : "Actualités",
       slug : "evenements/actualités"
     },
-    {
-      titre : "Nouvelles",
-      slug : "evenements/nouvelles"
-    },
+    // {
+    //   titre : "Nouvelles",
+    //   slug : "evenements/nouvelles"
+    // },
     {
       titre : "Annonces",
       slug : "annonces"

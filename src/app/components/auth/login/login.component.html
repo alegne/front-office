@@ -1,9 +1,9 @@
   <div class="content">
     <div id="progress-man">
-      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+      <mat-progress-bar mode="buffer"></mat-progress-bar>
     </div>
 
-    
+
       <div class="" id="loginheader">
         <div class="left-side row">
           <div class="cool-md-4 logoimg">
@@ -32,7 +32,7 @@
                 <mat-icon matSuffix>assignment_ind</mat-icon>
               </mat-form-field>
           </div>
-  
+
           <div class="content-form-field field">
               <mat-form-field>
                 <mat-label>Identifiant/Email</mat-label>
@@ -40,7 +40,7 @@
                 <mat-icon matSuffix>account_circle</mat-icon>
               </mat-form-field>
           </div>
-  
+
           <div class="content-form-field field">
             <mat-form-field>
               <mat-label>Mot de passe</mat-label>
@@ -51,13 +51,13 @@
           <!-- <div class="forgot-pass">
             Mot de passe <span>oublié</span> ?
           </div> -->
-  
+
           <div class="contain-error">
             <p *ngIf="error">
               {{error}}
             </p>
           </div>
-  
+
           <div class="content-btn">
               <button class="btn_connecter" type="submit">
                 <div class="loader" *ngIf="isLogin">...</div>

@@ -279,3 +279,12 @@ $second-color : #002247;
   justify-content: flex-end;
   opacity: 0.7;
 }
+
+@media screen and (max-width: 800px) {
+  .single-teacher-item:hover .single-teacher-text {
+    margin-top: -45px;
+    padding: 20px 26px 66px;
+    position: relative !important;
+    z-index: 9;
+}
+}

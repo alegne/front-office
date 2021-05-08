@@ -155,14 +155,9 @@ export class ActualityComponent implements OnInit, PipeTransform {
   }
 
   showActu(titre, date, posteur) {
-    // console.log("show");
     let tempActu: Actu = null;
     this.listActu.forEach(element => {
-      // console.log(element.titre + " et " + titre);
-      // console.log(element.date_mise_jour + " et " + date);
-      // console.log(element.posteur + " et " + posteur);
       if (element.titre == titre && element.date_mise_jour == date && element.posteur == posteur) {
-        // console.log("ito");
         tempActu = element;
       }
     });
@@ -189,15 +184,19 @@ export class ActualityComponent implements OnInit, PipeTransform {
   }
 
   slideToActu() {
+    // $("#mis_azy").hide();
     $([document.documentElement, document.body]).animate({
       scrollTop: $("#top-row").offset().top
-    }, 200);
+    }, 1);
+    // setTimeout(function() {
+    //   $(".mis_azy").show();
+    // }, 1000);
   }
 
   slideToToppy() {
     $([document.documentElement, document.body]).animate({
       scrollTop: $("#the-toppyy").offset().top
-    }, 200);
+    }, 1);
   }
 
   animateGalleryOne() {
@@ -344,12 +343,12 @@ export class ActualityComponent implements OnInit, PipeTransform {
           if (element.image == null) {
               element.image = this.defaultImg;
           }
-          if (element.galerie == null) {
-            element.galerie = [];
-            for (let index = 0; index < 3; index++) {
-              element.galerie.push(this.defaultImg);
-            }
-          }
+          // if (element.galerie == null) {
+          //   element.galerie = [];
+          //   for (let index = 0; index < 3; index++) {
+          //     element.galerie.push(this.defaultImg);
+          //   }
+          // }
           if (this.isNews && element.type == "nouvelle") {
             this.listActu.push(element);
           } else if (!this.isNews && element.type == "actualite") {

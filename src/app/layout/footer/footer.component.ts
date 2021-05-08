@@ -17,12 +17,12 @@ import { MatSnackBar } from '@angular/material';
 })
 export class FooterComponent implements OnInit {
   logo = "./../../../assets/images/ENI/logo-ENl.png";
-  logoUf = "./../../../assets/images/ENI/uf-light.png";
+  logoUf = "./../../../assets/images/ENI/UF.png";
   menu = null;
-  facebook = "";
-  youtube = "";
-  twitter = "";
-  instagram = "";
+  facebook = null;
+  youtube = null;
+  twitter = null;
+  instagram = null;
   telephone = "+261 34 05 733 36";
   callPhone = "tel:+261 34 05 733 36";
   email = "eni@univ-fianar.mg";
@@ -44,7 +44,24 @@ export class FooterComponent implements OnInit {
   }
 
   home() {
+    window.location.href = "/";
     this.router.navigateByUrl("/");
+  }
+
+  apropos() {
+    window.location.href = "/Apropos";
+  }
+
+  contact() {
+    window.location.href = "/contact";
+  }
+
+  clubs() {
+    window.location.href = "/clubs";
+  }
+
+  actu() {
+    window.location.href = "/evenements/actualites";
   }
 
   openSnackBar(message: string, action: string) {
@@ -54,12 +71,12 @@ export class FooterComponent implements OnInit {
   getConf() {
     this.confService.getConfigurations().subscribe(
       (data: any[]) => {
-        // console.log(data);
+        console.log(data);
         data.forEach(el => {
-          if (el.cle == "lien_facebook") this.facebook = el.valeur;
-          if (el.cle == "lien_twitter") this.twitter = el.valeur;
-          if (el.cle == "lien_youtube") this.youtube = el.valeur;
-          if (el.cle == "lien_instagram") this.instagram = el.valeur;
+          if (el.cle == "lien_facebook" && this.isHttps(el.valeur)) this.facebook = el.valeur;
+          if (el.cle == "lien_twitter" && this.isHttps(el.valeur)) this.twitter = el.valeur;
+          if (el.cle == "lien_youtube" && this.isHttps(el.valeur)) this.youtube = el.valeur;
+          if (el.cle == "lien_instagram" && this.isHttps(el.valeur)) this.instagram = el.valeur;
           if (el.cle == "email") this.email = el.valeur;
           if (el.cle == "adresse") this.adresse = el.valeur;
           if (el.cle == "lien_site") this.site = el.valeur;
@@ -73,6 +90,11 @@ export class FooterComponent implements OnInit {
         console.log(err);
       }
     )
+  }
+
+  isHttps(str: string) {
+    if (str.includes("https")) return true;
+    else return false;
   }
 
   newsletter() {
